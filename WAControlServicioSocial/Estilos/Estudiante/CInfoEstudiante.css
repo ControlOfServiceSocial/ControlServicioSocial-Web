@@ -1,0 +1,173 @@
+﻿:root {
+    --gris: #666;
+    --color-principal: #8C4975;
+    --negro: #000;
+    --ancho-contenido: 80%;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.boton-retorno {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.boton-retorno a {
+    color: var(--negro);
+    z-index: 2;
+}
+
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor__secciones {
+    width: 129.7rem;
+    height: 63.5rem;
+    border-radius: 2.2rem;
+    box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion__informacion {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.informacion__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 2.75rem 3.6rem;
+}
+
+.informacion__mapas {
+    height: auto;
+    width: auto;
+    margin-left: 3.6rem;
+    margin-top: 2.75rem;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.mapa__inicial, .mapa__final {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.inicial__contenedor, .final__contenedor {
+    display: flex;
+    width: 31rem;
+    height: 18.4rem;
+    max-width: 31rem;
+    max-height: 18.4rem;
+    background-color: var(--gris);
+    margin-bottom: .6rem;
+}
+
+.informacion__estudiante {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 3.6rem;
+    margin-top: 4.4rem;
+}
+
+.informacion__estudiante p {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.informacion__estudiante p span {
+    font-weight: 400;
+}
+
+.seccion__proyectos {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 56rem;
+}
+
+.tipo__proyecto, .tipo__certificado {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    overflow-y: scroll;
+    max-height: 26.95rem;
+}
+
+.proyecto__elemento, .certificado__elemento {
+    display: flex;
+    width: 52.5rem;
+    height: 5.5rem;
+    min-height: 5.5rem;
+    border-radius: .5rem;
+    border: 1px solid #E9EFF4;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tipo__certificado {
+    margin-top: 2rem;
+}
+
+.proyecto__titulo, 
+.certificado__titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.elemento__nombre {
+    margin-left: 4rem;
+    color: var(--gris);
+}
+
+.elemento__contenedor-icono {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(140, 73, 117, .1);
+    border-radius: 50%;
+    padding: .5rem;
+    margin-right: 1rem;
+}
+
+.elemento__icono {
+    width: 1rem;
+    height: 1rem;
+}

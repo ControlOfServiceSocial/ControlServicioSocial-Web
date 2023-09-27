@@ -1,0 +1,137 @@
+﻿:root {
+    --gris: #666;
+    --color-principal: #8C4975;
+    --negro: #000;
+    --ancho-contenido: 80%;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.contenedor-principal {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-tabla {
+    width: 111.3rem;
+    height: 70.3rem;
+    background-color: var(--blanco);
+    border-radius: 2.2rem;
+    box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-tabla .tabla {
+    width: 90%;
+    /* background-color: #8C4975; */
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.contenedor-tabla .tabla__titulo {
+    margin-bottom: 4.3rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.tabla__encabezado tr th {
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 2rem;
+    color: var(--gris);
+    position: sticky;
+}
+
+.tabla__cuerpo tr.borde-fila td {
+    text-align: center;
+    padding: 1.4rem 0;
+    max-height: 5.5rem;
+}
+
+.borde-fila td .icon-info {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(140, 73, 117, .1);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.borde-fila td .icon-info svg {
+    color: var(--negro);
+    width: 2rem;
+    height: 2rem;
+    margin-top: .5rem;
+}
+
+tr.borde-fila {
+    height: 2rem;
+    max-height: 5.5rem;
+    border: 2px solid #E9EFF4;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gris);
+}
+
+.tabla .tabla__cuerpo .borde-fila td a.icon-info svg.icono {
+    color: #000;
+}
+
+.paginacion {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+    margin-top: 3.65rem;
+}
+
+.paginacion__texto {
+    font-size: 1.5rem;
+    color: var(--gris);
+    width: 40%;
+    margin-left: 6rem;
+}
+
+.paginacion__elementos {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+}
+
+.paginacion__elementos .etiqueta-paginacion {
+    color: var(--gris);
+    font-weight: 400;
+}
+
+.paginacion__elementos .pagina-seleccionada {
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: var(--color-principal);
+    color: var(--blanco);
+    border-radius: 50%;
+    padding: .5rem;
+}
