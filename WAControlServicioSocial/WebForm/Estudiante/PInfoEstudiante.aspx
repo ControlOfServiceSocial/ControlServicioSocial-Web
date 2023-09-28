@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <<section class="contenedor">
+    <section class="contenedor">
     <div class="boton-retorno">
       <a href="#">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

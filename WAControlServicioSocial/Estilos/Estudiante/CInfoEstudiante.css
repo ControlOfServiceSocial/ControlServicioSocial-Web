@@ -76,7 +76,7 @@ body {
     /* background-color: red; */
     display: flex;
     justify-content: space-between;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .mapa__inicial, .mapa__final {
@@ -128,7 +128,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: .8rem;
-    overflow-y: scroll;
+    overflow-y: hidden;
     max-height: 26.95rem;
 }
 
