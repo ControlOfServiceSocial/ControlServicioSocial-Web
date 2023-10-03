@@ -1,0 +1,22 @@
+﻿:root {
+    --gris: #666;
+    --color-principal: #8C4975;
+    --negro: #000;
+    --ancho-contenido: 80%;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+}
