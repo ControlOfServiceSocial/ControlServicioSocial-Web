@@ -9,5 +9,5 @@ using System.Web;
 /// </summary>
 public class ADCProyecto
 {
-    Database BDSWADNETReciclado = SBaseDatos.BDSWADNETReciclado;
+    Database BDSWADNETReciclado = SBaseDatos.BDSWADNETControlServicioSocial;
 }

@@ -43,10 +43,15 @@ body {
 }
 
 .contenedor-tabla .tabla {
-    width: 90%;
-    /* background-color: #8C4975; */
+    width: 1041px;
     text-align: center;
     border-collapse: collapse;
+    height: 500px;
+}
+
+.tabla tbody tr {
+    height: 55px;
+    max-height: 55px;
 }
 
 .contenedor-tabla .tabla__titulo {
@@ -63,6 +68,22 @@ body {
     color: var(--gris);
     position: sticky;
 }
+table.tabla {
+    border: none;
+    border-collapse: collapse; 
+}
+
+table.tabla th {
+    border: none;
+}
+
+table.tabla td {
+    border: none; 
+}
+
+table.tabla tr {
+    border-bottom: 1px solid var(--gris); /* Cambia el color y el grosor según tus preferencias */
+}
 
 .tabla__cuerpo tr.borde-fila td {
     text-align: center;
@@ -70,7 +91,7 @@ body {
     max-height: 5.5rem;
 }
 
-.borde-fila td .icon-info {
+.icon-info {
     display: block;
     width: 3rem;
     height: 3rem;
@@ -79,10 +100,10 @@ body {
     margin: 0 auto;
 }
 
-.borde-fila td .icon-info svg {
+.icon-info svg {
     color: var(--negro);
-    width: 2rem;
-    height: 2rem;
+    width: 20px;
+    height: 20px;
     margin-top: .5rem;
 }
 

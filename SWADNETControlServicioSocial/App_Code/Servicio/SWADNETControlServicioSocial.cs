@@ -26,4 +26,15 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		}
 		return composite;
 	}
+
+	#region Tabla: Estudiante
+	public List<ECEstudiante> Obtener_CEstudiante_O()
+    {
+        CCEstudiante cCEstudiante = new CCEstudiante();
+		List<ECEstudiante> lstCEstudiante = new List<ECEstudiante>();
+		lstCEstudiante = cCEstudiante.Obtener_CEstudiante_O();
+		return lstCEstudiante;
+    }
+    #endregion
+
 }
