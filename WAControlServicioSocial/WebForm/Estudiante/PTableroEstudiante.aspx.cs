@@ -26,12 +26,9 @@ public partial class WebForm_Estudiante_TableroEstudiante : System.Web.UI.Page
         gvListaEstudiantes.DataBind();
     }
 
-    protected void gvListaEstudiantes_RowDataBound(object sender, GridViewRowEventArgs e)
+    protected void gvListaEstudiantes_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        if (e.Row.RowType == DataControlRowType.DataRow || e.Row.RowType == DataControlRowType.Header)
-        {
-            e.Row.Style["height"] = "55px"; // Ajusta esta altura según tus necesidades
-        }
+        gvListaEstudiantes.PageIndex = e.NewPageIndex;
+        CargarDatos();
     }
-
 }

@@ -39,38 +39,46 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    padding: 2rem;
 }
 
 .contenedor-tabla .tabla {
-    width: 1041px;
+    width: 100rem;
     text-align: center;
     border-collapse: collapse;
-    height: 500px;
+    max-height: 50rem;
 }
 
 .tabla tbody tr {
-    height: 55px;
-    max-height: 55px;
+    height: 5.5rem;
 }
 
 .contenedor-tabla .tabla__titulo {
-    margin-bottom: 4.3rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
     font-weight: 700;
 }
 
-.tabla__encabezado tr th {
-    font-size: 1.3rem;
-    font-weight: 400;
+.tabla tbody tr th {
+    font-size: 13px;
+    font-weight: 700;
     font-style: normal;
-    padding-bottom: 2rem;
     color: var(--gris);
     position: sticky;
 }
 table.tabla {
     border: none;
     border-collapse: collapse; 
+}
+
+.tabla tbody tr.pagina-numero td table{
+    color: red;
+    margin-left: 50%;
+}
+
+.tabla tbody tr.pagina-numero td table tbody tr td {
+    padding-left: 1rem;
 }
 
 table.tabla th {
@@ -81,9 +89,6 @@ table.tabla td {
     border: none; 
 }
 
-table.tabla tr {
-    border-bottom: 1px solid var(--gris); /* Cambia el color y el grosor según tus preferencias */
-}
 
 .tabla__cuerpo tr.borde-fila td {
     text-align: center;
@@ -107,8 +112,8 @@ table.tabla tr {
     margin-top: .5rem;
 }
 
-tr.borde-fila {
-    height: 2rem;
+.tabla tbody tr {
+    height: 5.5rem;
     max-height: 5.5rem;
     border: 2px solid #E9EFF4;
     font-size: 1.3rem;

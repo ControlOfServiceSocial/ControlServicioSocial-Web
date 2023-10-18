@@ -7,7 +7,9 @@
 <form id="form1" runat="server">
       <section class="contenedor-principal">
   <div class="contenedor-tabla">
-    <asp:GridView ID="gvListaEstudiantes" runat="server" CssClass="tabla" AutoGenerateColumns="false">
+    <h2 class="tabla__titulo">Listado de estudiantes</h2>
+    <asp:GridView ID="gvListaEstudiantes" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="8" OnPageIndexChanging="gvListaEstudiantes_PageIndexChanging" >
+        <PagerStyle CssClass="pagina-numero" /> 
         <Columns>
             <asp:BoundField DataField="IdEstudiante" HeaderText="Id Estudiante" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" Visible="false" />
             <asp:BoundField DataField="NombreEstudiante" HeaderText="Nombre completo" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />
@@ -24,29 +26,6 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-
-
-    <div class="paginacion">
-      <p class="paginacion__texto">Mostrando M de N estudiantes</p>
-
-      <div class="paginacion__elementos">
-        <span class="etiqueta-paginacion">Página</span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
-            <path d="M12 18.9325L12 1.06752C12 0.643602 11.5056 0.412025 11.1799 0.683411L0.460933 9.61589C0.221056 9.81579 0.221056 10.1842 0.460934 10.3841L11.1799 19.3166C11.5056 19.588 12 19.3564 12 18.9325Z" fill="#8C4975"/>
-          </svg>
-        </span>
-        <div class="pagina-seleccionada">
-          <span>1</span>
-        </div>
-        <span>2</span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
-            <path d="M2.25768e-07 1.06752L1.27301e-08 18.9325C7.67488e-09 19.3564 0.494428 19.588 0.820091 19.3166L11.5391 10.3841C11.7789 10.1842 11.7789 9.81579 11.5391 9.61589L0.820092 0.683411C0.494429 0.412024 2.30823e-07 0.643602 2.25768e-07 1.06752Z" fill="#8C4975"/>
-          </svg>
-        </span>
-      </div>
-    </div>
   </div>
 </section>
      </form>

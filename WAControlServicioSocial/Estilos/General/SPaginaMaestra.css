@@ -65,16 +65,16 @@ ul {
     margin-right: 4rem;
 }
 
-    .derecha__opciones ul {
-        display: flex;
-        gap: 2rem;
-        font-size: 1.6rem;
-    }
+.derecha__opciones ul {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.6rem;
+}
 
-        .derecha__opciones ul li a:focus,
-        .derecha__opciones ul li a:active {
-            font-weight: 700;
-        }
+.derecha__opciones ul li a:focus,
+.derecha__opciones ul li a:active {
+    font-weight: 700;
+}
 
 .derecha__iconos {
     margin-right: 1.2rem;
