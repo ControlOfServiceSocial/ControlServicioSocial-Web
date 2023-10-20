@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SWADNETControlServicioSocial;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,7 +18,9 @@ public interface ISWLNControlServicioSocial
 	[OperationContract]
 	CompositeType GetDataUsingDataContract(CompositeType composite);
 
-	// TODO: agregue aquí sus operaciones de servicio
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O();
+    // TODO: agregue aquí sus operaciones de servicio
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

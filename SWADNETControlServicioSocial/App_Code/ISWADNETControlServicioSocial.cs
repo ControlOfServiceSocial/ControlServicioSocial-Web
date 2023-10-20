@@ -18,6 +18,8 @@ public interface ISWADNETControlServicioSocial
 	CompositeType GetDataUsingDataContract(CompositeType composite);
 
 	// TODO: agregue aquí sus operaciones de servicio
+	[OperationContract]
+	List<ECProyecto> Obtener_CProyecto_O();
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

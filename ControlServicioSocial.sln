@@ -75,17 +75,32 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WAControlServicioSocial", "
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAUIControlServicioSocial", "..\..\source\repos\MAUIControlServicioSocial\MAUIControlServicioSocial\MAUIControlServicioSocial.csproj", "{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19555DBD-9D8E-40AE-A709-D8645818BA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19555DBD-9D8E-40AE-A709-D8645818BA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19555DBD-9D8E-40AE-A709-D8645818BA51}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{19555DBD-9D8E-40AE-A709-D8645818BA51}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{8BCE1774-97CD-4C80-9088-4A408D357238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BCE1774-97CD-4C80-9088-4A408D357238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BCE1774-97CD-4C80-9088-4A408D357238}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BCE1774-97CD-4C80-9088-4A408D357238}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{369CEADF-F239-493C-B59F-134801C94F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{369CEADF-F239-493C-B59F-134801C94F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369CEADF-F239-493C-B59F-134801C94F29}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{369CEADF-F239-493C-B59F-134801C94F29}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D29EE3D-40A2-4883-9AA6-3D67F77E17C6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

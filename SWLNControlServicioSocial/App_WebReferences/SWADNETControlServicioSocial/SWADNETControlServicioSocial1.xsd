@@ -29,4 +29,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Obtener_CProyecto_O">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_OResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_OResult" nillable="true" type="q3:ArrayOfECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

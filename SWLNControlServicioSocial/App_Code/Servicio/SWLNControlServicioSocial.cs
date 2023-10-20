@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SWADNETControlServicioSocial;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -26,4 +27,9 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 		}
 		return composite;
 	}
+
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        throw new NotImplementedException();
+    }
 }

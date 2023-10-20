@@ -26,4 +26,12 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		}
 		return composite;
 	}
+
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        CCProyecto cCProyecto = new CCProyecto();
+		List<ECProyecto> lstCProyecto=new List<ECProyecto>();
+		lstCProyecto=cCProyecto.Obtener_CProyecto_O();
+		return lstCProyecto;
+    }
 }
