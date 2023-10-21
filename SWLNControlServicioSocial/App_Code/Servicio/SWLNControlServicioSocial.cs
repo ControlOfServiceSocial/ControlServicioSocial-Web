@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SWADNETControlServicioSocial;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -26,4 +27,14 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 		}
 		return composite;
 	}
+
+	#region Estudiante
+	public List<ECEstudiante> Obtener_CEstudiante_O()
+	{
+		CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+		List<ECEstudiante> lstEcEstudiante = new List<ECEstudiante>();
+		lstEcEstudiante = cControlServicioSocial.Obtener_CEstudiante_O();
+		return lstEcEstudiante;
+	}
+    #endregion
 }
