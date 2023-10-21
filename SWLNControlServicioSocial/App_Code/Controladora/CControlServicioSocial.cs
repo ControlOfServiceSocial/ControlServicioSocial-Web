@@ -31,4 +31,10 @@ public class CControlServicioSocial
         return lstEcEstudiante;
     }
     #endregion
+    #region Metodos Publicos Proyecto
+    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    {
+        asNetControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+    }
+    #endregion
 }

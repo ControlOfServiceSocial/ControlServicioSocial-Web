@@ -36,5 +36,12 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 		lstEcEstudiante = cControlServicioSocial.Obtener_CEstudiante_O();
 		return lstEcEstudiante;
 	}
-    #endregion
+	#endregion
+	#region Tabla: Proyecto
+	public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+	{
+		CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+		cControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+	}
+	#endregion
 }

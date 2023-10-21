@@ -24,6 +24,10 @@ public interface ISWLNControlServicioSocial
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
 	#endregion
+	#region Tabla: Proyecto
+	[OperationContract]
+	void Insertar_CProyecto_I(ECProyecto eCProyecto);
+	#endregion
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
