@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="../../Estilos/Proyecto/SCrearProyecto.css" />
 </head>
 <body>
-    <a href="login.html" >
-        <img src="image/atras 1.png" alt="Imagen de bienvenida" >
-    </a>
+        <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" >
+
   <div class="proyect-box">
     <form ID="form1" runat="server">
         <h2>Crear proyecto nuevo</h1>
@@ -61,7 +60,7 @@
         <div class="form-item">
             <label for="imagen">Imagen *</label>
             <label ID="imageFile"> Cargar Imagen
-              <asp:input type="file" ID="imagen" runat="server" name="imagen" accept="image/*" required>
+                <asp:FileUpload ID="img" runat="server" />
             </label>      
         </div>     
         <div class="form-item">
@@ -80,7 +79,7 @@
                 <input type="button" ID="btnCancelar" runat="server" value="Cancelar">
             </div>
             <div class="form-item">
-                <input type="submit" id="btnCrear" runat="server" value="Crear Proyecto">
+                <asp:Button ID="btnSend" runat="server" Text="Crear Proyecto"  OnClick="btnSend_Click"/>
             </div>           
         </div>
       </div>
