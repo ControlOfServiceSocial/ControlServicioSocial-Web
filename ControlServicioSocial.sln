@@ -52,6 +52,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWLNControlServicioSocial",
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WAControlServicioSocial", "WAControlServicioSocial\", "{369CEADF-F239-493C-B59F-134801C94F29}"
 	ProjectSection(ProjectDependencies) = postProject
+		{19555DBD-9D8E-40AE-A709-D8645818BA51} = {19555DBD-9D8E-40AE-A709-D8645818BA51}
 		{8BCE1774-97CD-4C80-9088-4A408D357238} = {8BCE1774-97CD-4C80-9088-4A408D357238}
 	EndProjectSection
 	ProjectSection(WebsiteProperties) = preProject

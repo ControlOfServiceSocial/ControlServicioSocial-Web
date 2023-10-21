@@ -7,41 +7,22 @@
       <xsd:import schemaLocation="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ISWLNControlServicioSocial_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O" />
   </wsdl:message>
-  <wsdl:message name="ISWLNControlServicioSocial_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISWLNControlServicioSocial_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="ISWLNControlServicioSocial_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_OResponse" />
   </wsdl:message>
   <wsdl:portType name="ISWLNControlServicioSocial">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/GetData" message="tns:ISWLNControlServicioSocial_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/GetDataResponse" message="tns:ISWLNControlServicioSocial_GetData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/GetDataUsingDataContract" message="tns:ISWLNControlServicioSocial_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/GetDataUsingDataContractResponse" message="tns:ISWLNControlServicioSocial_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="Obtener_CProyecto_O">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_OResponse" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWLNControlServicioSocial" type="tns:ISWLNControlServicioSocial">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="Obtener_CProyecto_O">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

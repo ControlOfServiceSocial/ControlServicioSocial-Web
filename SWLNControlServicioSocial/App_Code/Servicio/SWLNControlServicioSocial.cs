@@ -10,26 +10,11 @@ using System.Text;
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 {
-	public string GetData(int value)
-	{
-		return string.Format("You entered: {0}", value);
-	}
-
-	public CompositeType GetDataUsingDataContract(CompositeType composite)
-	{
-		if (composite == null)
-		{
-			throw new ArgumentNullException("composite");
-		}
-		if (composite.BoolValue)
-		{
-			composite.StringValue += "Suffix";
-		}
-		return composite;
-	}
-
     public List<ECProyecto> Obtener_CProyecto_O()
     {
-        throw new NotImplementedException();
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        List<ECProyecto> lstECProyectos = new List<ECProyecto>();
+        lstECProyectos = cControlServicioSocial.Obtener_CProyecto_O();
+        return lstECProyectos; 
     }
 }

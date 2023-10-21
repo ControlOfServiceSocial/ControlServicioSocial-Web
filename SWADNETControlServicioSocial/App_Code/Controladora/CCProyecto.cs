@@ -21,7 +21,7 @@ public class CCProyecto
         ECProyecto eCProyecto;
         List<ECProyecto> lstECProyecto=new List<ECProyecto>();
         DTOCProyecto dTOCProyecto = aDCProyecto.Obtener_CProyecto_O();
-        if (dTOCProyecto==null)
+        if (dTOCProyecto!=null)
         {
             foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
             {
@@ -36,8 +36,9 @@ public class CCProyecto
                 eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
                 eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
                 eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
-
+                lstECProyecto.Add(eCProyecto);
             }
+            
         }
         else
         {

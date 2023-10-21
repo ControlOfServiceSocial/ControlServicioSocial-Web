@@ -31,5 +31,19 @@ public class ASNETControlServicioSocial
         }
         return lstEcProyecto;
     }
+    public List<ECCertificado> Obtener_CCertificado_O()
+    {
+        List<ECCertificado>lstEcCertifiado=new List<ECCertificado>();
+        try
+        {
+            lstEcCertifiado = swADNETControlServicioSocial.Obtener_CCertificado_O().ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcCertifiado; 
+    }
     #endregion
 }

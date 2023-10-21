@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="d87eb6ef-1a2a-495b-857d-e9728c230f50" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5b85a49f-3c41-40b2-9ec3-616251452b7c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:56886/SWADNETControlServicioSocial.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SWADNETControlServicioSocial.xsd" MetadataType="Schema" ID="25b9a948-68d5-45be-90e8-9927cd612b3a" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd1" />
-    <MetadataFile FileName="SWADNETControlServicioSocial.disco" MetadataType="Disco" ID="ad99d487-a917-4d70-8fa9-1cc98a20120f" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?disco" />
-    <MetadataFile FileName="SWADNETControlServicioSocial.wsdl" MetadataType="Wsdl" ID="3e23bfd6-5eed-417f-817f-1e185dafb02b" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?wsdl" />
-    <MetadataFile FileName="SWADNETControlServicioSocial1.xsd" MetadataType="Schema" ID="7872d7b9-0cfc-49ab-b836-d5541b01fb6c" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd0" />
-    <MetadataFile FileName="SWADNETControlServicioSocial2.xsd" MetadataType="Schema" ID="16f21368-b679-4979-a753-2e9bf4b71bbf" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd2" />
+    <MetadataFile FileName="SWADNETControlServicioSocial.xsd" MetadataType="Schema" ID="ef968642-c80a-43ae-ad34-174e866328f7" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd1" />
+    <MetadataFile FileName="SWADNETControlServicioSocial.disco" MetadataType="Disco" ID="0ab80955-4ec6-4589-9884-1a62394385e1" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?disco" />
+    <MetadataFile FileName="SWADNETControlServicioSocial.wsdl" MetadataType="Wsdl" ID="bd74decd-df23-442b-84bb-db1292146ac9" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?wsdl" />
+    <MetadataFile FileName="SWADNETControlServicioSocial1.xsd" MetadataType="Schema" ID="8ae49516-1e99-4e4a-9556-1f1769b155eb" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd0" />
+    <MetadataFile FileName="SWADNETControlServicioSocial2.xsd" MetadataType="Schema" ID="19d30cec-611c-4ce2-bfb3-3138df0d0deb" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

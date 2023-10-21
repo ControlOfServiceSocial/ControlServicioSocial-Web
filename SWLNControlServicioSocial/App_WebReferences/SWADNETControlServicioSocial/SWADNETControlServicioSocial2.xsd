@@ -28,4 +28,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+  <xs:complexType name="ArrayOfECCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECCertificado" nillable="true" type="tns:ECCertificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECCertificado" nillable="true" type="tns:ArrayOfECCertificado" />
+  <xs:complexType name="ECCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CargaHoraria" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentoCertificado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCertificado" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="TituloCertificado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECCertificado" nillable="true" type="tns:ECCertificado" />
 </xs:schema>

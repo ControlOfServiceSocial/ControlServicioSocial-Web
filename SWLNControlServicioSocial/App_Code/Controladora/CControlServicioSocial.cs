@@ -28,4 +28,18 @@ public class CControlServicioSocial
         }
         return lstEcProyecto;
     }
+    public List<ECCertificado> Obtener_CCertificado_O()
+    {
+        List<ECCertificado> lstEcCertifiado = new List<ECCertificado>();
+        try
+        {
+            lstEcCertifiado = aSNETControlServicioSocial.Obtener_CCertificado_O();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcCertifiado;
+    }
 }
