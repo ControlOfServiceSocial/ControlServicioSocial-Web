@@ -36,6 +36,18 @@ public class LNServicio
         return lstEcEstudiante;
     }
     #endregion
-
+    #region CProyecto
+    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    {
+        try
+        {
+            swlnControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
     #endregion
-}
+    #endregion
+    }

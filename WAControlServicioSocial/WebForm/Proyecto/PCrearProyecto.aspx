@@ -13,34 +13,34 @@
         <img src="image/atras 1.png" alt="Imagen de bienvenida" >
     </a>
   <div class="proyect-box">
-    <form id="form1" runat="server">
+    <form ID="form1" runat="server">
         <h2>Crear proyecto nuevo</h1>
       <div class="form-row">
         <div class="form-item">
           <label for="nombre">Nombre del proyecto *</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del proyecto" required>
+          <input type="text" ID="txtnombre" runat="server" name="nombre" placeholder="Ingrese el nombre del proyecto" required>
         </div>
         <div class="form-item">
             <label for="ubicacion">Ubicación del proyecto *</label>
-            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese el lugar del proyecto" required>
+            <input type="text" ID="ubicacion" runat="server" name="ubicacion" placeholder="Ingrese el lugar del proyecto" required>
         </div>
         <div class="form-item">
             <label for="inicio">Fecha de inicio *</label>
-            <input type="date" id="inicio" name="inicio" required>
+            <input type="date" ID="inicio" runat="server" name="inicio" required>
         </div>   
       </div>
       <div class="form-row">
         <div class="form-item">
             <label for="fin">Fecha de finalización *</label>
-            <input type="date" id="fin" name="fin" required>
+            <input type="date" ID="fin" runat="server" name="fin" required>
         </div>      
         <div class="form-item">
             <label for="creacion">Fecha de creación *</label>
-            <input type="date" id="creacion" name="creacion" required>
+            <input type="date" ID="creacion" runat="server" name="creacion" required>
         </div>
         <div class="form-item">
             <label for="estado">Estado *</label>
-            <select id="estado" name="estado" required>
+            <select ID="estado" runat="server" name="estado" required>
               <option value="">-- Seleccionar --</option>
               <option value="iniciado">Iniciado</option>
               <option value="en proceso">En Proceso</option>
@@ -51,7 +51,7 @@
       <div class="form-row">
         <div class="form-item">
             <label for="sede">Sede del proyecto *</label>
-            <select id="sede" name="sede" required>
+            <select ID="sede" runat="server" name="sede" required>
               <option value="">-- Seleccionar --</option>
               <option value="sede1">Sede 1</option>
               <option value="sede2">Sede 2</option>
@@ -60,32 +60,32 @@
         </div> 
         <div class="form-item">
             <label for="imagen">Imagen *</label>
-            <label id="imageFile"> Cargar Imagen
-              <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            <label ID="imageFile"> Cargar Imagen
+              <asp:input type="file" ID="imagen" runat="server" name="imagen" accept="image/*" required>
             </label>      
         </div>     
         <div class="form-item">
           <label for="horas">Asignar horas *</label>
-          <input type="number" id="horas" name="horas" placeholder="Ingrese la cantidad de horas de proyecto" required>
+          <input type="number" ID="horas" runat="server" name="horas" placeholder="Ingrese la cantIDad de horas de proyecto" required>
         </div>
              
       </div>
       <div class="form-row">       
         <div class="form-item">
             <label for="desc">Descripción del proyecto</label>
-            <textarea id="desc" name="desc" placeholder="Ingrese la descripción del proyecto"></textarea>
+            <textarea ID="desc" runat="server" name="desc" placeholder="Ingrese la descripción del proyecto"></textarea>
           </div>
         <div class="form-row">
             <div class="form-item">
-                <input type="button" value="Cancelar">
+                <input type="button" ID="btnCancelar" runat="server" value="Cancelar">
             </div>
             <div class="form-item">
-                <input type="submit" value="Crear Proyecto">
+                <input type="submit" id="btnCrear" runat="server" value="Crear Proyecto">
             </div>           
         </div>
       </div>
       <div class="form-row">
-        <label id="advertencia">Los campos marcados con ‘*’ son de carácter obligatorio.</label>
+        <label ID="advertencia">Los campos marcados con ‘*’ son de carácter obligatorio.</label>
       </div>
     </form>
       </div>

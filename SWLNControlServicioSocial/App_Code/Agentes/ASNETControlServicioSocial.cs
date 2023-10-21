@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Web;
-using SWADNETControlServicioSocial;
 
 /// <summary>
 /// Descripción breve de ASNETControlServicioSocial
@@ -41,29 +40,29 @@ public class ASNETControlServicioSocial
     #region CProyecto
     public void Insertar_CProyecto_I(ECProyecto eCProyecto)
     {
-        /*try
+        try
         {
-            swADNETControlServicioSocial.(eRCampania);
+            swADNETControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
         }
         catch (EndpointNotFoundException EndPointEx)
         {
-            ECProyecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", EndPointEx.ToString(), EndPointEx.Message);
-            throw new FaultException<EDefecto>(eDefecto);
+            /*EDefecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", EndPointEx.ToString(), EndPointEx.Message);
+            throw new FaultException<EDefecto>(eDefecto);*/
         }
         catch (CommunicationException CommEx)
         {
             FaultException feaultEx = CommEx as FaultException;
             if (feaultEx == null)
             {
-                swADNETReciclado.Insertar_RCampania_I(eRCampania);
+                swADNETControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
             }
             else
             {
-                EDefecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", CommEx.ToString(), CommEx.Message);
-                throw new FaultException<EDefecto>(eDefecto);
+                /*EDefecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", CommEx.ToString(), CommEx.Message);
+                throw new FaultException<EDefecto>(eDefecto);*/
             }
 
-        }*/
+        }
     }
     #endregion
     #endregion
