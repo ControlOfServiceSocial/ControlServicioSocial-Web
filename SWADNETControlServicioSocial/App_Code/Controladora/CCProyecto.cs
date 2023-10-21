@@ -8,9 +8,20 @@ using System.Web;
 /// </summary>
 public class CCProyecto
 {
+    #region Metodos Privados
     private ADCProyecto aDCProyecto;
-    public CCProyecto( )
+    #endregion
+
+    #region Metodos Publicos
+    public CCProyecto()
     {
         aDCProyecto = new ADCProyecto();
     }
+
+    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    {
+        aDCProyecto.Insertar_CProyecto_I(eCProyecto);
+    }
+
+    #endregion
 }

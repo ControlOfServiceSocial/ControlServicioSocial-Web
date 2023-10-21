@@ -12,5 +12,5 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 public class SBaseDatos
 {
 
-    public static Database BDSWADNETReciclado = DatabaseFactory.CreateDatabase("BDControlServicioSocialConnectionString");
+    public static Database BDSWADNETControlServicioSocial = DatabaseFactory.CreateDatabase("BDControlServicioSocialConnectionString");
 }

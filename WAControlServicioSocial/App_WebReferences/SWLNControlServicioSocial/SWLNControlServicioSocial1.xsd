@@ -7,4 +7,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfECEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECEstudiante" nillable="true" type="tns:ECEstudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECEstudiante" nillable="true" type="tns:ArrayOfECEstudiante" />
+  <xs:complexType name="ECEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaternoEstudiante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaternoEstudiante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailEstudiante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaActualizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRegistroEstudiante" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreEstudiante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoEstudiante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECEstudiante" nillable="true" type="tns:ECEstudiante" />
 </xs:schema>

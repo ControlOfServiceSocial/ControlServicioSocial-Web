@@ -1,0 +1,115 @@
+﻿:root {
+    --gris: #666;
+    --color-principal: #8C4975;
+    --negro: #000;
+    --ancho-contenido: 80%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+    /* background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image:  radial-gradient(#8C4975 0.5px, transparent 0.5px), radial-gradient(#8C4975 0.5px, #e5e5f7 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0,10px 10px; */
+}
+
+.boton-retorno {
+    max-width: 3rem;
+    max-height: 3rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+    .boton-retorno a {
+        color: var(--negro);
+    }
+
+.contenedor-info {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-info__titulo {
+    display: flex;
+    justify-content: left;
+    width: var(--ancho-contenido);
+    margin-bottom: 5.4rem;
+}
+
+    .contenedor-info__titulo h2 {
+        font-size: 2.4rem;
+    }
+
+.contenedor-info__informacion-proyecto {
+    width: var(--ancho-contenido);
+    display: flex;
+    margin-bottom: 4.7rem;
+}
+
+.informacion-proyecto__imagen {
+    max-height: 29rem;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    padding-right: 2rem;
+}
+
+.informacion-proyecto__datos1 {
+    padding-right: 2rem;
+    width: 30%;
+}
+
+.informacion-proyecto__datos1 div {
+    margin-bottom: 2rem;
+}
+
+.informacion-proyecto__datos1 div span,
+.informacion-proyecto__datos2 div span,
+.contenedor-info__descripcion span {
+    color: var(--gris);
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+}
+
+.informacion-proyecto__datos1 div p,
+.informacion-proyecto__datos2 div p,
+.contenedor-info__descripcion p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    /* letter-spacing: .0314rem; */
+}
+
+.informacion-proyecto__datos2 {
+    width: 30%;
+    padding-right: 2rem;
+}
+
+.informacion-proyecto__datos2 div {
+    margin-bottom: 2rem;
+}
+
+
+
+.informacion-proyecto__imagen img {
+    height: 100%;
+    max-width: 90%;
+}
+
+.contenedor-info__descripcion {
+    width: var(--ancho-contenido);
+}

@@ -1,0 +1,129 @@
+﻿:root {
+    --Gray: #666;
+    --basic-colour: #8C4975;
+    --background-color: #FAFAFB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    /* background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(#8C4975 0.5px, transparent 0.5px), radial-gradient(#8C4975 0.5px, #e5e5f7 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px; */
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+}
+
+.form {
+    background-color: #fff;
+    margin: auto;
+    width: 90%;
+    max-width: 45rem;
+    padding: 0 5rem;
+    border-radius: 22px;
+    box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+    text-align: center;
+    font-weight: 700;
+    display: grid;
+}
+
+    .form .etiqueta__seleccion {
+        text-align: left;
+        color: var(--Gray);
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 2.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+.form__titulo {
+    font-size: 22px;
+    margin-bottom: 3.9rem;
+    margin-top: 6.3rem;
+}
+
+.form__parrafo {
+    font-weight: 500;
+    color: var(--Gray);
+    font-size: 15px;
+    text-align: left;
+    margin-top: 3.9rem;
+    margin-bottom: 2.9rem;
+}
+
+.botones__contenedor {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.1rem;
+    margin-bottom: 6.8rem;
+}
+
+.seleccion__opciones {
+    border: none;
+    border-bottom: 1px solid #DCE0E5;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    color: #616161;
+    margin-top: 0.3rem;
+    margin-bottom: 2.5rem;
+}
+
+.seleccion__opciones:focus {
+    border-color: #C2BEBE;
+}
+
+.seleccion__opciones option[disabled] {
+    color: #999;
+    background-color: #f0f0f0;
+}
+
+.boton__cancelar,
+.boton__aceptar {
+    width: 140px;
+    height: 38px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 7px;
+}
+
+.boton__cancelar {
+    border: 2px solid var(--basic-colour);
+    background: var(--background-color);
+    color: var(--basic-colour);
+}
+
+.boton__aceptar {
+    background: var(--basic-colour);
+    box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+    color: #fff;
+}
+
+.form__horas {
+    color: var(--Gray);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 4.1rem;
+    margin-top: 2.5rem;
+}
+
+    .form__horas span {
+        color: #000;
+        font-size: 13px;
+    }
