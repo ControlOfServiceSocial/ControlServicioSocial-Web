@@ -15,16 +15,15 @@ public class CProyecto : System.Web.UI.Page
     {
         
     }
-
-    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
-    {     
+    public void Insertar_CProyecto_I_CC(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, string EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
+    {
         try
         {
-            lnServicio.Insertar_CProyecto_I(eCProyecto);
+            lnServicio.Insertar_CProyecto_I(NombreProyecto, DescripcionProyecto, UbicacionProyecto, EstadoProyecto, ImagenProyecto, HorasEstimadas, FechaInicioProyecto, FechaFinProyecto, FechaCreacionProyecto);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            throw ex;
+            throw;
         }
     }
 }

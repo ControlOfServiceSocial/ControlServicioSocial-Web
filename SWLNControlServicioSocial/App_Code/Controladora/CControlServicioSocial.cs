@@ -32,9 +32,26 @@ public class CControlServicioSocial
     }
     #endregion
     #region Metodos Publicos Proyecto
-    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, string EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
-        asNetControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+        ECProyecto eCProyecto = new ECProyecto();
+        try
+        {
+            eCProyecto.NombreProyecto = NombreProyecto;
+            eCProyecto.DescripcionProyecto = DescripcionProyecto;
+            eCProyecto.UbicacionProyecto = UbicacionProyecto;
+            eCProyecto.EstadoProyecto = EstadoProyecto;
+            eCProyecto.ImagenProyecto = ImagenProyecto;
+            eCProyecto.HorasEstimadas = HorasEstimadas;
+            eCProyecto.FechaInicioProyecto = FechaInicioProyecto;
+            eCProyecto.FechaFinProyecto = FechaFinProyecto;
+            eCProyecto.FechaCreacionProyecto = FechaCreacionProyecto;
+            asNetControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
     #endregion
 }

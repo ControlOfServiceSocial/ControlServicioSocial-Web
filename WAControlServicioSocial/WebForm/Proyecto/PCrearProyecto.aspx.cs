@@ -1,6 +1,7 @@
 ﻿using SWLNControlServicioSocial;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +9,6 @@ using System.Web.UI.WebControls;
 
 public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 {
-    ECProyecto eCProyecto = new ECProyecto();
     CProyecto cProyecto = new CProyecto();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -17,37 +17,35 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 
     private void crearProyecto()
     {
-        byte[] imageBytes = img.FileBytes;
-        string base64String = Convert.ToBase64String(imageBytes);
-
-        DateTime dateValueInicio;
-        DateTime dateValueFin;
-        DateTime dateValueCreacion;
-        if (DateTime.TryParse(inicio.ToString(), out dateValueInicio))
+        if (img.HasFile)
         {
-            if (DateTime.TryParse(fin.ToString(), out dateValueFin)) 
+            // Verifica si el archivo es una imagen
+            string extension = Path.GetExtension(img.FileName);
+            if (extension != "")
             {
-                if (DateTime.TryParse(creacion.ToString(), out dateValueCreacion))
+                // Convierte el archivo a un array de bytes
+                byte[] imagenBytes = img.FileBytes;
+                try
                 {
-                    eCProyecto.NombreProyecto = txtnombre.ToString();
-                    eCProyecto.DescripcionProyecto = desc.ToString();
-                    eCProyecto.UbicacionProyecto = ubicacion.ToString();
-                    eCProyecto.EstadoProyecto = estado.ToString();
-                    eCProyecto.ImagenProyecto = base64String;
-                    eCProyecto.HorasEstimadas = byte.Parse(horas.ToString());
-                    eCProyecto.FechaInicioProyecto = dateValueInicio;
-                    eCProyecto.FechaFinProyecto = dateValueFin;
-                    eCProyecto.FechaCreacionProyecto = dateValueCreacion;
-                    cProyecto.Insertar_CProyecto_I(eCProyecto);
-                }                   
-            }              
+                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, estado.SelectedValue, imagenBytes, byte.Parse(horas.Text), inicio.SelectedDate, fin.SelectedDate, creacion.SelectedDate);
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                Response.Write("El archivo no es una imagen.");
+            }
         }
         else
         {
-            // La cadena no se pudo convertir a DateTime.
+            Response.Write("Por favor, selecciona un archivo para subir.");
         }
-
-        
+ 
     }
 
 
