@@ -42,4 +42,18 @@ public class CControlServicioSocial
         }
         return lstEcCertifiado;
     }
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
+    {
+        List<ECProyectoEstudiante> lstEcProyectoEstudiante = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstEcProyectoEstudiante = aSNETControlServicioSocial.Obtener_CProyectoEstudiante_O();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcProyectoEstudiante;
+    }   
 }

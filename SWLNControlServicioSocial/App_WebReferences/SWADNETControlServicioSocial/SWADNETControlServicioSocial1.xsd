@@ -53,4 +53,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Obtener_CProyectoEstudiante_O">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyectoEstudiante_OResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyectoEstudiante_OResult" nillable="true" type="q5:ArrayOfECProyectoEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

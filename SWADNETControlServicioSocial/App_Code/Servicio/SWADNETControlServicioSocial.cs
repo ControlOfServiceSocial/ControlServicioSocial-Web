@@ -35,6 +35,14 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		return lstCcCertificado;	
     }
 
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
+    {
+		CCProyectoEstudiante cCProyectoEstudiante=new CCProyectoEstudiante();
+		List<ECProyectoEstudiante> lstCProyectoEstudiante=new List<ECProyectoEstudiante>();
+		lstCProyectoEstudiante=cCProyectoEstudiante.Obtener_CProyectoEstudiante_O();
+		return lstCProyectoEstudiante;
+    }
+
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         CCProyecto cCProyecto = new CCProyecto();
