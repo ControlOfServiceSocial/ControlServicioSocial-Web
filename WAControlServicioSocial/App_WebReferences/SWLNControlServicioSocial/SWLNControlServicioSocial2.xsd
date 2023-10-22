@@ -47,7 +47,7 @@
         <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="EstadoProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EstadoProyecto" type="xs:unsignedByte" />
         <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:base64Binary" />
         <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
         <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
@@ -59,6 +59,18 @@
   <xs:element name="Insertar_CProyecto_IResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_OResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_OResult" nillable="true" type="q4:ArrayOfECProyecto" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

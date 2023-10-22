@@ -23,5 +23,36 @@ public class CCProyecto
         aDCProyecto.Insertar_CProyecto_I(eCProyecto);
     }
 
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        ECProyecto eCProyecto;
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        DTOCProyecto dtoCProyecto = aDCProyecto.Obtener_CProyecto_O();
+        if (dtoCProyecto != null)
+        {
+            foreach (DTOCProyecto.CProyectoRow drCProyecto in dtoCProyecto.CProyecto.Rows)
+            {
+                eCProyecto = new ECProyecto();
+                eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto.TrimEnd();
+                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto.TrimEnd();
+                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto.TrimEnd();
+                eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
+                eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
+                eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
+                eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
+                eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
+                eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
+                lstECProyecto.Add(eCProyecto);
+            }
+        }
+        else
+        {
+            dtoCProyecto = new DTOCProyecto();
+        }
+
+        return lstECProyecto;
+    }
+
     #endregion
 }

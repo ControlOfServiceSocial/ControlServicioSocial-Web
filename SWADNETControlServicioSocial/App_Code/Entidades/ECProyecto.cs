@@ -20,7 +20,7 @@ public class ECProyecto
     [DataMember]
     public string UbicacionProyecto { get; set; }
     [DataMember]
-    public string EstadoProyecto { get; set; }
+    public byte EstadoProyecto { get; set; }
     [DataMember]
     public byte[] ImagenProyecto { get; set; }
     [DataMember]
@@ -39,7 +39,7 @@ public class ECProyecto
         NombreProyecto = string.Empty;
         DescripcionProyecto = string.Empty;
         UbicacionProyecto = string.Empty;
-        EstadoProyecto = "  ";
+        EstadoProyecto = 0;
         ImagenProyecto = null;
         HorasEstimadas = 0;
         FechaInicioProyecto = DateTime.MinValue;

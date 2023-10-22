@@ -43,6 +43,14 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		CCProyecto cCProyecto = new CCProyecto();
 		cCProyecto.Insertar_CProyecto_I(eCProyecto);
 	}
+
+	public List<ECProyecto> Obtener_CProyecto_O()
+	{
+		CCProyecto cCProyecto = new CCProyecto();
+		List<ECProyecto> lstCProyecto = new List<ECProyecto>();
+		lstCProyecto = cCProyecto.Obtener_CProyecto_O();
+		return lstCProyecto;
+	}
 	#endregion
 
 }
