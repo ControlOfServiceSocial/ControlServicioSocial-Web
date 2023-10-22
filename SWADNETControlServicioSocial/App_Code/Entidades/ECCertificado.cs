@@ -23,9 +23,6 @@ public class ECCertificado
     #endregion
     public ECCertificado()
     {
-        //
-        // TODO: Agregar aquí la lógica del constructor
-        //
         IdCertificado=int.MinValue;
         DocumentoCertificado=string.Empty;
         IdEstudiante=int.MinValue;

@@ -31,6 +31,7 @@ public class CCCertificado
                 eCCertificado.IdEstudiante = drCCertificado.IdEstudiante;
                 eCCertificado.TituloCertificado = drCCertificado.TituloCertificado;
                 eCCertificado.CargaHoraria = drCCertificado.CargaHoraria;
+                lstECCertificado.Add(eCCertificado);
             }
         }
         else

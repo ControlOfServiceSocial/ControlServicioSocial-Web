@@ -13,6 +13,11 @@ public interface ISWLNControlServicioSocial
 {
     [OperationContract]
     List<ECProyecto> Obtener_CProyecto_O();
-    // TODO: agregue aquí sus operaciones de servicio
+    [OperationContract]
+    List<ECCertificado> Obtener_CCertificado_O();
+    [OperationContract]
+    List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+    [OperationContract]
+    ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
 }
 

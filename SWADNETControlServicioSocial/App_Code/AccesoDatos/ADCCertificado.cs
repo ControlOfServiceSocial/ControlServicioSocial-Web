@@ -34,5 +34,6 @@ public class ADCCertificado
         }
         return dTOCCertificado;
     }
+ 
     #endregion
 }

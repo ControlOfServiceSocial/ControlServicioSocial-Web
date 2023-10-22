@@ -43,11 +43,24 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		return lstCProyectoEstudiante;
     }
 
+    public ECProyectoEstudiante Obtener_CProyectoEstudiante_O_IdProyecto(int IdProyecto)
+    {
+		throw new NotImplementedException();
+    }
+
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         CCProyecto cCProyecto = new CCProyecto();
 		List<ECProyecto> lstCProyecto=new List<ECProyecto>();
 		lstCProyecto=cCProyecto.Obtener_CProyecto_O();
 		return lstCProyecto;
+    }
+
+    public ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)
+    {
+        ECProyecto eCProyecto = new ECProyecto();
+		CCProyecto cCProyecto = new CCProyecto();
+		eCProyecto=cCProyecto.Obtener_CProyecto_O_IdProyecto(IdProyecto);
+		return eCProyecto;
     }
 }
