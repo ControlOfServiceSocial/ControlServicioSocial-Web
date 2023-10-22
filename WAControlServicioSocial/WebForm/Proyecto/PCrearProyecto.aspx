@@ -17,45 +17,45 @@
       <div class="form-row">
         <div class="form-item">
           <label for="nombre">Nombre del proyecto *</label>
-          <input type="text" ID="txtnombre" runat="server" name="nombre" placeholder="Ingrese el nombre del proyecto" required>
+          <asp:TextBox type="text" ID="txtnombre" runat="server" name="nombre" placeholder="Ingrese el nombre del proyecto"></asp:TextBox>
         </div>
         <div class="form-item">
             <label for="ubicacion">Ubicación del proyecto *</label>
-            <input type="text" ID="ubicacion" runat="server" name="ubicacion" placeholder="Ingrese el lugar del proyecto" required>
+            <asp:TextBox type="text" ID="ubicacion" runat="server" name="ubicacion" placeholder="Ingrese el lugar del proyecto" ></asp:TextBox>
         </div>
         <div class="form-item">
             <label for="inicio">Fecha de inicio *</label>
-            <input type="date" ID="inicio" runat="server" name="inicio" required>
+            <asp:Calendar ID="inicio" runat="server"></asp:Calendar>
         </div>   
       </div>
       <div class="form-row">
         <div class="form-item">
             <label for="fin">Fecha de finalización *</label>
-            <input type="date" ID="fin" runat="server" name="fin" required>
+            <asp:Calendar ID="fin" runat="server"></asp:Calendar>
         </div>      
         <div class="form-item">
             <label for="creacion">Fecha de creación *</label>
-            <input type="date" ID="creacion" runat="server" name="creacion" required>
+            <asp:Calendar ID="creacion" runat="server"></asp:Calendar>
         </div>
         <div class="form-item">
             <label for="estado">Estado *</label>
-            <select ID="estado" runat="server" name="estado" required>
-              <option value="">-- Seleccionar --</option>
-              <option value="iniciado">Iniciado</option>
-              <option value="en proceso">En Proceso</option>
-              <option value="finalizado">Finalizado</option>
-            </select>
+            <asp:DropDownList ID="estado" runat="server" name="estado">
+              <asp:ListItem value="">-- Seleccionar --</asp:ListItem>
+              <asp:ListItem value="AC">Activo</asp:ListItem>
+              <asp:ListItem value="FI">Finalizado</asp:ListItem>
+              <asp:ListItem value="CO">Completo</asp:ListItem>
+            </asp:DropDownList>
         </div>
       </div>
       <div class="form-row">
         <div class="form-item">
             <label for="sede">Sede del proyecto *</label>
-            <select ID="sede" runat="server" name="sede" required>
-              <option value="">-- Seleccionar --</option>
-              <option value="sede1">Sede 1</option>
-              <option value="sede2">Sede 2</option>
-              <option value="sede3">Sede 3</option>
-            </select>
+            <asp:DropDownList ID="sede" runat="server" name="sede" required>
+              <asp:ListItem value="">-- Seleccionar --</asp:ListItem>
+              <asp:ListItem value="sede1">Sede 1</asp:ListItem>
+              <asp:ListItem value="sede2">Sede 2</asp:ListItem>
+              <asp:ListItem value="sede3">Sede 3</asp:ListItem>
+            </asp:DropDownList>
         </div> 
         <div class="form-item">
             <label for="imagen">Imagen *</label>
@@ -65,14 +65,14 @@
         </div>     
         <div class="form-item">
           <label for="horas">Asignar horas *</label>
-          <input type="number" ID="horas" runat="server" name="horas" placeholder="Ingrese la cantIDad de horas de proyecto" required>
+          <asp:TextBox type="number" ID="horas" runat="server" name="horas" placeholder="Ingrese la cantidad de horas de proyecto"></asp:TextBox>
         </div>
              
       </div>
       <div class="form-row">       
         <div class="form-item">
             <label for="desc">Descripción del proyecto</label>
-            <textarea ID="desc" runat="server" name="desc" placeholder="Ingrese la descripción del proyecto"></textarea>
+            <asp:TextBox ID="desc" runat="server" name="desc" placeholder="Ingrese la descripción del proyecto"></asp:TextBox>
           </div>
         <div class="form-row">
             <div class="form-item">

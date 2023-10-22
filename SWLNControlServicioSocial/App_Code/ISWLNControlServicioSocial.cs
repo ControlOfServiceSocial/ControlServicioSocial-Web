@@ -26,7 +26,7 @@ public interface ISWLNControlServicioSocial
 	#endregion
 	#region Tabla: Proyecto
 	[OperationContract]
-	void Insertar_CProyecto_I(ECProyecto eCProyecto);
+	void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, string EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto);
 	#endregion
 }
 

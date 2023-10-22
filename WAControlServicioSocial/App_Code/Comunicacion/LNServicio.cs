@@ -37,11 +37,11 @@ public class LNServicio
     }
     #endregion
     #region CProyecto
-    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, string EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
         try
         {
-            swlnControlServicioSocial.Insertar_CProyecto_I(eCProyecto);
+            swlnControlServicioSocial.Insertar_CProyecto_I(NombreProyecto, DescripcionProyecto, UbicacionProyecto, EstadoProyecto, ImagenProyecto, HorasEstimadas, FechaInicioProyecto, FechaFinProyecto, FechaCreacionProyecto);
         }
         catch (Exception)
         {

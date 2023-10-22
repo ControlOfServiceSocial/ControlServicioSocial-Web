@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34018.315
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWADNETControlServicioSocial", "SWADNETControlServicioSocial\", "{19555DBD-9D8E-40AE-A709-D8645818BA51}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -23,12 +23,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWADNETControlServicioSocia
 		VWDPort = "56886"
 		SlnRelativePath = "SWADNETControlServicioSocial\"
 		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "true"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWLNControlServicioSocial", "SWLNControlServicioSocial\", "{8BCE1774-97CD-4C80-9088-4A408D357238}"
-	ProjectSection(ProjectDependencies) = postProject
-		{19555DBD-9D8E-40AE-A709-D8645818BA51} = {19555DBD-9D8E-40AE-A709-D8645818BA51}
-	EndProjectSection
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56904"
@@ -49,11 +47,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWLNControlServicioSocial",
 		SlnRelativePath = "SWLNControlServicioSocial\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{19555DBD-9D8E-40AE-A709-D8645818BA51} = {19555DBD-9D8E-40AE-A709-D8645818BA51}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WAControlServicioSocial", "WAControlServicioSocial\", "{369CEADF-F239-493C-B59F-134801C94F29}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8BCE1774-97CD-4C80-9088-4A408D357238} = {8BCE1774-97CD-4C80-9088-4A408D357238}
-	EndProjectSection
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56906"
@@ -73,6 +71,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WAControlServicioSocial", "
 		VWDPort = "56906"
 		SlnRelativePath = "WAControlServicioSocial\"
 		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{8BCE1774-97CD-4C80-9088-4A408D357238} = {8BCE1774-97CD-4C80-9088-4A408D357238}
 	EndProjectSection
 EndProject
 Global
