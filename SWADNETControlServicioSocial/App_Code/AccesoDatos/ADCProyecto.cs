@@ -29,10 +29,10 @@ public class ADCProyecto
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "NombreProyecto", DbType.String, eCProyecto.NombreProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "DescripcionProyecto", DbType.String, eCProyecto.DescripcionProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "UbicacionProyecto", DbType.String, eCProyecto.UbicacionProyecto);
-            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "EstadoProyecto", DbType.AnsiStringFixedLength, eCProyecto.EstadoProyecto);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "EstadoProyecto", DbType.Byte, eCProyecto.EstadoProyecto);
             // Configura el parámetro de ImagenProyecto como byte[]
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "ImagenProyecto", DbType.Binary, eCProyecto.ImagenProyecto);
-            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "HorasEstimadas", DbType.Int16, eCProyecto.HorasEstimadas);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "HorasEstimadas", DbType.Byte, eCProyecto.HorasEstimadas);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "FechaInicioProyecto", DbType.Date, eCProyecto.FechaInicioProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "FechaFinProyecto", DbType.Date, eCProyecto.FechaFinProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "FechaCreacionProyecto", DbType.DateTime, eCProyecto.FechaCreacionProyecto);
@@ -45,6 +45,25 @@ public class ADCProyecto
             // Maneja las excepciones aquí, puedes descomentar y personalizar esta parte para manejar los errores de acuerdo a tus necesidades.
         }
 
+    }
+
+    public DTOCProyecto Obtener_CProyecto_O()
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O");
+
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "ECProyecto");
+        }
+
+        catch (SqlException SQLEx)
+        {
+            // EDefectoAD eDefectoAD = ConstruirErrorServicio(TTipoError.BaseDatos, "Obtener_RCampania_O", SQLEx.ToString(), SQLEx.Message);
+            // throw new FaultException<EDefectoAD>(eDefectoAD);
+        }
+        return dTOCProyecto;
     }
     #endregion
 

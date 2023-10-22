@@ -26,6 +26,9 @@ public interface ISWADNETControlServicioSocial
 	#region Tabla: Proyecto
 	[OperationContract]
 	void Insertar_CProyecto_I(ECProyecto eCProyecto);
+
+	[OperationContract]
+	List<ECProyecto> Obtener_CProyecto_O();
 	#endregion
 }
 

@@ -81,7 +81,7 @@
   <xs:element name="DTOCProyecto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DTOCProyecto" msprop:Generator_UserDSName="DTOCProyecto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CProyecto" msprop:Generator_TableClassName="CProyectoDataTable" msprop:Generator_RowEvArgName="CProyectoRowChangeEvent" msprop:Generator_TableVarName="tableCProyecto" msprop:Generator_TablePropName="CProyecto" msprop:Generator_RowDeletingName="CProyectoRowDeleting" msprop:Generator_RowChangingName="CProyectoRowChanging" msprop:Generator_RowDeletedName="CProyectoRowDeleted" msprop:Generator_RowEvHandlerName="CProyectoRowChangeEventHandler" msprop:Generator_UserTableName="CProyecto" msprop:Generator_RowChangedName="CProyectoRowChanged" msprop:Generator_RowClassName="CProyectoRow">
+        <xs:element name="CProyecto" msprop:Generator_TableClassName="CProyectoDataTable" msprop:Generator_RowEvArgName="CProyectoRowChangeEvent" msprop:Generator_TableVarName="tableCProyecto" msprop:Generator_TablePropName="CProyecto" msprop:Generator_RowDeletingName="CProyectoRowDeleting" msprop:Generator_RowChangingName="CProyectoRowChanging" msprop:Generator_RowDeletedName="CProyectoRowDeleted" msprop:Generator_RowEvHandlerName="CProyectoRowChangeEventHandler" msprop:Generator_RowChangedName="CProyectoRowChanged" msprop:Generator_UserTableName="CProyecto" msprop:Generator_RowClassName="CProyectoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdProyecto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProyecto" msprop:Generator_ColumnPropNameInRow="IdProyecto" msprop:Generator_ColumnPropNameInTable="IdProyectoColumn" msprop:Generator_UserColumnName="IdProyecto" type="xs:int" />
@@ -106,13 +106,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EstadoProyecto" msprop:Generator_ColumnVarNameInTable="columnEstadoProyecto" msprop:Generator_ColumnPropNameInRow="EstadoProyecto" msprop:Generator_ColumnPropNameInTable="EstadoProyectoColumn" msprop:Generator_UserColumnName="EstadoProyecto" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="EstadoProyecto" msprop:Generator_ColumnVarNameInTable="columnEstadoProyecto" msprop:Generator_ColumnPropNameInRow="EstadoProyecto" msprop:Generator_ColumnPropNameInTable="EstadoProyectoColumn" msprop:Generator_UserColumnName="EstadoProyecto" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="ImagenProyecto" msprop:Generator_ColumnVarNameInTable="columnImagenProyecto" msprop:Generator_ColumnPropNameInRow="ImagenProyecto" msprop:Generator_ColumnPropNameInTable="ImagenProyectoColumn" msprop:Generator_UserColumnName="ImagenProyecto" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="HorasEstimadas" msprop:Generator_ColumnVarNameInTable="columnHorasEstimadas" msprop:Generator_ColumnPropNameInRow="HorasEstimadas" msprop:Generator_ColumnPropNameInTable="HorasEstimadasColumn" msprop:Generator_UserColumnName="HorasEstimadas" type="xs:unsignedByte" />
               <xs:element name="FechaInicioProyecto" msprop:Generator_ColumnVarNameInTable="columnFechaInicioProyecto" msprop:Generator_ColumnPropNameInRow="FechaInicioProyecto" msprop:Generator_ColumnPropNameInTable="FechaInicioProyectoColumn" msprop:Generator_UserColumnName="FechaInicioProyecto" type="xs:dateTime" minOccurs="0" />

@@ -27,7 +27,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 byte[] imagenBytes = img.FileBytes;
                 try
                 {
-                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, estado.SelectedValue, imagenBytes, byte.Parse(horas.Text), inicio.SelectedDate, fin.SelectedDate, creacion.SelectedDate);
+                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), imagenBytes, byte.Parse(horas.Text), inicio.SelectedDate, fin.SelectedDate, creacion.SelectedDate);
 
                 }
                 catch (Exception)

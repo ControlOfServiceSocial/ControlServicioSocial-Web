@@ -15,7 +15,7 @@ public class CProyecto : System.Web.UI.Page
     {
         
     }
-    public void Insertar_CProyecto_I_CC(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, string EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
+    public void Insertar_CProyecto_I_CC(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, byte[] ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
         try
         {
@@ -25,5 +25,19 @@ public class CProyecto : System.Web.UI.Page
         {
             throw;
         }
+    }
+
+    public List<ECProyecto> Obtener_CProyecto_O_CC()
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = lnServicio.Obtener_CProyecto_O().ToList();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        return lstEcProyecto;
     }
 }

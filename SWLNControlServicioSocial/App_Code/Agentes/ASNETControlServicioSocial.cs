@@ -64,6 +64,23 @@ public class ASNETControlServicioSocial
 
         }
     }
+
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = swADNETControlServicioSocial.Obtener_CProyecto_O().ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+        return lstEcProyecto;
+    }
+
     #endregion
     #endregion
 

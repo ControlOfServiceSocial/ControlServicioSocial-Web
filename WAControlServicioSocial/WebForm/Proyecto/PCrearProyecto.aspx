@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="../../Estilos/Proyecto/SCrearProyecto.css" />
 </head>
 <body>
-        <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" >
+        <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" />
 
   <div class="proyect-box">
     <form ID="form1" runat="server">
-        <h2>Crear proyecto nuevo</h1>
+        <h2>Crear proyecto nuevo</h2>
       <div class="form-row">
         <div class="form-item">
           <label for="nombre">Nombre del proyecto *</label>
@@ -40,10 +40,10 @@
         <div class="form-item">
             <label for="estado">Estado *</label>
             <asp:DropDownList ID="estado" runat="server" name="estado">
-              <asp:ListItem value="">-- Seleccionar --</asp:ListItem>
-              <asp:ListItem value="AC">Activo</asp:ListItem>
-              <asp:ListItem value="FI">Finalizado</asp:ListItem>
-              <asp:ListItem value="CO">Completo</asp:ListItem>
+              <asp:ListItem value="0">-- Seleccionar --</asp:ListItem>
+              <asp:ListItem value="1">Activo</asp:ListItem>
+              <asp:ListItem value="2">Finalizado</asp:ListItem>
+              <asp:ListItem value="3">Completo</asp:ListItem>
             </asp:DropDownList>
         </div>
       </div>
