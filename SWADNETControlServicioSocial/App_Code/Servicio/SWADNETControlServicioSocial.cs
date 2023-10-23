@@ -37,4 +37,40 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
     }
     #endregion
 
+    public List<ECCertificado> Obtener_CCertificado_O()
+    {
+		CCCertificado cCCertificado=new CCCertificado();
+		List<ECCertificado> lstCcCertificado=new List<ECCertificado>();
+		lstCcCertificado=cCCertificado.Obtener_CCertificado_O();
+		return lstCcCertificado;	
+    }
+
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
+    {
+		CCProyectoEstudiante cCProyectoEstudiante=new CCProyectoEstudiante();
+		List<ECProyectoEstudiante> lstCProyectoEstudiante=new List<ECProyectoEstudiante>();
+		lstCProyectoEstudiante=cCProyectoEstudiante.Obtener_CProyectoEstudiante_O();
+		return lstCProyectoEstudiante;
+    }
+
+    public ECProyectoEstudiante Obtener_CProyectoEstudiante_O_IdProyecto(int IdProyecto)
+    {
+		throw new NotImplementedException();
+    }
+
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        CCProyecto cCProyecto = new CCProyecto();
+		List<ECProyecto> lstCProyecto=new List<ECProyecto>();
+		lstCProyecto=cCProyecto.Obtener_CProyecto_O();
+		return lstCProyecto;
+    }
+
+    public ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)
+    {
+        ECProyecto eCProyecto = new ECProyecto();
+		CCProyecto cCProyecto = new CCProyecto();
+		eCProyecto=cCProyecto.Obtener_CProyecto_O_IdProyecto(IdProyecto);
+		return eCProyecto;
+    }
 }

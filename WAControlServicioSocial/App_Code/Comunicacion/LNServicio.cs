@@ -37,5 +37,20 @@ public class LNServicio
     }
     #endregion
 
+    public List<ECProyecto> Obtener_CProyecto_O()
+    {
+        List<ECProyecto> lstECProyectos = new List<ECProyecto>();
+        try
+        {
+            lstECProyectos = swlnControlServicioSocial.Obtener_CProyecto_O().ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyectos;
+    }
+
     #endregion
 }

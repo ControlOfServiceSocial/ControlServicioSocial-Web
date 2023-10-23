@@ -23,27 +23,14 @@ public interface ISWLNControlServicioSocial
 	#region Estudiante
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
-    #endregion
+  #endregion
+  [OperationContract]
+  List<ECProyecto> Obtener_CProyecto_O();
+  [OperationContract]
+  List<ECCertificado> Obtener_CCertificado_O();
+  [OperationContract]
+  List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+  [OperationContract]
+  ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
 }
 
-// Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-[DataContract]
-public class CompositeType
-{
-	bool boolValue = true;
-	string stringValue = "Hello ";
-
-	[DataMember]
-	public bool BoolValue
-	{
-		get { return boolValue; }
-		set { boolValue = value; }
-	}
-
-	[DataMember]
-	public string StringValue
-	{
-		get { return stringValue; }
-		set { stringValue = value; }
-	}
-}
