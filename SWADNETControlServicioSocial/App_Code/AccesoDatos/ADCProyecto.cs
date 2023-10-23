@@ -44,5 +44,22 @@ public class ADCProyecto
         }
         return dTOCProyecto;
     }
+
+    public DTOCProyecto Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante)
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyectoEstudiante_O_CProyecto");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, idEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (SqlException SQLEx)
+        {
+            throw;
+        }
+        return dTOCProyecto;
+    }
     #endregion
 }

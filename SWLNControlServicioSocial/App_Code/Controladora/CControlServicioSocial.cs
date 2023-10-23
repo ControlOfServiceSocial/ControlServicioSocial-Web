@@ -42,20 +42,7 @@ public class CControlServicioSocial
         }
         return lstEcCertifiado;
     }
-    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
-    {
-        List<ECProyectoEstudiante> lstEcProyectoEstudiante = new List<ECProyectoEstudiante>();
-        try
-        {
-            lstEcProyectoEstudiante = aSNETControlServicioSocial.Obtener_CProyectoEstudiante_O();
-        }
-        catch (Exception)
-        {
 
-            throw;
-        }
-        return lstEcProyectoEstudiante;
-    }   
     public ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)
     {
        ECProyecto eCProyecto=new ECProyecto();
@@ -69,5 +56,50 @@ public class CControlServicioSocial
             throw;
         }
         return eCProyecto;
+    }
+
+    public ECProyectoEstudiante Obtener_CProyectoEstudiante_O()
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            eCProyectoEstudiante = aSNETControlServicioSocial.Obtener_CProyectoEstudiante_O();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return eCProyectoEstudiante;
+    }
+
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O_IdEstudiante(int idEstudiante)
+    {
+        List<ECProyectoEstudiante> lstECProyectoEstudiante = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstECProyectoEstudiante = aSNETControlServicioSocial.Obtener_CProyectoEstudiante_O_IdEstudiante(idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyectoEstudiante;
+    }
+
+    public List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante)
+    {
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        try
+        {
+            lstECProyecto = aSNETControlServicioSocial.Obtener_CProyecto_O_CProyecto(idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyecto;
     }
 }

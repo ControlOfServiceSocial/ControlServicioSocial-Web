@@ -19,10 +19,9 @@ public class CCProyectoEstudiante
         //
         aDCProyectoEstudiante = new ADCProyectoEstudiante();
     }
-    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
+    public ECProyectoEstudiante Obtener_CProyectoEstudiante_O()
     {
-        ECProyectoEstudiante eCProyectoEstudiante;
-        List<ECProyectoEstudiante> lstECProyectoEstudiante = new List<ECProyectoEstudiante>();
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
         DTOCProyectoEstudiante dTOCProyectoEstudiante = aDCProyectoEstudiante.Obtener_CProyectoEstudiante_O();
         if (dTOCProyectoEstudiante != null)
         {
@@ -34,7 +33,36 @@ public class CCProyectoEstudiante
                 eCProyectoEstudiante.IdEstudiante = drCProyectoEstudiante.IdEstudiante;
                 eCProyectoEstudiante.HoraAcumulada = drCProyectoEstudiante.HoraAcumulada;
                 eCProyectoEstudiante.HoraInicio = drCProyectoEstudiante.HoraInicio;
-                eCProyectoEstudiante.HoraFinal= drCProyectoEstudiante.HoraFinal;
+                eCProyectoEstudiante.HoraFinal = drCProyectoEstudiante.HoraFinal;
+                eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;
+                eCProyectoEstudiante.LongitudInicial = drCProyectoEstudiante.LongitudInicial;
+                eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;
+                eCProyectoEstudiante.LatitudFinal = drCProyectoEstudiante.LatitudFinal;
+            }
+
+        }
+        else
+        {
+            dTOCProyectoEstudiante = new DTOCProyectoEstudiante();
+        }
+        return eCProyectoEstudiante;
+    }
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O_IdEstudiante(int idEstudiante)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante;
+        List<ECProyectoEstudiante> lstECProyectoEstudiante = new List<ECProyectoEstudiante>();
+        DTOCProyectoEstudiante dTOCProyectoEstudiante = aDCProyectoEstudiante.Obtener_CProyectoEstudiante_O_IdEstudiante(idEstudiante);
+        if (dTOCProyectoEstudiante != null)
+        {
+            foreach (DTOCProyectoEstudiante.CProyectoEstudianteRow drCProyectoEstudiante in dTOCProyectoEstudiante.CProyectoEstudiante.Rows)
+            {
+                eCProyectoEstudiante = new ECProyectoEstudiante();
+                eCProyectoEstudiante.IdProyectoEstudiante = drCProyectoEstudiante.IdProyectoEstudiante;
+                eCProyectoEstudiante.IdProyecto = drCProyectoEstudiante.IdProyecto;
+                eCProyectoEstudiante.IdEstudiante = drCProyectoEstudiante.IdEstudiante;
+                eCProyectoEstudiante.HoraAcumulada = drCProyectoEstudiante.HoraAcumulada;
+                eCProyectoEstudiante.HoraInicio = drCProyectoEstudiante.HoraInicio;
+                eCProyectoEstudiante.HoraFinal = drCProyectoEstudiante.HoraFinal;
                 eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;
                 eCProyectoEstudiante.LongitudInicial = drCProyectoEstudiante.LongitudInicial;
                 eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;

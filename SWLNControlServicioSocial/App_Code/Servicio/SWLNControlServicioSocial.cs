@@ -18,11 +18,19 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         return lstECCertificados;
     }
 
-    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
+    public ECProyectoEstudiante Obtener_CProyectoEstudiante_O()
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        eCProyectoEstudiante = cControlServicioSocial.Obtener_CProyectoEstudiante_O();
+        return eCProyectoEstudiante;
+    }
+
+    public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O_IdEstudiante(int idEstudiante)
     {
         CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
         List<ECProyectoEstudiante> lstECProyectoEstudiante = new List<ECProyectoEstudiante>();
-        lstECProyectoEstudiante = cControlServicioSocial.Obtener_CProyectoEstudiante_O();
+        lstECProyectoEstudiante = cControlServicioSocial.Obtener_CProyectoEstudiante_O_IdEstudiante(idEstudiante);
         return lstECProyectoEstudiante;
     }
 
@@ -32,6 +40,14 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         List<ECProyecto> lstECProyectos = new List<ECProyecto>();
         lstECProyectos = cControlServicioSocial.Obtener_CProyecto_O();
         return lstECProyectos; 
+    }
+
+    public List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        List<ECProyecto> lstECProyectos = new List<ECProyecto>();
+        lstECProyectos = cControlServicioSocial.Obtener_CProyecto_O_CProyecto(idEstudiante);
+        return lstECProyectos;
     }
 
     public ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)

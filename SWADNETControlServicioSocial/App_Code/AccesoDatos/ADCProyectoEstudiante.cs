@@ -33,4 +33,38 @@ public class ADCProyectoEstudiante
         }
         return dTOCProyectoEstudiante;
     }
+    public DTOCProyectoEstudiante Obtener_CProyectoEstudiante_O_IdEstudiante(int IdEstudiante)
+    {
+        DTOCProyectoEstudiante dTOCProyectoEstudiante = new DTOCProyectoEstudiante();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyectoEstudiante_O_IdEstudiante");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, IdEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyectoEstudiante, "CProyectoEstudiante");
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+        return dTOCProyectoEstudiante;
+    }
+    public DTOCProyecto Obtener_CProyectoEstudiante_O_CProyecto(int IdEstudiante)
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyectoEstudiante_O_CProyecto");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, IdEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+        return dTOCProyecto;
+    }
 }

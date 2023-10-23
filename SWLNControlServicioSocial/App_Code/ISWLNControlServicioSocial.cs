@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
@@ -16,8 +17,12 @@ public interface ISWLNControlServicioSocial
     [OperationContract]
     List<ECCertificado> Obtener_CCertificado_O();
     [OperationContract]
-    List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+    List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O_IdEstudiante(int idEstudiante);
+    [OperationContract]
+    ECProyectoEstudiante Obtener_CProyectoEstudiante_O();
     [OperationContract]
     ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante);
 }
 
