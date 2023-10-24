@@ -24,5 +24,7 @@ public interface ISWLNControlServicioSocial
     ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
     [OperationContract]
     List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante);
+    [OperationContract]
+    List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante);
 }
 

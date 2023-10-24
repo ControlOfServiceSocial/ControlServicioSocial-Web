@@ -34,6 +34,24 @@ public class ADCCertificado
         }
         return dTOCCertificado;
     }
- 
+
+    public DTOCCertificado Obtener_CCertificado_O_IdEstudiante(int idEstudiante)
+    {
+        DTOCCertificado dTOCCertificado = new DTOCCertificado();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CCertificado_O_IdEstudiante");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, idEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCCertificado, "CCertificado");
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return dTOCCertificado;
+    }
+
     #endregion
 }

@@ -18,6 +18,14 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         return lstECCertificados;
     }
 
+    public List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        List<ECCertificado> lstECCertificados = new List<ECCertificado>();
+        lstECCertificados = cControlServicioSocial.Obtener_CCertificado_O_IdEstudiante(idEstudiante);
+        return lstECCertificados;
+    }
+
     public ECProyectoEstudiante Obtener_CProyectoEstudiante_O()
     {
         CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();

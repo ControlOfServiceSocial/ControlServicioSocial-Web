@@ -29,7 +29,7 @@
   <xs:element name="ArrayOfECCertificado" nillable="true" type="tns:ArrayOfECCertificado" />
   <xs:complexType name="ECCertificado">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CargaHoraria" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CargaHoraria" type="xs:int" />
       <xs:element minOccurs="0" name="DocumentoCertificado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdCertificado" type="xs:int" />
       <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />

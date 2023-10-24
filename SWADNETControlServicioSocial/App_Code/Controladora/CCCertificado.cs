@@ -40,5 +40,30 @@ public class CCCertificado
         }
         return lstECCertificado;
     }
+
+    public List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante)
+    {
+        ECCertificado eCCertificado = new ECCertificado();
+        List<ECCertificado> lstECCertificado = new List<ECCertificado>();
+        DTOCCertificado dTOCCertificado = aDCertificado.Obtener_CCertificado_O_IdEstudiante(idEstudiante);
+        if (dTOCCertificado!=null)
+        {
+            foreach (DTOCCertificado.CCertificadoRow drCCertificado in dTOCCertificado.CCertificado.Rows)
+            {
+                eCCertificado = new ECCertificado();
+                eCCertificado.IdCertificado = drCCertificado.IdCertificado;
+                eCCertificado.DocumentoCertificado = drCCertificado.DocumentoCertificado;
+                eCCertificado.IdEstudiante = drCCertificado.IdEstudiante;
+                eCCertificado.TituloCertificado = drCCertificado.TituloCertificado;
+                eCCertificado.CargaHoraria = drCCertificado.CargaHoraria;
+                lstECCertificado.Add(eCCertificado);
+            }
+        }
+        else
+        {
+            dTOCCertificado = new DTOCCertificado();
+        }
+        return lstECCertificado;
+    }
     #endregion
 }

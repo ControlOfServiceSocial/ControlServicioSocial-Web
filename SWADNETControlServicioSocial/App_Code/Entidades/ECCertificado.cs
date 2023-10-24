@@ -19,7 +19,7 @@ public class ECCertificado
     [DataMember]
     public string TituloCertificado { get; set; }
     [DataMember]
-    public DateTime CargaHoraria { get; set; }
+    public int CargaHoraria { get; set; }
     #endregion
     public ECCertificado()
     {
@@ -27,6 +27,6 @@ public class ECCertificado
         DocumentoCertificado=string.Empty;
         IdEstudiante=int.MinValue;
         TituloCertificado = string.Empty;
-        CargaHoraria=DateTime.MinValue;
+        CargaHoraria=int.MinValue;
     }
 }

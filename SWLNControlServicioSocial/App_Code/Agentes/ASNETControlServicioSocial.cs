@@ -104,5 +104,20 @@ public class ASNETControlServicioSocial
         }
         return lstECProyecto;
     }
+
+    public List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante)
+    {
+        List<ECCertificado> lstECCertificado = new List<ECCertificado>();
+        try
+        {
+            lstECCertificado = swADNETControlServicioSocial.Obtener_CCertificado_O_IdEstudiante(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECCertificado;
+    }
     #endregion
 }
