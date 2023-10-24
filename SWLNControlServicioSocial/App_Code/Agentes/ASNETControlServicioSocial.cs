@@ -119,5 +119,18 @@ public class ASNETControlServicioSocial
         }
         return lstECCertificado;
     }
+
+    public void Insertar_CCertificado_I(ECCertificado eCCertificado)
+    {
+        try
+        {
+            swADNETControlServicioSocial.Insertar_CCertificado_I(eCCertificado);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
 }

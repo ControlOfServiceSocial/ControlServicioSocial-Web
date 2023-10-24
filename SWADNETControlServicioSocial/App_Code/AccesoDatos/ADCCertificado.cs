@@ -53,5 +53,24 @@ public class ADCCertificado
         return dTOCCertificado;
     }
 
+    public void Insertar_CCertificado_I(ECCertificado eCCertificado)
+    {
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("Insertar_CCertificado_I");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "DocumentoCertificado", System.Data.DbType.String, eCCertificado.DocumentoCertificado);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, eCCertificado.IdEstudiante);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "TituloCertificado", System.Data.DbType.String, eCCertificado.TituloCertificado);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "CargaHoraria", System.Data.DbType.Int32, eCCertificado.CargaHoraria);
+            BDSWADNETControlServicioSocial.ExecuteNonQuery(dbCommand);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
     #endregion
 }

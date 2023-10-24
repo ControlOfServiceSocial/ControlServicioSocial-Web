@@ -117,4 +117,22 @@ public class CControlServicioSocial
         }
         return lstECCertificado;
     }
+
+    public void Insertar_CCertificado_I(string documentoCertificado, int idEstudiante, string tituloCertificado, int cargaHoraria)
+    {
+        ECCertificado eCCertificado = new ECCertificado();
+        try
+        {
+            eCCertificado.DocumentoCertificado = documentoCertificado;
+            eCCertificado.IdEstudiante = idEstudiante;
+            eCCertificado.TituloCertificado = tituloCertificado;
+            eCCertificado.CargaHoraria = cargaHoraria;
+            aSNETControlServicioSocial.Insertar_CCertificado_I(eCCertificado);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

@@ -9,6 +9,12 @@ using System.Text;
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 {
+    public void Insertar_CCertificado_I(ECCertificado eCCertificado)
+    {
+        CCCertificado cCCertificado=new CCCertificado();
+        cCCertificado.Insertar_CCertificado_I(eCCertificado);
+    }
+
     public List<ECCertificado> Obtener_CCertificado_O()
     {
 		CCCertificado cCCertificado=new CCCertificado();

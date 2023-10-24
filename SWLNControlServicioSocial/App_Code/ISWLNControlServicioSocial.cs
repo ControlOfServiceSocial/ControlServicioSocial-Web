@@ -26,5 +26,7 @@ public interface ISWLNControlServicioSocial
     List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante);
     [OperationContract]
     List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante);
+    [OperationContract]
+    void Insertar_CCertificado_I(string DocumentoCertificado, int IdEstudiante,string TituloCertificado,int CargaHoraria);
 }
 

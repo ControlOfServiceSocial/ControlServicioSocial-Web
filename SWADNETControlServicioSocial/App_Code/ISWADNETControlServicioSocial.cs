@@ -25,4 +25,6 @@ public interface ISWADNETControlServicioSocial
 	List<ECProyecto> Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante);
 	[OperationContract]
 	List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante);
+	[OperationContract]
+	void Insertar_CCertificado_I(ECCertificado eCCertificado);
 }

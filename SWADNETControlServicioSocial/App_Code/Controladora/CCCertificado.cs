@@ -65,5 +65,10 @@ public class CCCertificado
         }
         return lstECCertificado;
     }
+
+    public void Insertar_CCertificado_I(ECCertificado eCCertificado)
+    {
+        aDCertificado.Insertar_CCertificado_I(eCCertificado);
+    }
     #endregion
 }
