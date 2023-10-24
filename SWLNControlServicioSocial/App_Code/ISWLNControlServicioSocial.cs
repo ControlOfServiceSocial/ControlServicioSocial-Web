@@ -11,26 +11,33 @@ using System.Text;
 [ServiceContract]
 public interface ISWLNControlServicioSocial
 {
-
-	[OperationContract]
-	string GetData(int value);
-
-	[OperationContract]
-	CompositeType GetDataUsingDataContract(CompositeType composite);
-
 	// TODO: agregue aquí sus operaciones de servicio
 
 	#region Estudiante
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
-  #endregion
-  [OperationContract]
-  List<ECProyecto> Obtener_CProyecto_O();
-  [OperationContract]
-  List<ECCertificado> Obtener_CCertificado_O();
-  [OperationContract]
-  List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
-  [OperationContract]
-  ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
+
+    [OperationContract]
+    ECEstudiante ObtenerEstudiantePorId(int idEstudiante);
+	#endregion
+
+	#region Facultad
+	[OperationContract]
+	ECFacultad ObtenerCFacultadPorId(int idEstudiante);
+	#endregion
+
+	#region Certificado
+	[OperationContract]
+	List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante);
+    #endregion
+
+    [OperationContract]
+	List<ECProyecto> Obtener_CProyecto_O();
+	[OperationContract]
+	List<ECCertificado> Obtener_CCertificado_O();
+	[OperationContract]
+	List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+	[OperationContract]
+	ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
 }
 

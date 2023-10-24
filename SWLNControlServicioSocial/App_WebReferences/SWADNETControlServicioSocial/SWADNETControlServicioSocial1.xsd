@@ -30,7 +30,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="Obtener_CEstudiante_O">
-  <xs:element name="Obtener_CProyecto_O">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -39,10 +38,60 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CEstudiante_OResult" nillable="true" type="q3:ArrayOfECEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEstudiantePorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEstudiante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEstudiantePorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ObtenerEstudiantePorIdResult" nillable="true" type="q4:ECEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCFacultadPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEstudiante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCFacultadPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ObtenerCFacultadPorIdResult" nillable="true" type="q5:ECFacultad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CertificadosEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEstudiante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CertificadosEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CertificadosEstudianteResult" nillable="true" type="q6:ArrayOfECCertificado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_CProyecto_OResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_OResult" nillable="true" type="q3:ArrayOfECProyecto" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_OResult" nillable="true" type="q7:ArrayOfECProyecto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +103,7 @@
   <xs:element name="Obtener_CCertificado_OResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CCertificado_OResult" nillable="true" type="q4:ArrayOfECCertificado" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CCertificado_OResult" nillable="true" type="q8:ArrayOfECCertificado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +115,7 @@
   <xs:element name="Obtener_CProyectoEstudiante_OResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyectoEstudiante_OResult" nillable="true" type="q5:ArrayOfECProyectoEstudiante" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyectoEstudiante_OResult" nillable="true" type="q9:ArrayOfECProyectoEstudiante" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -80,7 +129,7 @@
   <xs:element name="Obtener_CProyectoEstudiante_O_IdProyectoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyectoEstudiante_O_IdProyectoResult" nillable="true" type="q6:ECProyectoEstudiante" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyectoEstudiante_O_IdProyectoResult" nillable="true" type="q10:ECProyectoEstudiante" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -94,7 +143,7 @@
   <xs:element name="Obtener_CProyecto_O_IdProyectoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_O_IdProyectoResult" nillable="true" type="q7:ECProyecto" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_O_IdProyectoResult" nillable="true" type="q11:ECProyecto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

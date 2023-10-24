@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -37,5 +38,24 @@ public class ADCEstudiante
         }
         return dTOCEstudiante;
     }
+
+    public DTOCEstudiante Obtener_CEstudiante_O(int idEstudiante)
+    {
+        DTOCEstudiante dTOCEstudiante = new DTOCEstudiante();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CEstudiante_id_O");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@IdEstudiante", DbType.Int32, idEstudiante);
+
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCEstudiante, "CEstudiante");
+        }
+        catch (SqlException SQLEx)
+        {
+            // Manejar excepciones aquí
+        }
+        return dTOCEstudiante;
+    }
+
     #endregion
 }

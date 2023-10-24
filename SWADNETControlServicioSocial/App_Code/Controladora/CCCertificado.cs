@@ -40,5 +40,36 @@ public class CCCertificado
         }
         return lstECCertificado;
     }
+
+
+    public List<ECCertificado> Obtener_CCertificadosEstudiante(int idEstudiante)
+    {
+        List<ECCertificado> lstECCertificado = new List<ECCertificado>();
+        DTOCCertificado dTOCertificado = aDCertificado.ObtenerCertificadosEstudiante(idEstudiante);
+
+        if (dTOCertificado != null)
+        {
+            foreach (DTOCCertificado.CCertificadoRow drCCertificado in dTOCertificado.CCertificado.Rows)
+            {
+                ECCertificado eCCertificado = new ECCertificado
+                {
+                    IdCertificado = drCCertificado.IdCertificado,
+                    DocumentoCertificado = drCCertificado.DocumentoCertificado,
+                    IdEstudiante = drCCertificado.IdEstudiante,
+                    TituloCertificado = drCCertificado.TituloCertificado,
+                    CargaHoraria = drCCertificado.CargaHoraria
+                };
+
+                lstECCertificado.Add(eCCertificado);
+            }
+        }
+        else
+        {
+            // Aquí podrías lanzar una excepción o manejarla de acuerdo a tus requerimientos.
+        }
+
+        return lstECCertificado;
+    }
+
     #endregion
 }

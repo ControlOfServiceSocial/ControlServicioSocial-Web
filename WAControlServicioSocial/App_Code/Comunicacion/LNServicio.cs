@@ -35,6 +35,54 @@ public class LNServicio
 
         return lstEcEstudiante;
     }
+
+    public ECEstudiante ObtenerEstudiantePorId(int idEstudiante)
+    {
+        ECEstudiante estudiante = new ECEstudiante();
+        try
+        {
+            estudiante = swlnControlServicioSocial.ObtenerEstudiantePorId(idEstudiante);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return estudiante;
+    }
+    #endregion
+
+    #region Facultad
+    public ECFacultad ObtenerCFacultadPorId(int idEstudiante)
+    {
+        ECFacultad facultad = new ECFacultad();
+        try
+        {
+            facultad = swlnControlServicioSocial.ObtenerCFacultadPorId(idEstudiante);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return facultad;
+    }
+    #endregion
+
+    #region Certificado
+    public List<ECCertificado> ObtenerCertificadosEstudiante(int idEstudiante)
+    {
+        List<ECCertificado> lstCertificadosEstudiante = new List<ECCertificado>();
+        try
+        {
+            lstCertificadosEstudiante = swlnControlServicioSocial.Obtener_CertificadosEstudiante(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return lstCertificadosEstudiante;
+    }
     #endregion
 
     public List<ECProyecto> Obtener_CProyecto_O()

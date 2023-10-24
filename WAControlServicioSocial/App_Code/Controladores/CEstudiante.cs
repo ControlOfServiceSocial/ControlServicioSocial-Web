@@ -29,4 +29,19 @@ public class CEstudiante : System.Web.UI.Page
         }
         return lstEcEstudiante;
     }
+
+    public ECEstudiante ObtenerEstudiantePorId_C(int idEstudiante)
+    {
+        ECEstudiante estudiante = new ECEstudiante();
+        try
+        {
+            estudiante = lnServicio.ObtenerEstudiantePorId(idEstudiante);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return estudiante;
+    }
 }

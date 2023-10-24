@@ -39,8 +39,8 @@
         </div>
         <div class="informacion__estudiante">
           <p>Tiempo de contribución: <span>12 horas</span></p>
-          <p>Nombre completo: <span>Juan Perez</span></p>
-          <p>Carrera: <span>Ing. Comercial</span></p>
+          <p>Nombre completo: <asp:Label ID="lblNombreEstudiante" runat="server"></asp:Label></p>
+          <p>Carrera: <asp:Label ID="lblNombreCarrera" runat="server"></asp:Label></p>
           <p>Horas acumuladas: <span>150 horas</span></p>
         </div>
       </div>
@@ -92,52 +92,35 @@
             </div>
           </div>
         </div>
+
         <div class="tipo__certificado">
           <p class="certificado__titulo">Certificados:</p>
+        <form id="formCertificados" runat="server">
+         <asp:GridView ID="gridViewCertificadosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false">
+    <Columns>
+        <asp:TemplateField>
+            <ItemTemplate>
+                <p><%# Eval("TituloCertificado") %></p>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField>
+            <ItemTemplate>
+                <div class="certificado__elemento elemento">
+                    <div class="elemento__contenedor-icono">
+                        <a class="elemento__icono" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="mis-estilos-svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
 
-          <div class="certificado__elemento elemento">
-            <p class="elemento__nombre">Nombre certificado</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>                
-              </a>
-            </div>
-          </div>
+            </form>
 
-          <div class="certificado__elemento elemento">
-            <p class="elemento__nombre">Nombre certificado</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>                
-              </a>
-            </div>
-          </div>
-
-          <div class="certificado__elemento elemento">
-            <p class="elemento__nombre">Nombre certificado</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>                
-              </a>
-            </div>
-          </div>
-
-          <div class="certificado__elemento elemento">
-            <p class="elemento__nombre">Nombre certificado</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>                
-              </a>
-            </div>
-          </div>
 
         </div>
       </div>

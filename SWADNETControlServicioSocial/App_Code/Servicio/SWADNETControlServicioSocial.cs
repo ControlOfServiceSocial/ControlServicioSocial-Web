@@ -35,7 +35,47 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		lstCEstudiante = cCEstudiante.Obtener_CEstudiante_O();
 		return lstCEstudiante;
     }
+
+    public ECEstudiante ObtenerEstudiantePorId(int idEstudiante)
+    {
+        CCEstudiante cCEstudiante = new CCEstudiante();
+        ECEstudiante estudiante = cCEstudiante.ObtenerEstudiantePorId(idEstudiante);
+
+        if (estudiante == null)
+        {
+            // Puedes lanzar una excepción si el estudiante no se encuentra o devolver un valor por defecto según tus necesidades.
+            throw new Exception("Estudiante no encontrado"); // Ejemplo de lanzar una excepción
+        }
+        return estudiante;
+    }
+
     #endregion
+
+    #region Tabla: Facultad
+    public ECFacultad ObtenerCFacultadPorId(int idEstudiante)
+    {
+        CCFacultad cCFacultad = new CCFacultad();
+        ECFacultad facultad = cCFacultad.ObtenerFacultadPorIdEstudiante(idEstudiante);
+
+        if (facultad == null)
+        {
+            // Puedes lanzar una excepción si el estudiante no se encuentra o devolver un valor por defecto según tus necesidades.
+            throw new Exception("facultad no encontrado"); // Ejemplo de lanzar una excepción
+        }
+        return facultad;
+    }
+    #endregion
+
+    #region Certificado
+    public List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante)
+    {
+        CCCertificado cCCertificado = new CCCertificado();
+        List<ECCertificado> lstCertificadosEstudiante = new List<ECCertificado>();
+        lstCertificadosEstudiante = cCCertificado.Obtener_CCertificadosEstudiante(idEstudiante);
+        return lstCertificadosEstudiante;
+    }
+    #endregion
+
 
     public List<ECCertificado> Obtener_CCertificado_O()
     {

@@ -37,6 +37,57 @@ public class ASNETControlServicioSocial
 
         return lstEcEstudiante;
     }
+
+    public ECEstudiante ObtenerEstudiantePorId(int idEstudiante)
+    {
+        ECEstudiante estudiante = new ECEstudiante();
+        try
+        {
+            estudiante = swADNETControlServicioSocial.ObtenerEstudiantePorId(idEstudiante);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return estudiante;
+    }
+
+    #endregion
+
+    #region CFacultad
+
+    public ECFacultad ObtenerCFacultadPorId(int idEstudiante)
+    {
+        ECFacultad facultad = new ECFacultad();
+        try
+        {
+            facultad = swADNETControlServicioSocial.ObtenerCFacultadPorId(idEstudiante);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return facultad;
+    }
+
+    #endregion
+
+    #region Certificado
+    public List<ECCertificado> ObtenerCertificadosEstudiante(int idEstudiante)
+    {
+        List<ECCertificado> lstCertificadosEstudiante = new List<ECCertificado>();
+        try
+        {
+            lstCertificadosEstudiante = swADNETControlServicioSocial.Obtener_CertificadosEstudiante(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return lstCertificadosEstudiante;
+    }
     #endregion
 
     #region CProyecto

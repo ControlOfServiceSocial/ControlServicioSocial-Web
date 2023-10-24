@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Policy;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
@@ -18,19 +19,6 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         return lstECCertificados;
     }
 
-	public CompositeType GetDataUsingDataContract(CompositeType composite)
-	{
-		if (composite == null)
-		{
-			throw new ArgumentNullException("composite");
-		}
-		if (composite.BoolValue)
-		{
-			composite.StringValue += "Suffix";
-		}
-		return composite;
-	}
-
 	#region Estudiante
 	public List<ECEstudiante> Obtener_CEstudiante_O()
 	{
@@ -39,7 +27,36 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 		lstEcEstudiante = cControlServicioSocial.Obtener_CEstudiante_O();
 		return lstEcEstudiante;
 	}
+
+    public ECEstudiante ObtenerEstudiantePorId(int idEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        ECEstudiante eCEstudiante = new ECEstudiante();
+        eCEstudiante = cControlServicioSocial.ObtenerEstudiantePorId(idEstudiante);
+        return eCEstudiante;
+    }
     #endregion
+
+    #region Facultad
+    public ECFacultad ObtenerCFacultadPorId(int idEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        ECFacultad eCFacultad = new ECFacultad();
+        eCFacultad = cControlServicioSocial.ObtenerCFacultadPorId(idEstudiante);
+        return eCFacultad;
+    }
+    #endregion
+
+    #region Certificado
+    public List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        List<ECCertificado> lstECertificadosEstudiante = new List<ECCertificado>();
+        lstECertificadosEstudiante = cControlServicioSocial.ObtenerCertificadosEstudiante(idEstudiante);
+        return lstECertificadosEstudiante;
+    }
+    #endregion
+
     public List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O()
     {
         CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();

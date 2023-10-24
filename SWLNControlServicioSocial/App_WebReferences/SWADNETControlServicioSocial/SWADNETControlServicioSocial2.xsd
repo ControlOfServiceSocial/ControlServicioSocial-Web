@@ -26,27 +26,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECEstudiante" nillable="true" type="tns:ECEstudiante" />
-  <xs:complexType name="ArrayOfECProyecto">
+  <xs:complexType name="ECFacultad">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFacultad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreFacultad" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfECProyecto" nillable="true" type="tns:ArrayOfECProyecto" />
-  <xs:complexType name="ECProyecto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EstadoProyecto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FechaCreacionProyecto" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaFinProyecto" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
-      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
-      <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+  <xs:element name="ECFacultad" nillable="true" type="tns:ECFacultad" />
   <xs:complexType name="ArrayOfECCertificado">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ECCertificado" nillable="true" type="tns:ECCertificado" />
@@ -63,6 +51,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECCertificado" nillable="true" type="tns:ECCertificado" />
+  <xs:complexType name="ArrayOfECProyecto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECProyecto" nillable="true" type="tns:ArrayOfECProyecto" />
+  <xs:complexType name="ECProyecto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoProyecto" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="FechaCreacionProyecto" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaFinProyecto" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECProyecto" nillable="true" type="tns:ECProyecto" />
   <xs:complexType name="ArrayOfECProyectoEstudiante">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyectoEstudiante" nillable="true" type="tns:ECProyectoEstudiante" />

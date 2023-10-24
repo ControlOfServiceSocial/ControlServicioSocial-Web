@@ -23,6 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWADNETControlServicioSocia
 		VWDPort = "56886"
 		SlnRelativePath = "SWADNETControlServicioSocial\"
 		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "false"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SWLNControlServicioSocial", "SWLNControlServicioSocial\", "{8BCE1774-97CD-4C80-9088-4A408D357238}"

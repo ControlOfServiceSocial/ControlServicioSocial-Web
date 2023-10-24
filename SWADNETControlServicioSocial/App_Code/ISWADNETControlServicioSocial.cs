@@ -22,8 +22,23 @@ public interface ISWADNETControlServicioSocial
 	#region Tabla: Estudiante
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
-  #endregion
+    [OperationContract]
+    ECEstudiante ObtenerEstudiantePorId(int idEstudiante);
+
+	#endregion
+
+	#region Tabla: Facultad
 	[OperationContract]
+	ECFacultad ObtenerCFacultadPorId(int idEstudiante);
+    #endregion
+
+    #region Certificado
+    [OperationContract]
+    List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante);
+
+    #endregion
+
+    [OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O();
 	[OperationContract]
 	List<ECCertificado> Obtener_CCertificado_O();

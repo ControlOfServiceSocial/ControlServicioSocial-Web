@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfECProyecto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyecto" nillable="true" type="tns:ECProyecto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
   <xs:complexType name="ArrayOfECEstudiante">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ECEstudiante" nillable="true" type="tns:ECEstudiante" />
@@ -25,20 +19,71 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECEstudiante" nillable="true" type="tns:ECEstudiante" />
+  <xs:complexType name="ECFacultad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFacultad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreFacultad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECFacultad" nillable="true" type="tns:ECFacultad" />
+  <xs:complexType name="ArrayOfECCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECCertificado" nillable="true" type="tns:ECCertificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECCertificado" nillable="true" type="tns:ArrayOfECCertificado" />
+  <xs:complexType name="ECCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CargaHoraria" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentoCertificado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCertificado" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="TituloCertificado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECCertificado" nillable="true" type="tns:ECCertificado" />
+  <xs:complexType name="ArrayOfECProyecto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="ArrayOfECProyecto" nillable="true" type="tns:ArrayOfECProyecto" />
   <xs:complexType name="ECProyecto">
     <xs:sequence>
       <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EstadoProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoProyecto" type="xs:unsignedByte" />
       <xs:element minOccurs="0" name="FechaCreacionProyecto" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaFinProyecto" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
       <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
-      <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECProyecto" nillable="true" type="tns:ECProyecto" />
+  <xs:complexType name="ArrayOfECProyectoEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECProyectoEstudiante" nillable="true" type="tns:ECProyectoEstudiante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECProyectoEstudiante" nillable="true" type="tns:ArrayOfECProyectoEstudiante" />
+  <xs:complexType name="ECProyectoEstudiante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HoraAcumulada" type="xs:int" />
+      <xs:element minOccurs="0" name="HoraFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProyectoEstudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="LatitudFinal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LatitudInicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LongitudFinal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LongitudInicial" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECProyectoEstudiante" nillable="true" type="tns:ECProyectoEstudiante" />
 </xs:schema>
