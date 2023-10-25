@@ -13,7 +13,6 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
     CProyecto cProyecto = new CProyecto();
     protected void Page_Load(object sender, EventArgs e)
     {
-        lstECProyecto = new List<ECProyecto>();
         CargarDatos();
     }
 
@@ -25,9 +24,14 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
 
     private void CargarDatos()
     {
-        /*gvListaProyectos.DataSource = null;      
+        gvListaProyectos.DataSource = null;      
         lstECProyecto = cProyecto.Obtener_CProyecto_O_CC();
         gvListaProyectos.DataSource = lstECProyecto;
-        gvListaProyectos.DataBind();*/
+        gvListaProyectos.DataBind();
+    }
+
+    protected void btnVer_Click(object sender, EventArgs e)
+    {
+        
     }
 }

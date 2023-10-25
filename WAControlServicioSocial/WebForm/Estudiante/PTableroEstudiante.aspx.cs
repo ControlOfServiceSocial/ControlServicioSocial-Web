@@ -20,10 +20,10 @@ public partial class WebForm_Estudiante_TableroEstudiante : System.Web.UI.Page
 
     private void CargarDatos() 
     {
-        /*gvListaEstudiantes.DataSource = null;
+        gvListaEstudiantes.DataSource = null;
         lstECEstudiante = cEstudiante.Obtener_CEstudiante_O_CC();
         gvListaEstudiantes.DataSource = lstECEstudiante;
-        gvListaEstudiantes.DataBind();*/
+        gvListaEstudiantes.DataBind();
     }
 
     protected void gvListaEstudiantes_PageIndexChanging(object sender, GridViewPageEventArgs e)
