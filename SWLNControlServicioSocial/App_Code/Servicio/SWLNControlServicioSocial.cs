@@ -10,6 +10,18 @@ using System.Text;
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 {
+    public void Actualizar_CProyectoEstudiante_A_HoraAcumulada(int IdEstudiante, DateTime HoraFinal, string LatitudFinal, string LongitudFinal)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        cControlServicioSocial.Actualizar_CProyectoEstudiante_A_HoraAcumulada(IdEstudiante, HoraFinal, LatitudFinal, LongitudFinal);
+    }
+
+    public void Actualizar_CProyectoEstudiante_A_Inicio(int IdEstudiante, DateTime HoraInicio, string LatitudInicial, string LongitudInicial)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        cControlServicioSocial.Actualizar_CProyectoEstudiante_A_Inicio(IdEstudiante, HoraInicio, LatitudInicial, LongitudInicial);
+    }
+
     public void Insertar_CCertificado_I(string DocumentoCertificado, int IdEstudiante, string TituloCertificado, int CargaHoraria)
     {
         CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();

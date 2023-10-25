@@ -55,6 +55,18 @@
   <wsdl:message name="ISWADNETControlServicioSocial_Insertar_CCertificado_I_OutputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_CCertificado_IResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_Inicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyectoEstudiante_A_Inicio" />
+  </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_Inicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyectoEstudiante_A_InicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_HoraAcumulada_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyectoEstudiante_A_HoraAcumulada" />
+  </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_HoraAcumulada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyectoEstudiante_A_HoraAcumuladaResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWADNETControlServicioSocial">
     <wsdl:operation name="Obtener_CProyecto_O">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O" message="tns:ISWADNETControlServicioSocial_Obtener_CProyecto_O_InputMessage" />
@@ -87,6 +99,14 @@
     <wsdl:operation name="Insertar_CCertificado_I">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Insertar_CCertificado_I" message="tns:ISWADNETControlServicioSocial_Insertar_CCertificado_I_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Insertar_CCertificado_IResponse" message="tns:ISWADNETControlServicioSocial_Insertar_CCertificado_I_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyectoEstudiante_A_Inicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_Inicio" message="tns:ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_Inicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_InicioResponse" message="tns:ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_Inicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyectoEstudiante_A_HoraAcumulada">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_HoraAcumulada" message="tns:ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_HoraAcumulada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_HoraAcumuladaResponse" message="tns:ISWADNETControlServicioSocial_Actualizar_CProyectoEstudiante_A_HoraAcumulada_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWADNETControlServicioSocial" type="tns:ISWADNETControlServicioSocial">
@@ -156,6 +176,24 @@
     </wsdl:operation>
     <wsdl:operation name="Insertar_CCertificado_I">
       <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/Insertar_CCertificado_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyectoEstudiante_A_Inicio">
+      <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_Inicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyectoEstudiante_A_HoraAcumulada">
+      <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/Actualizar_CProyectoEstudiante_A_HoraAcumulada" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -67,4 +67,42 @@ public class ADCProyectoEstudiante
         }
         return dTOCProyecto;
     }
+
+    public void Actualizar_CProyectoEstudiante_A_Inicio(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("Actualizar_CProyectoEstudiante_A_Inicio");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, eCProyectoEstudiante.IdEstudiante);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "HoraInicio", System.Data.DbType.DateTime,eCProyectoEstudiante.HoraInicio);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "LatitudInicial",System.Data.DbType.String,eCProyectoEstudiante.LatitudInicial);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "LongitudInicial", System.Data.DbType.String,eCProyectoEstudiante.LongitudInicial);
+            BDSWADNETControlServicioSocial.ExecuteNonQuery(dbCommand);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public void Actualizar_CProyectoEstudiante_A_HoraAcumulada(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("Actualizar_CProyectoEstudiante_A_HoraAcumulada");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, eCProyectoEstudiante.IdEstudiante);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "HoraFinal", System.Data.DbType.DateTime, eCProyectoEstudiante.HoraFinal);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "LatitudFinal", System.Data.DbType.String, eCProyectoEstudiante.LatitudFinal);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "LongitudFinal", System.Data.DbType.String, eCProyectoEstudiante.LongitudFinal);
+            BDSWADNETControlServicioSocial.ExecuteNonQuery(dbCommand);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

@@ -77,5 +77,30 @@ public class CCProyectoEstudiante
         }
         return lstECProyectoEstudiante;
     }
+
+    public void Actualizar_CProyectoEstudiante_A_Inicio(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            aDCProyectoEstudiante.Actualizar_CProyectoEstudiante_A_Inicio(eCProyectoEstudiante);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    public void Actualizar_CProyectoEstudiante_A_HoraAcumulada(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            aDCProyectoEstudiante.Actualizar_CProyectoEstudiante_A_HoraAcumulada(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
 }

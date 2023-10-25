@@ -132,5 +132,31 @@ public class ASNETControlServicioSocial
             throw;
         }
     }
+
+    public void Actualizar_CProyectoEstudiante_A_HoraAcumulada(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            swADNETControlServicioSocial.Actualizar_CProyectoEstudiante_A_HoraAcumulada(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public void Actualizar_CProyectoEstudiante_A_Inicio(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            swADNETControlServicioSocial.Actualizar_CProyectoEstudiante_A_Inicio(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
 }

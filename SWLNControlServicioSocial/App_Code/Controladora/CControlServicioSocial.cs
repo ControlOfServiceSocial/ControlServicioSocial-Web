@@ -135,4 +135,40 @@ public class CControlServicioSocial
             throw;
         }
     }
+
+    public void Actualizar_CProyectoEstudiante_A_HoraAcumulada(int idEstudiante, DateTime horaFinal, string latitudFinal, string longitudFinal)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            eCProyectoEstudiante.IdEstudiante = idEstudiante;
+            eCProyectoEstudiante.HoraFinal = horaFinal;
+            eCProyectoEstudiante.LatitudFinal = latitudFinal;
+            eCProyectoEstudiante.LongitudFinal = longitudFinal;
+            aSNETControlServicioSocial.Actualizar_CProyectoEstudiante_A_HoraAcumulada(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public void Actualizar_CProyectoEstudiante_A_Inicio(int idEstudiante, DateTime horaInicio, string latitudInicial, string longitudInicial)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            eCProyectoEstudiante.IdEstudiante = idEstudiante;
+            eCProyectoEstudiante.HoraInicio = horaInicio;
+            eCProyectoEstudiante.LatitudInicial = latitudInicial;
+            eCProyectoEstudiante.LongitudInicial = longitudInicial;
+            aSNETControlServicioSocial.Actualizar_CProyectoEstudiante_A_Inicio(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

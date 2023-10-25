@@ -28,5 +28,9 @@ public interface ISWLNControlServicioSocial
     List<ECCertificado> Obtener_CCertificado_O_IdEstudiante(int idEstudiante);
     [OperationContract]
     void Insertar_CCertificado_I(string DocumentoCertificado, int IdEstudiante,string TituloCertificado,int CargaHoraria);
+    [OperationContract]
+    void Actualizar_CProyectoEstudiante_A_Inicio(int IdEstudiante, DateTime HoraInicio,string LatitudInicial,string LongitudInicial);
+    [OperationContract]
+    void Actualizar_CProyectoEstudiante_A_HoraAcumulada(int IdEstudiante,DateTime HoraFinal,string LatitudFinal,string LongitudFinal);
 }
 
