@@ -55,7 +55,7 @@ public class ADCProyecto
             Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
             DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O");
 
-            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "ECProyecto");
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
         }
 
         catch (SqlException SQLEx)

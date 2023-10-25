@@ -14,6 +14,7 @@
         <h2>Control de servicio social</h2>
         <form id="form1" runat="server">
             <div>
+                <asp:Button ID="btnVer" OnClick="btnVer_Click" runat="server" Text="Crear Proyecto" />
                 <asp:GridView ID="gvListaProyectos" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="8" OnPageIndexChanging="gvListaProyectos_PageIndexChanging" >
                     <PagerStyle CssClass="pagina-numero" /> 
                     <Columns>
