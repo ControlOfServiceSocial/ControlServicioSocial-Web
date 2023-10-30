@@ -25,17 +25,17 @@
         </div>
         <div class="form-item">
             <label for="inicio">Fecha de inicio *</label>
-            <asp:Calendar ID="inicio" runat="server"></asp:Calendar>
+            <asp:TextBox ID="inicio" runat="server" TextMode="Date"></asp:TextBox>
         </div>   
       </div>
       <div class="form-row">
         <div class="form-item">
             <label for="fin">Fecha de finalización *</label>
-            <asp:Calendar ID="fin" runat="server"></asp:Calendar>
+             <asp:TextBox ID="fin" runat="server" TextMode="Date"></asp:TextBox>
         </div>      
         <div class="form-item">
             <label for="creacion">Fecha de creación *</label>
-            <asp:Calendar ID="creacion" runat="server"></asp:Calendar>
+            <asp:TextBox ID="creacion" runat="server" TextMode="Date"></asp:TextBox>
         </div>
         <div class="form-item">
             <label for="estado">Estado *</label>
@@ -85,6 +85,7 @@
       </div>
       <div class="form-row">
         <label ID="advertencia">Los campos marcados con ‘*’ son de carácter obligatorio.</label>
+          <label ID="mensaje" runat="server"></label>
       </div>
     </form>
       </div>

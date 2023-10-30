@@ -38,7 +38,7 @@ public class CCProyecto
                 eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto.TrimEnd();
                 eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto.TrimEnd();
                 eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
-                eCProyecto.ImagenProyecto = null;
+                eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
                 eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
                 eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
                 eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;

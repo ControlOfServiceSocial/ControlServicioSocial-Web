@@ -31,7 +31,7 @@ public class ADCProyecto
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "UbicacionProyecto", DbType.String, eCProyecto.UbicacionProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "EstadoProyecto", DbType.Byte, eCProyecto.EstadoProyecto);
             // Configura el parámetro de ImagenProyecto como byte[]
-            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "ImagenProyecto", DbType.Binary, eCProyecto.ImagenProyecto);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "ImagenProyecto", DbType.String, eCProyecto.ImagenProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "HorasEstimadas", DbType.Byte, eCProyecto.HorasEstimadas);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "FechaInicioProyecto", DbType.Date, eCProyecto.FechaInicioProyecto);
             BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "FechaFinProyecto", DbType.Date, eCProyecto.FechaFinProyecto);
