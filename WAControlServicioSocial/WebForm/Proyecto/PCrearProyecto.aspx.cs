@@ -23,12 +23,15 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             string extension = Path.GetExtension(img.FileName);
             if (extension != "")
             {
-                // Convierte el archivo a un array de bytes
-                byte[] imagenBytes = img.FileBytes;
+                string fileName = Path.GetFileName(img.PostedFile.FileName);
+                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
+                img.SaveAs(filePath);
+
+                string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;           
                 try
                 {
-                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), imagenBytes, byte.Parse(horas.Text), inicio.SelectedDate, fin.SelectedDate, creacion.SelectedDate);
-
+                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text));
+                    mensaje.InnerText="El proyecto se guardo correctamente";
                 }
                 catch (Exception)
                 {
@@ -38,12 +41,12 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             }
             else
             {
-                Response.Write("El archivo no es una imagen.");
+
             }
         }
         else
         {
-            Response.Write("Por favor, selecciona un archivo para subir.");
+            mensaje.InnerText = "Debe subir una imagen";
         }
  
     }
