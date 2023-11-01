@@ -37,6 +37,12 @@
   <wsdl:message name="ISWADNETControlServicioSocial_Obtener_CProyecto_O_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_CProyecto_OResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Obtener_CProyecto_O_ID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_ID" />
+  </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_Obtener_CProyecto_O_ID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_IDResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWADNETControlServicioSocial">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/GetData" message="tns:ISWADNETControlServicioSocial_GetData_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="Obtener_CProyecto_O">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O" message="tns:ISWADNETControlServicioSocial_Obtener_CProyecto_O_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_OResponse" message="tns:ISWADNETControlServicioSocial_Obtener_CProyecto_O_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_ID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O_ID" message="tns:ISWADNETControlServicioSocial_Obtener_CProyecto_O_ID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O_IDResponse" message="tns:ISWADNETControlServicioSocial_Obtener_CProyecto_O_ID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWADNETControlServicioSocial" type="tns:ISWADNETControlServicioSocial">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="Obtener_CProyecto_O">
       <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_ID">
+      <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/Obtener_CProyecto_O_ID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

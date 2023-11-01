@@ -37,6 +37,7 @@ public class LNServicio
     }
     #endregion
     #region CProyecto
+    #region insert
     public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
         try
@@ -48,7 +49,9 @@ public class LNServicio
             throw;
         }
     }
+    #endregion
 
+    #region get all
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
@@ -64,6 +67,25 @@ public class LNServicio
 
         return lstEcProyecto;
     }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = swlnControlServicioSocial.Obtener_CProyecto_O_ID(Idproyecto).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+        return lstEcProyecto;
+    }
+    #endregion
     #endregion
     #endregion
 }

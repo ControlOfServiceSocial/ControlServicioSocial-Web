@@ -24,11 +24,20 @@ public interface ISWADNETControlServicioSocial
 	List<ECEstudiante> Obtener_CEstudiante_O();
 	#endregion
 	#region Tabla: Proyecto
+	#region insert
 	[OperationContract]
 	void Insertar_CProyecto_I(ECProyecto eCProyecto);
+	#endregion
 
+	#region get all
 	[OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O();
+	#endregion
+
+	#region get 
+	[OperationContract]
+	List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+	#endregion
 	#endregion
 }
 

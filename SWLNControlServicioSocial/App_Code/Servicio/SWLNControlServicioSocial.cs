@@ -38,12 +38,15 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 	}
 	#endregion
 	#region Tabla: Proyecto
+	#region insert
 	public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
 	{
 		CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
 		cControlServicioSocial.Insertar_CProyecto_I(NombreProyecto, DescripcionProyecto, UbicacionProyecto, EstadoProyecto, ImagenProyecto, HorasEstimadas, FechaInicioProyecto, FechaFinProyecto, FechaCreacionProyecto);
 	}
+	#endregion
 
+	#region get all
 	public List<ECProyecto> Obtener_CProyecto_O()
 	{
 		CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
@@ -51,5 +54,16 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
 		lstEcProyecto = cControlServicioSocial.Obtener_CProyecto_O();
 		return lstEcProyecto;
 	}
+	#endregion
+
+	#region get
+	public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+	{
+		CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+		List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+		lstEcProyecto = cControlServicioSocial.Obtener_CProyecto_O_ID(Idproyecto);
+		return lstEcProyecto;
+	}
+	#endregion
 	#endregion
 }

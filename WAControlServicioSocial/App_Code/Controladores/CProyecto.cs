@@ -15,6 +15,7 @@ public class CProyecto : System.Web.UI.Page
     {
         
     }
+    #region insert
     public void Insertar_CProyecto_I_CC(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
         try
@@ -26,7 +27,9 @@ public class CProyecto : System.Web.UI.Page
             throw;
         }
     }
+    #endregion
 
+    #region get all
     public List<ECProyecto> Obtener_CProyecto_O_CC()
     {
         List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
@@ -40,4 +43,21 @@ public class CProyecto : System.Web.UI.Page
         }
         return lstEcProyecto;
     }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_CC_ID(int Idproyecto)
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = lnServicio.Obtener_CProyecto_O_ID(Idproyecto).ToList();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        return lstEcProyecto;
+    }
+    #endregion
 }

@@ -38,6 +38,7 @@ public class ASNETControlServicioSocial
     }
     #endregion
     #region CProyecto
+    #region insert
     public void Insertar_CProyecto_I(ECProyecto eCProyecto)
     {
         try
@@ -64,7 +65,9 @@ public class ASNETControlServicioSocial
 
         }
     }
+    #endregion
 
+    #region get all
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
@@ -80,6 +83,25 @@ public class ASNETControlServicioSocial
 
         return lstEcProyecto;
     }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = swADNETControlServicioSocial.Obtener_CProyecto_O_ID(Idproyecto).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+        return lstEcProyecto;
+    }
+    #endregion
 
     #endregion
     #endregion

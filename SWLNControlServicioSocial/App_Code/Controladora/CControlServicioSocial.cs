@@ -32,6 +32,7 @@ public class CControlServicioSocial
     }
     #endregion
     #region Metodos Publicos Proyecto
+    #region insert
     public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto)
     {
         ECProyecto eCProyecto = new ECProyecto();
@@ -53,7 +54,9 @@ public class CControlServicioSocial
             throw ex;
         }
     }
+    #endregion
 
+    #region get all
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
@@ -68,6 +71,24 @@ public class CControlServicioSocial
         }
         return lstEcProyecto;
     }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        try
+        {
+            lstEcProyecto = asNetControlServicioSocial.Obtener_CProyecto_O_ID(Idproyecto).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcProyecto;
+    }
+    #endregion
 
     #endregion
 }

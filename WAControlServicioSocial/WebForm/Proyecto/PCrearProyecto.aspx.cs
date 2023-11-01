@@ -10,9 +10,25 @@ using System.Web.UI.WebControls;
 public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 {
     CProyecto cProyecto = new CProyecto();
+    List<ECProyecto> lstECProyecto = new List<ECProyecto>(); 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (int.Parse(Session["EditarProyecto"].ToString()) > 0)
+        {
+            lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Session["EditarProyecto"].ToString()));
+
+            foreach (ECProyecto proyecto in lstECProyecto)
+            {
+                txtnombre.Text = proyecto.NombreProyecto;
+                ubicacion.Text = proyecto.UbicacionProyecto;
+                inicio.Text = proyecto.FechaInicioProyecto.ToString();
+                fin.Text = proyecto.FechaFinProyecto.ToString();
+                creacion.Text = proyecto.FechaCreacionProyecto.ToString();
+                estado.SelectedIndex = proyecto.EstadoProyecto;
+                horas.Text = proyecto.HorasEstimadas.ToString();
+                desc.Text = proyecto.DescripcionProyecto;
+            }
+        }
     }
 
     private void crearProyecto()
