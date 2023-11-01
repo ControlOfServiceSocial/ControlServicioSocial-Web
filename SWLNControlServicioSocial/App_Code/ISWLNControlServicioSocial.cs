@@ -25,11 +25,20 @@ public interface ISWLNControlServicioSocial
 	List<ECEstudiante> Obtener_CEstudiante_O();
 	#endregion
 	#region Tabla: Proyecto
+	#region insert
 	[OperationContract]
 	void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto);
-	
+	#endregion
+
+	#region get all
 	[OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O();
+	#endregion
+
+	#region get
+	[OperationContract]
+	List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+	#endregion
 	#endregion
 }
 

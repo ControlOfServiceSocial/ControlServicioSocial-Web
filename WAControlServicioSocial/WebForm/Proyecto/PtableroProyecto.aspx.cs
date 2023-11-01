@@ -11,6 +11,8 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
     ECProyecto eCProyecto = new ECProyecto();
     List<ECProyecto> lstECProyecto = new List<ECProyecto>();
     CProyecto cProyecto = new CProyecto();
+    int IdProyecto = int.MinValue;
+    private static int index;
     protected void Page_Load(object sender, EventArgs e)
     {
         CargarDatos();
@@ -32,6 +34,20 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
 
     protected void btnVer_Click(object sender, EventArgs e)
     {
+        Response.Redirect("PCrearProyecto.aspx");
+    }
+
+    protected void gvListaProyectos_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        index = Convert.ToInt32(e.CommandArgument);
+        string IdProyectoString = System.Net.WebUtility.HtmlDecode(gvListaProyectos.Rows[index].Cells[0].Text);
+        IdProyecto = int.Parse(IdProyectoString);
+        
+        if (e.CommandName == "btnActualizar")
+        {
+            Session["EditarProyecto"] = IdProyecto;
+            Response.Redirect("PCrearProyecto.aspx");
+        }
         
     }
 }

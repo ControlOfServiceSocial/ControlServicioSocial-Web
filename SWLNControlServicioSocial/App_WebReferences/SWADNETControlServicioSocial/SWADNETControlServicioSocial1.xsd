@@ -65,4 +65,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Obtener_CProyecto_O_ID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Idproyecto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O_IDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_O_IDResult" nillable="true" type="q6:ArrayOfECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

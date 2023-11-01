@@ -38,12 +38,15 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 	#endregion
 
 	#region Tabla: Proyecto
+	#region insert
 	public void Insertar_CProyecto_I(ECProyecto eCProyecto)
 	{
 		CCProyecto cCProyecto = new CCProyecto();
 		cCProyecto.Insertar_CProyecto_I(eCProyecto);
 	}
+	#endregion
 
+	#region get all
 	public List<ECProyecto> Obtener_CProyecto_O()
 	{
 		CCProyecto cCProyecto = new CCProyecto();
@@ -51,6 +54,17 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		lstCProyecto = cCProyecto.Obtener_CProyecto_O();
 		return lstCProyecto;
 	}
+	#endregion
+
+	#region get
+	public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+	{
+		CCProyecto cCProyecto = new CCProyecto();
+		List<ECProyecto> lstCProyecto = new List<ECProyecto>();
+		lstCProyecto = cCProyecto.Obtener_CProyecto_O_ID(Idproyecto);
+		return lstCProyecto;
+	}
+	#endregion
 	#endregion
 
 }

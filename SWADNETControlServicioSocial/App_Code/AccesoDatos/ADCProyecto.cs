@@ -18,6 +18,7 @@ public class ADCProyecto
     /// Obtener todos los estudiantes
     /// </summary>
     /// <returns>Retorna una lista de estudiantes</returns>
+    #region insert de proyectos
     public void Insertar_CProyecto_I(ECProyecto eCProyecto)
     {
         try
@@ -46,7 +47,9 @@ public class ADCProyecto
         }
 
     }
+    #endregion
 
+    #region Obtener todos los proyectos
     public DTOCProyecto Obtener_CProyecto_O()
     {
         DTOCProyecto dTOCProyecto = new DTOCProyecto();
@@ -65,6 +68,32 @@ public class ADCProyecto
         }
         return dTOCProyecto;
     }
+    #endregion
+
+    #region get de un proyecto
+    public DTOCProyecto Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O_ID");
+
+            // Configura los parámetros del procedimiento almacenado con los datos del proyecto.
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdProyecto", DbType.String, Idproyecto);
+
+            // Ejecuta el procedimiento almacenado para realizar la inserción.
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (SqlException SQLEx)
+        {
+            // Maneja las excepciones aquí, puedes descomentar y personalizar esta parte para manejar los errores de acuerdo a tus necesidades.
+        }
+        return dTOCProyecto;
+
+    }
+    #endregion
+
     #endregion
 
 }
