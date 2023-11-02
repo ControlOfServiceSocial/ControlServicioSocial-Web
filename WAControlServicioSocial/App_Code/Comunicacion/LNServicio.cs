@@ -100,5 +100,35 @@ public class LNServicio
         return lstECProyectos;
     }
 
+    public List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante)
+    {
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        try
+        {
+            lstECProyecto = swlnControlServicioSocial.Obtener_CProyecto_O_CProyecto(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyecto;
+    }
+
+    public ECProyecto ObtenerProyectoPorId(int idProyecto)
+    {
+        ECProyecto proyecto = new ECProyecto();
+        try
+        {
+            proyecto = swlnControlServicioSocial.Obtener_CProyecto_O_IdProyecto(idProyecto);
+        }
+        catch (Exception)
+        {
+            // Manejar excepciones aquí
+            throw;
+        }
+        return proyecto;
+    }
+
     #endregion
 }

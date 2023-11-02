@@ -73,6 +73,37 @@ public class CCProyecto
         }
         return eCProyecto;
     }
+
+    public List<ECProyecto> Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante)
+    {
+        ECProyecto eCProyecto;
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        DTOCProyecto dTOCProyecto = aDCProyecto.Obtener_CProyectoEstudiante_O_CProyecto(idEstudiante);
+        if (dTOCProyecto != null)
+        {
+            foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
+            {
+                eCProyecto = new ECProyecto();
+                eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
+                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
+                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
+                eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
+                eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
+                eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
+                eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
+                eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
+                eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
+                lstECProyecto.Add(eCProyecto);
+            }
+
+        }
+        else
+        {
+            dTOCProyecto = new DTOCProyecto();
+        }
+        return lstECProyecto;
+    }
     #endregion
 
 }

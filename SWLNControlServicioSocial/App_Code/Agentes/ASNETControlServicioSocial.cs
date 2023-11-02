@@ -147,6 +147,21 @@ public class ASNETControlServicioSocial
         }
         return eCProyecto;
     }
+
+    public List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante)
+    {
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        try
+        {
+            lstECProyecto = swADNETControlServicioSocial.Obtener_CProyectoEstudiante_O_CProyecto(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyecto;
+    }
     #endregion
     #endregion
 }

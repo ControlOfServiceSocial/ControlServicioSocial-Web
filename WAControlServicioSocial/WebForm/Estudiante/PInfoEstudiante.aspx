@@ -10,8 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=Ahzo_9SFE2hHoIUJyb8E7C-1rUwMJe8hK3x939moz-MBeh6LghjnYUZXw2z34x9Q&callback=initializeMap" async defer></script>
 </head>
-<body>
+<body onload="initializeMap()">
     <section class="contenedor">
     <div class="boton-retorno">
       <a href="javascript:void(0);" onclick="window.history.back();">
@@ -20,18 +21,19 @@
         </svg>         
       </a>
     </div>
+    <form id="formMain" runat="server">
     <div class="contenedor__secciones seccion">
       <div class="seccion__informacion informacion">
         <h2 class="informacion__titulo">Información del estudiante</h2>
         <div class="informacion__mapas mapa">
           <div class="mapa__inicial inicial">
-            <div class="inicial__contenedor">
+            <div class="inicial__contenedor" id="mapaInicial">
 
             </div>
             <p>Ubicación inicial</p>
           </div>
           <div class="mapa__final final">
-            <div class="final__contenedor">
+            <div class="final__contenedor" id="mapaFinal">
 
             </div>
             <p>Ubicación final</p>
@@ -47,55 +49,18 @@
       <div class="seccion__proyectos tipo">
         <div class="tipo__proyecto proyecto">
           <p class="proyecto__titulo">Proyectos:</p>
-
-          <div class="proyecto__elemento elemento">
-            <p class="elemento__nombre">Nombre proyecto</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>              
-              </a>
-            </div>
-          </div>
-
-          <div class="proyecto__elemento elemento">
-            <p class="elemento__nombre">Nombre proyecto</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>              
-              </a>
-            </div>
-          </div>
-
-          <div class="proyecto__elemento elemento">
-            <p class="elemento__nombre">Nombre proyecto</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>              
-              </a>
-            </div>
-          </div>
-
-          <div class="proyecto__elemento elemento">
-            <p class="elemento__nombre">Nombre proyecto</p>
-            <div class="elemento__contenedor-icono">
-              <a class="elemento__icono" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>              
-              </a>
-            </div>
-          </div>
+        
+          <asp:GridView ID="gridViewProyectosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false">
+            <Columns>
+                <asp:BoundField DataField="NombreProyecto" />
+            </Columns>
+        </asp:GridView>
+           
         </div>
 
         <div class="tipo__certificado">
           <p class="certificado__titulo">Certificados:</p>
-        <form id="formCertificados" runat="server">
+       
          <asp:GridView ID="gridViewCertificadosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false">
     <Columns>
         <asp:TemplateField>
@@ -119,12 +84,58 @@
     </Columns>
 </asp:GridView>
 
-            </form>
+          
 
 
         </div>
       </div>
     </div>
+    </form>
   </section>
+    <script>
+        // Función para inicializar los mapas
+        function initializeMaps() {
+            // Mapa 1
+            var mapOptions1 = {
+                credentials: "TU_CLAVE_DE_API",
+                center: new Microsoft.Maps.Location(latitudMapa1, longitudMapa1), // Coordenadas del centro del primer mapa
+                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                zoom: 15, // Nivel de zoom
+                showLocateMeButton: false,
+                showZoomButtons: false,
+                showMapTypeSelector: false
+            };
+            var map1 = new Microsoft.Maps.Map(document.getElementById("mapaInicial"), mapOptions1);
+
+            // Agrega un punto (marcador) al mapa 1
+            var pushpin1 = new Microsoft.Maps.Pushpin(map1.getCenter(), {
+                title: 'Punto 1', // Título del marcador
+                color: 'blue' // Color del marcador
+            });
+            map1.entities.push(pushpin1);
+
+            // Mapa 2
+            var mapOptions2 = {
+                credentials: "TU_CLAVE_DE_API",
+                center: new Microsoft.Maps.Location(latitudMapa2, longitudMapa2), // Coordenadas del centro del segundo mapa
+                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                zoom: 15, // Nivel de zoom
+                showLocateMeButton: false,
+                showZoomButtons: false,
+                showMapTypeSelector: false,
+            };
+            var map2 = new Microsoft.Maps.Map(document.getElementById("mapaFinal"), mapOptions2);
+
+            // Agrega un punto (marcador) al mapa 2
+            var pushpin2 = new Microsoft.Maps.Pushpin(map2.getCenter(), {
+                title: 'Punto 2', // Título del marcador
+                color: 'red' // Color del marcador
+            });
+            map2.entities.push(pushpin2);
+        }
+
+        // Llama a la función de inicialización cuando la página se cargue
+        window.onload = initializeMaps;
+    </script>
 </body>
 </html>

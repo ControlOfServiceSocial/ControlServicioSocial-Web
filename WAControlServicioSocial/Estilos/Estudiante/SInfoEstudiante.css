@@ -92,7 +92,7 @@ body {
     height: 18.4rem;
     max-width: 31rem;
     max-height: 18.4rem;
-    background-color: var(--gris);
+    /*background-color: var(--gris);*/
     margin-bottom: .6rem;
 }
 

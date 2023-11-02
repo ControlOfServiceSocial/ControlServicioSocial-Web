@@ -55,6 +55,12 @@
   <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_IdProyecto_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_IdProyectoResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_CProyecto_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_CProyecto" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_CProyecto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_CProyectoResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWLNControlServicioSocial">
     <wsdl:operation name="Obtener_CEstudiante_O">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CEstudiante_O" message="tns:ISWLNControlServicioSocial_Obtener_CEstudiante_O_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="Obtener_CProyecto_O_IdProyecto">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_IdProyecto" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_IdProyecto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_IdProyectoResponse" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_IdProyecto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_CProyecto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_CProyecto" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_CProyecto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_CProyectoResponse" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_CProyecto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWLNControlServicioSocial" type="tns:ISWLNControlServicioSocial">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="Obtener_CProyecto_O_IdProyecto">
       <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_IdProyecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_CProyecto">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_CProyecto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

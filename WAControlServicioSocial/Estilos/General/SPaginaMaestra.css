@@ -71,10 +71,10 @@ ul {
     font-size: 1.6rem;
 }
 
-.derecha__opciones ul li a:focus,
-.derecha__opciones ul li a:active {
-    font-weight: 700;
-}
+    .derecha__opciones ul li .enlace-estilo:focus,
+    .derecha__opciones ul li .enlace-estilo:active {
+        font-weight: 700;
+    }
 
 .derecha__iconos {
     margin-right: 1.2rem;

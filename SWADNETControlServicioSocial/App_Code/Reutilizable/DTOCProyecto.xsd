@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ControlServicioSocialDBConnectionString7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ControlServicioSocialDBConnectionString7 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ControlServicioSocialDBConnectionString7.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ControlServicioSocialDBConnectionString7" IsAppSettingsProperty="true" Modifier="Assembly" Name="ControlServicioSocialDBConnectionString7 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ControlServicioSocialDBConnectionString7.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CProyectoTableAdapter" GeneratorDataComponentClassName="CProyectoTableAdapter" Name="CProyecto" UserDataComponentName="CProyectoTableAdapter">
@@ -81,37 +81,37 @@
   <xs:element name="DTOCProyecto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DTOCProyecto" msprop:Generator_DataSetName="DTOCProyecto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CProyecto" msprop:Generator_RowEvHandlerName="CProyectoRowChangeEventHandler" msprop:Generator_RowDeletedName="CProyectoRowDeleted" msprop:Generator_RowDeletingName="CProyectoRowDeleting" msprop:Generator_RowEvArgName="CProyectoRowChangeEvent" msprop:Generator_TablePropName="CProyecto" msprop:Generator_RowChangedName="CProyectoRowChanged" msprop:Generator_RowChangingName="CProyectoRowChanging" msprop:Generator_TableClassName="CProyectoDataTable" msprop:Generator_RowClassName="CProyectoRow" msprop:Generator_TableVarName="tableCProyecto" msprop:Generator_UserTableName="CProyecto">
+        <xs:element name="CProyecto" msprop:Generator_RowClassName="CProyectoRow" msprop:Generator_RowEvHandlerName="CProyectoRowChangeEventHandler" msprop:Generator_RowDeletedName="CProyectoRowDeleted" msprop:Generator_RowDeletingName="CProyectoRowDeleting" msprop:Generator_RowEvArgName="CProyectoRowChangeEvent" msprop:Generator_TablePropName="CProyecto" msprop:Generator_RowChangedName="CProyectoRowChanged" msprop:Generator_UserTableName="CProyecto" msprop:Generator_RowChangingName="CProyectoRowChanging" msprop:Generator_TableClassName="CProyectoDataTable" msprop:Generator_TableVarName="tableCProyecto">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdProyecto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IdProyecto" msprop:Generator_ColumnPropNameInTable="IdProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnIdProyecto" msprop:Generator_UserColumnName="IdProyecto" type="xs:int" />
-              <xs:element name="NombreProyecto" msprop:Generator_ColumnPropNameInRow="NombreProyecto" msprop:Generator_ColumnPropNameInTable="NombreProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreProyecto" msprop:Generator_UserColumnName="NombreProyecto">
+              <xs:element name="IdProyecto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IdProyecto" msprop:Generator_ColumnPropNameInTable="IdProyectoColumn" msprop:Generator_ColumnPropNameInRow="IdProyecto" msprop:Generator_ColumnVarNameInTable="columnIdProyecto" type="xs:int" />
+              <xs:element name="NombreProyecto" msprop:Generator_UserColumnName="NombreProyecto" msprop:Generator_ColumnPropNameInTable="NombreProyectoColumn" msprop:Generator_ColumnPropNameInRow="NombreProyecto" msprop:Generator_ColumnVarNameInTable="columnNombreProyecto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DescripcionProyecto" msprop:Generator_ColumnPropNameInRow="DescripcionProyecto" msprop:Generator_ColumnPropNameInTable="DescripcionProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnDescripcionProyecto" msprop:Generator_UserColumnName="DescripcionProyecto">
+              <xs:element name="DescripcionProyecto" msprop:Generator_UserColumnName="DescripcionProyecto" msprop:Generator_ColumnPropNameInTable="DescripcionProyectoColumn" msprop:Generator_ColumnPropNameInRow="DescripcionProyecto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProyecto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UbicacionProyecto" msprop:Generator_ColumnPropNameInRow="UbicacionProyecto" msprop:Generator_ColumnPropNameInTable="UbicacionProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnUbicacionProyecto" msprop:Generator_UserColumnName="UbicacionProyecto">
+              <xs:element name="UbicacionProyecto" msprop:Generator_UserColumnName="UbicacionProyecto" msprop:Generator_ColumnPropNameInTable="UbicacionProyectoColumn" msprop:Generator_ColumnPropNameInRow="UbicacionProyecto" msprop:Generator_ColumnVarNameInTable="columnUbicacionProyecto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EstadoProyecto" msprop:Generator_ColumnPropNameInRow="EstadoProyecto" msprop:Generator_ColumnPropNameInTable="EstadoProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnEstadoProyecto" msprop:Generator_UserColumnName="EstadoProyecto" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="ImagenProyecto" msprop:Generator_ColumnPropNameInRow="ImagenProyecto" msprop:Generator_ColumnPropNameInTable="ImagenProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnImagenProyecto" msprop:Generator_UserColumnName="ImagenProyecto" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="HorasEstimadas" msprop:Generator_ColumnPropNameInRow="HorasEstimadas" msprop:Generator_ColumnPropNameInTable="HorasEstimadasColumn" msprop:Generator_ColumnVarNameInTable="columnHorasEstimadas" msprop:Generator_UserColumnName="HorasEstimadas" type="xs:unsignedByte" />
-              <xs:element name="FechaInicioProyecto" msprop:Generator_ColumnPropNameInRow="FechaInicioProyecto" msprop:Generator_ColumnPropNameInTable="FechaInicioProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnFechaInicioProyecto" msprop:Generator_UserColumnName="FechaInicioProyecto" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FechaFinProyecto" msprop:Generator_ColumnPropNameInRow="FechaFinProyecto" msprop:Generator_ColumnPropNameInTable="FechaFinProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnFechaFinProyecto" msprop:Generator_UserColumnName="FechaFinProyecto" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FechaCreacionProyecto" msprop:Generator_ColumnPropNameInRow="FechaCreacionProyecto" msprop:Generator_ColumnPropNameInTable="FechaCreacionProyectoColumn" msprop:Generator_ColumnVarNameInTable="columnFechaCreacionProyecto" msprop:Generator_UserColumnName="FechaCreacionProyecto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EstadoProyecto" msprop:Generator_UserColumnName="EstadoProyecto" msprop:Generator_ColumnPropNameInTable="EstadoProyectoColumn" msprop:Generator_ColumnPropNameInRow="EstadoProyecto" msprop:Generator_ColumnVarNameInTable="columnEstadoProyecto" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ImagenProyecto" msprop:Generator_UserColumnName="ImagenProyecto" msprop:Generator_ColumnPropNameInTable="ImagenProyectoColumn" msprop:Generator_ColumnPropNameInRow="ImagenProyecto" msprop:Generator_ColumnVarNameInTable="columnImagenProyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="HorasEstimadas" msprop:Generator_UserColumnName="HorasEstimadas" msprop:Generator_ColumnPropNameInTable="HorasEstimadasColumn" msprop:Generator_ColumnPropNameInRow="HorasEstimadas" msprop:Generator_ColumnVarNameInTable="columnHorasEstimadas" type="xs:unsignedByte" />
+              <xs:element name="FechaInicioProyecto" msprop:Generator_UserColumnName="FechaInicioProyecto" msprop:Generator_ColumnPropNameInTable="FechaInicioProyectoColumn" msprop:Generator_ColumnPropNameInRow="FechaInicioProyecto" msprop:Generator_ColumnVarNameInTable="columnFechaInicioProyecto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaFinProyecto" msprop:Generator_UserColumnName="FechaFinProyecto" msprop:Generator_ColumnPropNameInTable="FechaFinProyectoColumn" msprop:Generator_ColumnPropNameInRow="FechaFinProyecto" msprop:Generator_ColumnVarNameInTable="columnFechaFinProyecto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaCreacionProyecto" msprop:Generator_UserColumnName="FechaCreacionProyecto" msprop:Generator_ColumnPropNameInTable="FechaCreacionProyectoColumn" msprop:Generator_ColumnPropNameInRow="FechaCreacionProyecto" msprop:Generator_ColumnVarNameInTable="columnFechaCreacionProyecto" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

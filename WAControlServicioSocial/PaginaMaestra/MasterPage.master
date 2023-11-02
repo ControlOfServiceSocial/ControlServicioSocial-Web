@@ -29,8 +29,12 @@
     <div class="contenedor-header__derecha">
       <div class="derecha__opciones">
         <ul>
-          <li><a href="#">Proyectos</a></li>
-          <li><a href="#">Estudiantes</a></li>
+          <li>
+              <asp:HyperLink ID="lnkProyectos" runat="server" NavigateUrl="~/WebForm/Proyecto/PtableroProyecto.aspx" CssClass="enlace-estilo">Proyectos</asp:HyperLink>
+          </li>
+          <li>
+              <asp:HyperLink ID="lnkEstudiantes" runat="server" NavigateUrl="~/WebForm/Estudiante/PTableroEstudiante.aspx" CssClass="enlace-estilo">Estudiantes</asp:HyperLink>
+          </li>
         </ul>
       </div>
 
