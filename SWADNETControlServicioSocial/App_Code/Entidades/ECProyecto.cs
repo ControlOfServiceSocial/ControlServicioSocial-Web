@@ -13,6 +13,8 @@ public class ECProyecto
     [DataMember]    
     public int IdProyecto { get; set; }
     [DataMember]
+    public int IdSede { get; set; }
+    [DataMember]
     public string NombreProyecto { get; set; }
     [DataMember]
     public string DescripcionProyecto { get; set; }
@@ -21,7 +23,7 @@ public class ECProyecto
     [DataMember]
     public byte EstadoProyecto { get; set; }
     [DataMember]
-    public byte[] ImagenProyecto { get; set; }
+    public string ImagenProyecto { get; set; }
     [DataMember]
     public byte HorasEstimadas { get; set; }
     [DataMember]
@@ -37,11 +39,12 @@ public class ECProyecto
         // TODO: Agregar aquí la lógica del constructor
         //
         IdProyecto = int.MinValue;
+        IdSede = int.MinValue;
         NombreProyecto = string.Empty;
         DescripcionProyecto=string.Empty;
         UbicacionProyecto = string.Empty;
         EstadoProyecto=byte.MinValue;
-        ImagenProyecto = null;
+        ImagenProyecto = string.Empty;
         HorasEstimadas = byte.MinValue;
         FechaInicioProyecto=DateTime.MinValue;
         FechaFinProyecto = DateTime.MinValue;

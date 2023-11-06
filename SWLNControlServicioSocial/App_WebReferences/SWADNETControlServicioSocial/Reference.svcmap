@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:56886/SWADNETControlServicioSocial.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SWADNETControlServicioSocial.xsd" MetadataType="Schema" ID="ef968642-c80a-43ae-ad34-174e866328f7" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd1" />
-    <MetadataFile FileName="SWADNETControlServicioSocial.disco" MetadataType="Disco" ID="0ab80955-4ec6-4589-9884-1a62394385e1" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?disco" />
-    <MetadataFile FileName="SWADNETControlServicioSocial.wsdl" MetadataType="Wsdl" ID="bd74decd-df23-442b-84bb-db1292146ac9" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?wsdl" />
-    <MetadataFile FileName="SWADNETControlServicioSocial1.xsd" MetadataType="Schema" ID="8ae49516-1e99-4e4a-9556-1f1769b155eb" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd0" />
-    <MetadataFile FileName="SWADNETControlServicioSocial2.xsd" MetadataType="Schema" ID="19d30cec-611c-4ce2-bfb3-3138df0d0deb" SourceId="1" SourceUrl="http://localhost:56886/SWADNETControlServicioSocial.svc?xsd=xsd2" />
+    <MetadataFile FileName="SWADNETControlServicioSocial3.xsd" MetadataType="Schema" ID="d67d741a-6193-4569-a593-ea8cbb371c64" SourceId="1" SourceUrl="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc?xsd=xsd0" />
+    <MetadataFile FileName="SWADNETControlServicioSocial1.disco" MetadataType="Disco" ID="7e1a7c73-e10a-4de8-91ec-c8a2e8c46540" SourceId="1" SourceUrl="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc?disco" />
+    <MetadataFile FileName="SWADNETControlServicioSocial32.xsd" MetadataType="Schema" ID="4cbab677-a275-4483-bca4-5c693ebae9cc" SourceId="1" SourceUrl="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc?xsd=xsd2" />
+    <MetadataFile FileName="SWADNETControlServicioSocial1.wsdl" MetadataType="Wsdl" ID="c53ae705-c341-425f-b439-256002ece512" SourceId="1" SourceUrl="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc?wsdl" />
+    <MetadataFile FileName="SWADNETControlServicioSocial33.xsd" MetadataType="Schema" ID="67ffd087-ed1b-43e4-bed0-0233b6959b6e" SourceId="1" SourceUrl="http://swadnetcontrolserviciosocial.somee.com/SWADNETControlServicioSocial.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -27,6 +27,7 @@ public class CCProyecto
             {
                 eCProyecto = new ECProyecto();
                 eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.IdSede = drCProyecto.IdSede;
                 eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
                 eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
                 eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
@@ -55,6 +56,7 @@ public class CCProyecto
             foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
             {
                 eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.IdSede = drCProyecto.IdSede;
                 eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
                 eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
                 eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
@@ -85,6 +87,7 @@ public class CCProyecto
             {
                 eCProyecto = new ECProyecto();
                 eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.IdSede = drCProyecto.IdSede;
                 eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
                 eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
                 eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
