@@ -93,4 +93,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ECProyectoEstudiante" nillable="true" type="tns:ECProyectoEstudiante" />
+  <xs:complexType name="ECSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreSede" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECSede" nillable="true" type="tns:ECSede" />
 </xs:schema>

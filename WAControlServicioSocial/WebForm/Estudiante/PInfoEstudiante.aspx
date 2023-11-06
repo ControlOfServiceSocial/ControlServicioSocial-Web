@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoEstudiante.aspx.cs" Inherits="WebForm_Estudiante_PInfoEstudiante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoEstudiante.aspx.cs" Inherits="WebForm_Estudiante_PInfoEstudiante" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-<script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=Ahzo_9SFE2hHoIUJyb8E7C-1rUwMJe8hK3x939moz-MBeh6LghjnYUZXw2z34x9Q&callback=initializeMap" async defer></script>
+<script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=Ahzo_9SFE2hHoIUJyb8E7C-1rUwMJe8hK3x939moz-MBeh6LghjnYUZXw2z34x9Q&callback=initializeMap"></script>
 </head>
 <body onload="initializeMap()">
     <section class="contenedor">
@@ -44,14 +44,18 @@
           <p>Nombre completo: <asp:Label ID="lblNombreEstudiante" runat="server"></asp:Label></p>
           <p>Carrera: <asp:Label ID="lblNombreCarrera" runat="server"></asp:Label></p>
           <p>Horas acumuladas: <span>150 horas</span></p>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
       </div>
       <div class="seccion__proyectos tipo">
         <div class="tipo__proyecto proyecto">
           <p class="proyecto__titulo">Proyectos:</p>
         
-          <asp:GridView ID="gridViewProyectosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false">
+          <asp:GridView ID="gridViewProyectosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false" DataKeyNames="IdProyecto"
+              OnSelectedIndexChanged="GridViewProyectosEstudiante_SelectedIndexChanged" AutoGenerateSelectButton="true">
+              <SelectedRowStyle BackColor="LightGray" ForeColor="Black" />
             <Columns>
+                 
                 <asp:BoundField DataField="NombreProyecto" />
             </Columns>
         </asp:GridView>
@@ -93,45 +97,36 @@
     </form>
   </section>
     <script>
-        // Función para inicializar los mapas
-        function initializeMaps() {
-            // Mapa 1
-            var mapOptions1 = {
-                credentials: "TU_CLAVE_DE_API",
-                center: new Microsoft.Maps.Location(latitudMapa1, longitudMapa1), // Coordenadas del centro del primer mapa
+        // Función para crear un mapa
+        function createMap(elementId, latitude, longitude, pinColor) {
+            var mapOptions = {
+                credentials: "Ahzo_9SFE2hHoIUJyb8E7C-1rUwMJe8hK3x939moz-MBeh6LghjnYUZXw2z34x9Q",
+                center: new Microsoft.Maps.Location(latitude, longitude),
                 mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-                zoom: 15, // Nivel de zoom
+                zoom: 15,
                 showLocateMeButton: false,
                 showZoomButtons: false,
                 showMapTypeSelector: false
             };
-            var map1 = new Microsoft.Maps.Map(document.getElementById("mapaInicial"), mapOptions1);
+            var map = new Microsoft.Maps.Map(document.getElementById(elementId), mapOptions);
 
-            // Agrega un punto (marcador) al mapa 1
-            var pushpin1 = new Microsoft.Maps.Pushpin(map1.getCenter(), {
-                title: 'Punto 1', // Título del marcador
-                color: 'blue' // Color del marcador
+            // Agrega un punto (marcador) al mapa
+            var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), {
+                title: 'Punto', // Título del marcador
+                color: pinColor // Color del marcador
             });
-            map1.entities.push(pushpin1);
+            map.entities.push(pushpin);
+
+            return map;
+        }
+
+        // Función para inicializar los mapas
+        function initializeMaps() {
+            // Mapa 1
+            var map1 = createMap("mapaInicial", latitudMapa1, longitudMapa1, 'blue');
 
             // Mapa 2
-            var mapOptions2 = {
-                credentials: "TU_CLAVE_DE_API",
-                center: new Microsoft.Maps.Location(latitudMapa2, longitudMapa2), // Coordenadas del centro del segundo mapa
-                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-                zoom: 15, // Nivel de zoom
-                showLocateMeButton: false,
-                showZoomButtons: false,
-                showMapTypeSelector: false,
-            };
-            var map2 = new Microsoft.Maps.Map(document.getElementById("mapaFinal"), mapOptions2);
-
-            // Agrega un punto (marcador) al mapa 2
-            var pushpin2 = new Microsoft.Maps.Pushpin(map2.getCenter(), {
-                title: 'Punto 2', // Título del marcador
-                color: 'red' // Color del marcador
-            });
-            map2.entities.push(pushpin2);
+            var map2 = createMap("mapaFinal", latitudMapa2, longitudMapa2, 'red');
         }
 
         // Llama a la función de inicialización cuando la página se cargue

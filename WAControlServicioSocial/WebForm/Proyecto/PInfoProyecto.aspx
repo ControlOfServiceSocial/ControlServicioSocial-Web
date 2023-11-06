@@ -43,7 +43,7 @@
         </div>
         <div>
           <p>Sede del proyecto:</p>
-          <p>Sede de tiquipaya</p>
+          <p><asp:Label ID="lblSede" runat="server"></asp:Label></p>
         </div>
       </section>
 

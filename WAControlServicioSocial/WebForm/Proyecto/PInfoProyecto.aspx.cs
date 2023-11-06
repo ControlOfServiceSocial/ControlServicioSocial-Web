@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 public partial class WebForm_Proyecto_PInfoProyecto : System.Web.UI.Page
 {
     CCProyecto cCProyecto = new CCProyecto();
+    CCSede cCSede = new CCSede();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -17,7 +18,8 @@ public partial class WebForm_Proyecto_PInfoProyecto : System.Web.UI.Page
             {
                 int proyectoId = Convert.ToInt32(Request.QueryString["idProyecto"]);
                 ECProyecto proyecto = cCProyecto.ObtenerProyectoPorId_C(proyectoId);
-
+                ECSede sede = cCSede.ObtenerSedeIdProyecto(proyectoId);
+                lblSede.Text = sede.NombreSede;
                 lblSubtitulo.Text = proyecto.NombreProyecto;
                 lblNombreProyecto.Text = proyecto.NombreProyecto;
                 lblFechaInicio.Text = proyecto.FechaInicioProyecto.ToString("dd/MM/yyyy");

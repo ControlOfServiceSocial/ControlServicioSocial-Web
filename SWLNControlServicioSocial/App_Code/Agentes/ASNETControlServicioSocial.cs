@@ -162,6 +162,23 @@ public class ASNETControlServicioSocial
         }
         return lstECProyecto;
     }
+
+    #region Sede
+    public ECSede ObtenerSedeIdProyecto(int idProyecto)
+    {
+        ECSede sede = new ECSede();
+        try
+        {
+            sede = swADNETControlServicioSocial.ObtenerSedeIdProyecto(idProyecto);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return sede;
+    }
+    #endregion
     #endregion
     #endregion
 }

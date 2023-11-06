@@ -88,4 +88,12 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         lstECProyectos = cControlServicioSocial.Obtener_CProyecto_O_CProyecto(idEstudiante);
         return lstECProyectos;
     }
+
+    public ECSede ObtenerSedeIdProyecto(int IdProyecto)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        ECSede eCSede = new ECSede();
+        eCSede = cControlServicioSocial.ObtenerSedeIdProyecto(IdProyecto);
+        return eCSede;
+    }
 }

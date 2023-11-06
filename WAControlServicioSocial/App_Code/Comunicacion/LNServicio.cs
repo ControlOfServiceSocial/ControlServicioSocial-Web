@@ -130,5 +130,19 @@ public class LNServicio
         return proyecto;
     }
 
+    public ECSede ObtenerSedeIdProyecto(int idProyecto)
+    {
+        ECSede sede = new ECSede();
+        try
+        {
+            sede = swlnControlServicioSocial.ObtenerSedeIdProyecto(idProyecto);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return sede;
+    }
     #endregion
 }

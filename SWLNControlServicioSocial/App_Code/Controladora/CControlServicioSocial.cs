@@ -153,5 +153,21 @@ public class CControlServicioSocial
         }
         return lstECProyecto;
     }
+
+    public ECSede ObtenerSedeIdProyecto(int idProyecto)
+    {
+        ECSede sede = new ECSede();
+        try
+        {
+            sede = asNetControlServicioSocial.ObtenerSedeIdProyecto(idProyecto);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return sede;
+    }
+
     #endregion
 }
