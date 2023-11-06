@@ -133,4 +133,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerProyectoEstudiantePorIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+        <xs:element minOccurs="0" name="IdEstudiante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProyectoEstudiantePorIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ObtenerProyectoEstudiantePorIdsResult" nillable="true" type="q11:ECProyectoEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

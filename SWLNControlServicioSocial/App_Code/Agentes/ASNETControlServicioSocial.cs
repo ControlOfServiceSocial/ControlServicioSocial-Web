@@ -162,6 +162,7 @@ public class ASNETControlServicioSocial
         }
         return lstECProyecto;
     }
+    #endregion
 
     #region Sede
     public ECSede ObtenerSedeIdProyecto(int idProyecto)
@@ -179,6 +180,22 @@ public class ASNETControlServicioSocial
         return sede;
     }
     #endregion
+
+    #region ProyectoEstudiante
+    public ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante)
+    {
+        ECProyectoEstudiante proyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            proyectoEstudiante = swADNETControlServicioSocial.ObtenerProyectoEstudiantePorIds(IdProyecto, IdEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return proyectoEstudiante;
+    }
     #endregion
     #endregion
 }

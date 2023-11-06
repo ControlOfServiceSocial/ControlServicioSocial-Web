@@ -67,8 +67,8 @@ public class CCProyectoEstudiante
                 eCProyectoEstudiante.HoraFinal = drCProyectoEstudiante.HoraFinal;
                 eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;
                 eCProyectoEstudiante.LongitudInicial = drCProyectoEstudiante.LongitudInicial;
-                eCProyectoEstudiante.LatitudInicial = drCProyectoEstudiante.LatitudInicial;
                 eCProyectoEstudiante.LatitudFinal = drCProyectoEstudiante.LatitudFinal;
+                eCProyectoEstudiante.LongitudFinal = drCProyectoEstudiante.LongitudFinal;
                 break; // Como solo queremos un ECProyectoEstudiante, rompemos el ciclo después de la primera iteración
             }
         }

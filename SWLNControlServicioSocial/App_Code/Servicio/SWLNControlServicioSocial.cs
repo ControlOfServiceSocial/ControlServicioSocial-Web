@@ -96,4 +96,12 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         eCSede = cControlServicioSocial.ObtenerSedeIdProyecto(IdProyecto);
         return eCSede;
     }
+
+    public ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        eCProyectoEstudiante = cControlServicioSocial.ObtenerProyectoEstudiantePorIds(IdProyecto, IdEstudiante);
+        return eCProyectoEstudiante;
+    }
 }

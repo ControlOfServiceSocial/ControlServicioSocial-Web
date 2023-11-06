@@ -9,10 +9,15 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
     CFacultad facultadService = new CFacultad();
     CCertificado certificadoService = new CCertificado();
     CCProyecto proyectoService = new CCProyecto();
+    CProyectoEstudiante proyectoEstudianteService = new CProyectoEstudiante();
 
     private int estudianteId;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (ViewState["estudianteId"] != null)
+        {
+            estudianteId = (int)ViewState["estudianteId"]; // Recupera el valor del ViewState después de un postback
+        }
         if (!IsPostBack)
         {
             if (Request.QueryString["estudianteId"] != null && int.TryParse(Request.QueryString["estudianteId"], out estudianteId))
@@ -22,12 +27,14 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
 
                 lblNombreEstudiante.Text = estudiante.NombreEstudiante + " " + estudiante.ApellidoPaternoEstudiante + " " + estudiante.ApellidoMaternoEstudiante;
                 lblNombreCarrera.Text = facultad.NombreFacultad;
+                lblTiempoContribucion.Text = "0 horas";
 
                 CargarProyectos(estudianteId);
                 CargarCertificados(estudianteId);
                 InicializarMapa();
-            }
+            } 
         }
+        ViewState["estudianteId"] = estudianteId; // Mover esta línea fuera del bloque if (!IsPostBack)
     }
 
     private void InicializarMapa()
@@ -61,15 +68,22 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
         if (rowIndex >= 0)
         {
             int idProyecto = (int)gridViewProyectosEstudiante.DataKeys[rowIndex]["IdProyecto"];
-            Label1.Text = "IdProyecto seleccionado: " + idProyecto;
-
+            ECProyectoEstudiante proyectoEstudiante = proyectoEstudianteService.ObtenerProyectoEstudiantePorIds(idProyecto, estudianteId);
+            if (proyectoEstudiante.HoraAcumulada == 1)
+            {
+                lblTiempoContribucion.Text = proyectoEstudiante.HoraAcumulada.ToString() + " hora";
+            } else
+            {
+                lblTiempoContribucion.Text = proyectoEstudiante.HoraAcumulada.ToString() + " horas";
+            }
+            
             // Coordenadas estáticas para el primer mapa
-            double latitudMapa1 = -17.359334;  
-            double longitudMapa1 = -66.171867;
+            double latitudMapa1 = double.Parse(proyectoEstudiante.LatitudInicial);
+            double longitudMapa1 = double.Parse(proyectoEstudiante.LongitudInicial);
 
             // Coordenadas estáticas para el segundo mapa
-            double latitudMapa2 = -17.406050;  
-            double longitudMapa2 = -66.140259;
+            double latitudMapa2 = double.Parse(proyectoEstudiante.LatitudFinal);
+            double longitudMapa2 = double.Parse(proyectoEstudiante.LongitudFinal);
 
             // Actualiza las coordenadas en los mapas
             ActualizarMapas(latitudMapa1, longitudMapa1, latitudMapa2, longitudMapa2);

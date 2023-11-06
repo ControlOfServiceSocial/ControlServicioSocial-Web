@@ -144,5 +144,20 @@ public class LNServicio
         }
         return sede;
     }
+
+    public ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            eCProyectoEstudiante = swlnControlServicioSocial.ObtenerProyectoEstudiantePorIds(IdProyecto, IdEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return eCProyectoEstudiante;
+    }
     #endregion
 }

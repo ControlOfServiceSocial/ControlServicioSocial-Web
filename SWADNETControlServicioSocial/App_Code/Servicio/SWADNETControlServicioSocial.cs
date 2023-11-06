@@ -129,4 +129,12 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
         eCSede = cCSede.ObtenerSedeIdProyecto(IdProyecto);
         return eCSede;
     }
+
+    public ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        CCProyectoEstudiante cCProyectoEstudiante = new CCProyectoEstudiante();
+        eCProyectoEstudiante = cCProyectoEstudiante.ObtenerCProyectoEstudiantePorIds(IdProyecto, IdEstudiante);
+        return eCProyectoEstudiante;
+    }
 }

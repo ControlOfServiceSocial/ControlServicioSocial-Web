@@ -169,5 +169,19 @@ public class CControlServicioSocial
         return sede;
     }
 
+    public ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante)
+    {
+        ECProyectoEstudiante proyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            proyectoEstudiante = asNetControlServicioSocial.ObtenerProyectoEstudiantePorIds(IdProyecto, IdEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return proyectoEstudiante;
+    }   
     #endregion
 }

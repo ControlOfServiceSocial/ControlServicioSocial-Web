@@ -40,11 +40,10 @@
           </div>
         </div>
         <div class="informacion__estudiante">
-          <p>Tiempo de contribución: <span>12 horas</span></p>
+          <p>Tiempo de contribución: <asp:Label ID="lblTiempoContribucion" runat="server"></asp:Label></p>
           <p>Nombre completo: <asp:Label ID="lblNombreEstudiante" runat="server"></asp:Label></p>
           <p>Carrera: <asp:Label ID="lblNombreCarrera" runat="server"></asp:Label></p>
           <p>Horas acumuladas: <span>150 horas</span></p>
-            <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
       </div>
       <div class="seccion__proyectos tipo">
