@@ -59,6 +59,9 @@ public interface ISWADNETControlServicioSocial
 	ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante);
     [OperationContract]
     List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante);
+
+	[OperationContract]
+	void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante);
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

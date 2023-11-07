@@ -72,4 +72,30 @@ public class ADCProyectoEstudiante
         }
         return dTOCProyectoEstudiante;
     }
+
+    public void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("InsertarProyectoEstudiante");
+
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@IdProyecto", DbType.Int32, eCProyectoEstudiante.IdProyecto);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@IdEstudiante", DbType.Int32, eCProyectoEstudiante.IdEstudiante);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@HoraAcumulada", DbType.Int32, eCProyectoEstudiante.HoraAcumulada);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@HoraInicio", DbType.DateTime, eCProyectoEstudiante.HoraInicio);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@HoraFinal", DbType.DateTime, eCProyectoEstudiante.HoraFinal);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@LatitudInicial", DbType.String, eCProyectoEstudiante.LatitudInicial);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@LongitudInicial", DbType.String, eCProyectoEstudiante.LongitudInicial);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@LatitudFinal", DbType.String, eCProyectoEstudiante.LatitudFinal);
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@LongitudFinal", DbType.String, eCProyectoEstudiante.LongitudFinal);
+
+            BDSWADNETControlServicioSocial.ExecuteNonQuery(dbCommand);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

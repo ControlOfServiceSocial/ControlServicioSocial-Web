@@ -40,4 +40,17 @@ public class CProyectoEstudiante
         }
         return lstProyectoEstudiante;
     }
+
+    public void InsertarProyectoEstudiate(int idProyecto, int idEstudiante)
+    {
+        try
+        {
+            lNServicio.InsertarProyectoEstudiante(idProyecto, idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

@@ -198,5 +198,28 @@ public class CControlServicioSocial
         }
         return lstEcProyectoEstudiante;
     }
+
+    public void InsertarProyectoEstudiante(int idProyecto, int idEstudiante)
+    {
+        ECProyectoEstudiante eCProyectoEstudiante = new ECProyectoEstudiante();
+        try
+        {
+            eCProyectoEstudiante.IdProyecto = idProyecto;
+            eCProyectoEstudiante.IdEstudiante = idEstudiante;
+            eCProyectoEstudiante.HoraAcumulada = 0;
+            eCProyectoEstudiante.HoraInicio = DateTime.Now;
+            eCProyectoEstudiante.HoraFinal = DateTime.Now;
+            eCProyectoEstudiante.LatitudInicial = "0";
+            eCProyectoEstudiante.LongitudInicial = "0";
+            eCProyectoEstudiante.LatitudFinal = "0";
+            eCProyectoEstudiante.LongitudFinal = "0";
+            asNetControlServicioSocial.InsertarProyectoEstudiante(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
 }

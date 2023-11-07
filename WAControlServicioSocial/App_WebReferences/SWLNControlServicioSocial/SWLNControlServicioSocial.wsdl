@@ -79,6 +79,12 @@
   <wsdl:message name="ISWLNControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerProyectoEstudiantePorIdEstudianteResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_InsertarProyectoEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarProyectoEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_InsertarProyectoEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarProyectoEstudianteResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWLNControlServicioSocial">
     <wsdl:operation name="Obtener_CEstudiante_O">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CEstudiante_O" message="tns:ISWLNControlServicioSocial_Obtener_CEstudiante_O_InputMessage" />
@@ -127,6 +133,10 @@
     <wsdl:operation name="ObtenerProyectoEstudiantePorIdEstudiante">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudiante" message="tns:ISWLNControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudianteResponse" message="tns:ISWLNControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarProyectoEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudiante" message="tns:ISWLNControlServicioSocial_InsertarProyectoEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudianteResponse" message="tns:ISWLNControlServicioSocial_InsertarProyectoEstudiante_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWLNControlServicioSocial" type="tns:ISWLNControlServicioSocial">
@@ -232,6 +242,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerProyectoEstudiantePorIdEstudiante">
       <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarProyectoEstudiante">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudiante" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

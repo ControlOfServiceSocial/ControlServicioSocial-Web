@@ -204,4 +204,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertarProyectoEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="eCProyectoEstudiante" nillable="true" type="q16:ECProyectoEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarProyectoEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

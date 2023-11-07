@@ -24,6 +24,14 @@ body {
     min-height: 100vh;
     font-family: 'Work Sans', sans-serif;
     font-size: 1.6rem;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .form {
@@ -47,7 +55,11 @@ body {
         margin-top: 2.9rem;
         margin-bottom: 0.3rem;
     }
-
+.error {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
 .form__titulo {
     font-size: 22px;
     margin-bottom: 3.9rem;
@@ -123,7 +135,7 @@ body {
     margin-top: 2.5rem;
 }
 
-    .form__horas span {
-        color: #000;
-        font-size: 13px;
-    }
+.form__horas span {
+    color: #000;
+    font-size: 13px;
+}

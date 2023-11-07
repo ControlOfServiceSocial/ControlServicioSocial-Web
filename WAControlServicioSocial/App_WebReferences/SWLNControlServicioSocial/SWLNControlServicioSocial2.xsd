@@ -162,4 +162,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertarProyectoEstudiante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idProyecto" type="xs:int" />
+        <xs:element minOccurs="0" name="idEstudiante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarProyectoEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

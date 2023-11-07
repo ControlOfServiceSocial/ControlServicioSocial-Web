@@ -211,6 +211,19 @@ public class ASNETControlServicioSocial
         }
         return lstEcProyectoEstudiante;
     }
+
+    public void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        try
+        {
+            swADNETControlServicioSocial.InsertarProyectoEstudiante(eCProyectoEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
     #endregion
 }

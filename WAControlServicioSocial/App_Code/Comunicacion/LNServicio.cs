@@ -174,5 +174,18 @@ public class LNServicio
         }
         return lstECProyectoEstudiantes;
     }
+
+    public void InsertarProyectoEstudiante(int idProyecto, int idEstudiante)
+    {
+        try
+        {
+            swlnControlServicioSocial.InsertarProyectoEstudiante(idProyecto, idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
     #endregion
 }

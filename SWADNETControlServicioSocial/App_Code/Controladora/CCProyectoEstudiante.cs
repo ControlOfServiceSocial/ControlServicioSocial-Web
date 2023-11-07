@@ -105,5 +105,10 @@ public class CCProyectoEstudiante
         }
         return lstECProyectoEstudiante;
     }
+
+    public void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante)
+    {
+        aDCProyectoEstudiante.InsertarProyectoEstudiante(eCProyectoEstudiante);
+    }
     #endregion
 }
