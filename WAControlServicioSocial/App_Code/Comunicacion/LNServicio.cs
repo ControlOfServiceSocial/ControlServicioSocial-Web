@@ -159,5 +159,20 @@ public class LNServicio
         }
         return eCProyectoEstudiante;
     }
+
+    public List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante)
+    {
+        List<ECProyectoEstudiante> lstECProyectoEstudiantes = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstECProyectoEstudiantes = swlnControlServicioSocial.ObtenerProyectoEstudiantePorIdEstudiante(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstECProyectoEstudiantes;
+    }
     #endregion
 }

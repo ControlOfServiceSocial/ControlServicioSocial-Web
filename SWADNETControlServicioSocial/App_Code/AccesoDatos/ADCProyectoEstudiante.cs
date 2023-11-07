@@ -55,4 +55,21 @@ public class ADCProyectoEstudiante
         }
         return dTOCProyectoEstudiante;
     }
+
+    public DTOCProyectoEstudiante ObtenerCProyectoEstudiantePorIdEstudiante(int idEstudiante)
+    {
+        DTOCProyectoEstudiante dTOCProyectoEstudiante = new DTOCProyectoEstudiante();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("ObtenerCProyectoEstudiantePorIdEstudiante");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "@IdEstudiante", DbType.Int32, idEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyectoEstudiante, "CProyectoEstudiante");
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+        return dTOCProyectoEstudiante;
+    }
 }

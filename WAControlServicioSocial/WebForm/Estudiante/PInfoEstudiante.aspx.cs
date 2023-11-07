@@ -1,5 +1,6 @@
 ﻿using SWLNControlServicioSocial;
 using System;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -28,6 +29,10 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
                 lblNombreEstudiante.Text = estudiante.NombreEstudiante + " " + estudiante.ApellidoPaternoEstudiante + " " + estudiante.ApellidoMaternoEstudiante;
                 lblNombreCarrera.Text = facultad.NombreFacultad;
                 lblTiempoContribucion.Text = "0 horas";
+
+                var proyectosEstudiante = proyectoEstudianteService.ObtenerProyectoEstudiantePorIdEstudiante(estudianteId);
+                var totalHorasAcumuladas = proyectosEstudiante.Sum(pe => pe.HoraAcumulada);
+                lblHorasTotales.Text = totalHorasAcumuladas + (totalHorasAcumuladas == 1 ? " hora" : " horas");
 
                 CargarProyectos(estudianteId);
                 CargarCertificados(estudianteId);
@@ -94,5 +99,18 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
     {
         string script = String.Format("<script>var latitudMapa1 = {0}; var longitudMapa1 = {1}; var latitudMapa2 = {2}; var longitudMapa2 = {3}; initializeMaps();</script>", latitudMapa1, longitudMapa1, latitudMapa2, longitudMapa2);
         Page.ClientScript.RegisterStartupScript(this.GetType(), "ActualizarMapas", script, false);
+    }
+
+    protected void gridViewCertificadosEstudiante_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Descargar")
+        {
+            string nombreArchivo = e.CommandArgument.ToString();
+            string rutaArchivo = Server.MapPath("~/Archivos/" + nombreArchivo + ".pdf");
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombreArchivo + ".pdf");
+            Response.TransmitFile(rutaArchivo);
+            Response.End();
+        }
     }
 }

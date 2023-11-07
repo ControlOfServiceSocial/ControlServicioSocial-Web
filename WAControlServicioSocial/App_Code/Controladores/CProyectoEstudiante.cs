@@ -25,4 +25,19 @@ public class CProyectoEstudiante
         }
         return proyectoEstudiante;
     }
+
+    public List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante)
+    {
+        List<ECProyectoEstudiante> lstProyectoEstudiante = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstProyectoEstudiante = lNServicio.ObtenerProyectoEstudiantePorIdEstudiante(idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstProyectoEstudiante;
+    }
 }

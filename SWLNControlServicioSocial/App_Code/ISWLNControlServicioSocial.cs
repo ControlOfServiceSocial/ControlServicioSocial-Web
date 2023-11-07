@@ -47,5 +47,7 @@ public interface ISWLNControlServicioSocial
 
 	[OperationContract]
 	ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante);
+	[OperationContract]
+	List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int IdEstudiante);
 }
 

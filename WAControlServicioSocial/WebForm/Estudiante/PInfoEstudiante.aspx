@@ -15,7 +15,7 @@
 <body onload="initializeMap()">
     <section class="contenedor">
     <div class="boton-retorno">
-      <a href="javascript:void(0);" onclick="window.history.back();">
+      <a href="PTableroEstudiante.aspx">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
         </svg>         
@@ -43,7 +43,8 @@
           <p>Tiempo de contribución: <asp:Label ID="lblTiempoContribucion" runat="server"></asp:Label></p>
           <p>Nombre completo: <asp:Label ID="lblNombreEstudiante" runat="server"></asp:Label></p>
           <p>Carrera: <asp:Label ID="lblNombreCarrera" runat="server"></asp:Label></p>
-          <p>Horas acumuladas: <span>150 horas</span></p>
+          <p>Horas acumuladas: <asp:Label ID="lblHorasTotales" runat="server"></asp:Label></p>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
       </div>
       <div class="seccion__proyectos tipo">
@@ -64,7 +65,7 @@
         <div class="tipo__certificado">
           <p class="certificado__titulo">Certificados:</p>
        
-         <asp:GridView ID="gridViewCertificadosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false">
+         <asp:GridView ID="gridViewCertificadosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false" OnRowCommand="gridViewCertificadosEstudiante_RowCommand">
     <Columns>
         <asp:TemplateField>
             <ItemTemplate>
@@ -73,14 +74,14 @@
         </asp:TemplateField>
         <asp:TemplateField>
             <ItemTemplate>
-                <div class="certificado__elemento elemento">
-                    <div class="elemento__contenedor-icono">
-                        <a class="elemento__icono" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="mis-estilos-svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                            </svg>
-                        </a>
-                    </div>
+            <div class="certificado__elemento elemento">
+                <div class="elemento__contenedor-icono">
+                    <asp:LinkButton ID="lnkDescargar" CssClass="elemento__icono" CommandArgument='<%# Eval("DocumentoCertificado") %>' CommandName="Descargar" runat="server">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="mis-estilos-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                    </asp:LinkButton>
+                </div>
                 </div>
             </ItemTemplate>
         </asp:TemplateField>

@@ -91,6 +91,12 @@
   <wsdl:message name="ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIds_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerProyectoEstudiantePorIdsResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectoEstudiantePorIdEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectoEstudiantePorIdEstudianteResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWADNETControlServicioSocial">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/GetData" message="tns:ISWADNETControlServicioSocial_GetData_InputMessage" />
@@ -147,6 +153,10 @@
     <wsdl:operation name="ObtenerProyectoEstudiantePorIds">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIds" message="tns:ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIds_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIdsResponse" message="tns:ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectoEstudiantePorIdEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudiante" message="tns:ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudianteResponse" message="tns:ISWADNETControlServicioSocial_ObtenerProyectoEstudiantePorIdEstudiante_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWADNETControlServicioSocial" type="tns:ISWADNETControlServicioSocial">
@@ -270,6 +280,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerProyectoEstudiantePorIds">
       <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectoEstudiantePorIdEstudiante">
+      <soap:operation soapAction="http://tempuri.org/ISWADNETControlServicioSocial/ObtenerProyectoEstudiantePorIdEstudiante" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -182,6 +182,21 @@ public class CControlServicioSocial
             throw;
         }
         return proyectoEstudiante;
-    }   
+    }
+
+    public List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante)
+    {
+        List<ECProyectoEstudiante> lstEcProyectoEstudiante = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstEcProyectoEstudiante = asNetControlServicioSocial.ObtenerProyectoEstudiantePorIdEstudiante(idEstudiante);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcProyectoEstudiante;
+    }
     #endregion
 }

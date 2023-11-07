@@ -196,6 +196,21 @@ public class ASNETControlServicioSocial
         }
         return proyectoEstudiante;
     }
+
+    public List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante)
+    {
+        List<ECProyectoEstudiante> lstEcProyectoEstudiante = new List<ECProyectoEstudiante>();
+        try
+        {
+            lstEcProyectoEstudiante = swADNETControlServicioSocial.ObtenerProyectoEstudiantePorIdEstudiante(idEstudiante).ToList();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        return lstEcProyectoEstudiante;
+    }
     #endregion
     #endregion
 }
