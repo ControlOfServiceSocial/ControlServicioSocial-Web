@@ -151,4 +151,33 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
         CCProyectoEstudiante cCProyectoEstudiante = new CCProyectoEstudiante();
         cCProyectoEstudiante.InsertarProyectoEstudiante(eCProyectoEstudiante);
     }
+
+
+    #region Tabla: Proyecto
+    #region insert
+    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    {
+        CCProyecto cCProyecto = new CCProyecto();
+        cCProyecto.Insertar_CProyecto_I(eCProyecto);
+    }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        CCProyecto cCProyecto = new CCProyecto();
+        List<ECProyecto> lstCProyecto = new List<ECProyecto>();
+        lstCProyecto = cCProyecto.Obtener_CProyecto_O_ID(Idproyecto);
+        return lstCProyecto;
+    }
+    #endregion
+
+    #region update
+    public void Actualizar_CProyecto_A(ECProyecto eCProyecto)
+    {
+        CCProyecto cCProyecto = new CCProyecto();
+        cCProyecto.Actualizar_CProyecto_A(eCProyecto);
+    }
+    #endregion
+    #endregion
 }

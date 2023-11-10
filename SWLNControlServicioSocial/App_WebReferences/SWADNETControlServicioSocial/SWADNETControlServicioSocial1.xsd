@@ -216,4 +216,42 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_CProyecto_I">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="eCProyecto" nillable="true" type="q17:ECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_CProyecto_IResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O_ID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Idproyecto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O_IDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_O_IDResult" nillable="true" type="q18:ArrayOfECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CProyecto_A">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="eCProyecto" nillable="true" type="q19:ECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CProyecto_AResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

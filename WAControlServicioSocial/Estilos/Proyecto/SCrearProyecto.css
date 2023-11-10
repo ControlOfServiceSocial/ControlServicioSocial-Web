@@ -1,0 +1,120 @@
+﻿img {
+    margin: 0 auto;
+    max-width: 100px;
+}
+
+body {
+    margin: 10;
+    font-family: sans-serif;
+    background: #fff;
+}
+
+.proyect-box h2 {
+    text-align: left;
+    color: var(--Gray, #666);
+}
+
+/* Estilos para el card */
+.proyect-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1100px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+    /* Formulario */
+    .proyect-box form {
+        display: flex;
+        flex-direction: column;
+    }
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.form-item {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+#advertencia {
+    color: var(--basic-gradient, #C4161C);
+}
+
+#imageFile {
+    text-align: center;
+    padding: 5px;
+    background: #E4E4E4;
+    ;
+    display: table;
+    border: 1px solid #ccc;
+    color: var(--Gray, #666)
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input,
+select,
+textarea {
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: var(--Gray, #666);
+    border: none;
+    border-bottom: 1px solid #8C4975;
+    outline: none;
+    background: transparent;
+}
+
+    textarea::placeholder, input::placeholder {
+        color: var(--Gray, #666); /* Color deseado (en este caso, rojo) */
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        border-radius: 7px;
+        background: var(--basic-colour, #8C4975);
+        box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+        color: var(--background-color, #FAFAFB);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 7px;
+    }
+
+        input[type="submit"]:hover {
+            background: #8C4975;
+        }
+
+    input[type="button"] {
+        background: #ffffff;
+        border-radius: 7px;
+        border: 2px solid var(--basic-colour, #8C4975);
+        background: var(--background-color, #FAFAFB);
+        color: var(--basic-colour, #8C4975);
+    }
+
+.form-item input[type="button"],
+.form-item input[type="submit"] {
+    width: auto; /* Ocupa el ancho necesario */
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}

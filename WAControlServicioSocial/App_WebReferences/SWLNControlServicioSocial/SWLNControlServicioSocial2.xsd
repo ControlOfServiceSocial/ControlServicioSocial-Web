@@ -175,4 +175,61 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_CProyecto_I">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EstadoProyecto" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaCreacionProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_CProyecto_IResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O_ID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Idproyecto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_CProyecto_O_IDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Obtener_CProyecto_O_IDResult" nillable="true" type="q13:ArrayOfECProyecto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CProyecto_A">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+        <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DescripcionProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UbicacionProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EstadoProyecto" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="ImagenProyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HorasEstimadas" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="FechaInicioProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaCreacionProyecto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="IdSede" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CProyecto_AResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

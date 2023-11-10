@@ -85,6 +85,24 @@
   <wsdl:message name="ISWLNControlServicioSocial_InsertarProyectoEstudiante_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertarProyectoEstudianteResponse" />
   </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Insertar_CProyecto_I_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_CProyecto_I" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Insertar_CProyecto_I_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_CProyecto_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_ID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_ID" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Obtener_CProyecto_O_ID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CProyecto_O_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Actualizar_CProyecto_A_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyecto_A" />
+  </wsdl:message>
+  <wsdl:message name="ISWLNControlServicioSocial_Actualizar_CProyecto_A_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_CProyecto_AResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISWLNControlServicioSocial">
     <wsdl:operation name="Obtener_CEstudiante_O">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CEstudiante_O" message="tns:ISWLNControlServicioSocial_Obtener_CEstudiante_O_InputMessage" />
@@ -137,6 +155,18 @@
     <wsdl:operation name="InsertarProyectoEstudiante">
       <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudiante" message="tns:ISWLNControlServicioSocial_InsertarProyectoEstudiante_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudianteResponse" message="tns:ISWLNControlServicioSocial_InsertarProyectoEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_CProyecto_I">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Insertar_CProyecto_I" message="tns:ISWLNControlServicioSocial_Insertar_CProyecto_I_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Insertar_CProyecto_IResponse" message="tns:ISWLNControlServicioSocial_Insertar_CProyecto_I_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_ID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_ID" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_ID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_IDResponse" message="tns:ISWLNControlServicioSocial_Obtener_CProyecto_O_ID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyecto_A">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Actualizar_CProyecto_A" message="tns:ISWLNControlServicioSocial_Actualizar_CProyecto_A_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWLNControlServicioSocial/Actualizar_CProyecto_AResponse" message="tns:ISWLNControlServicioSocial_Actualizar_CProyecto_A_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISWLNControlServicioSocial" type="tns:ISWLNControlServicioSocial">
@@ -251,6 +281,33 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarProyectoEstudiante">
       <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/InsertarProyectoEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_CProyecto_I">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Insertar_CProyecto_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CProyecto_O_ID">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Obtener_CProyecto_O_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_CProyecto_A">
+      <soap:operation soapAction="http://tempuri.org/ISWLNControlServicioSocial/Actualizar_CProyecto_A" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

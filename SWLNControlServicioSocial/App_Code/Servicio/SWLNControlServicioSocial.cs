@@ -118,4 +118,32 @@ public class SWLNControlServicioSocial : ISWLNControlServicioSocial
         CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
         cControlServicioSocial.InsertarProyectoEstudiante(idProyecto, idEstudiante);
     }
+
+    #region Tabla: Proyecto
+    #region insert
+    public void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        cControlServicioSocial.Insertar_CProyecto_I(NombreProyecto, DescripcionProyecto, UbicacionProyecto, EstadoProyecto, ImagenProyecto, HorasEstimadas, FechaInicioProyecto, FechaFinProyecto, FechaCreacionProyecto, IdSede);
+    }
+    #endregion
+
+    #region get
+    public List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        List<ECProyecto> lstEcProyecto = new List<ECProyecto>();
+        lstEcProyecto = cControlServicioSocial.Obtener_CProyecto_O_ID(Idproyecto);
+        return lstEcProyecto;
+    }
+    #endregion
+
+    #region update
+    public void Actualizar_CProyecto_A(int IdProyecto, string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede)
+    {
+        CControlServicioSocial cControlServicioSocial = new CControlServicioSocial();
+        cControlServicioSocial.Actualizar_CProyecto_A(IdProyecto, NombreProyecto, DescripcionProyecto, UbicacionProyecto, EstadoProyecto, ImagenProyecto, HorasEstimadas, FechaInicioProyecto, FechaFinProyecto, FechaCreacionProyecto, IdSede);
+    }
+    #endregion
+    #endregion
 }

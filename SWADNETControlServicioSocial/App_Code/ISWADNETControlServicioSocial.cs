@@ -62,6 +62,22 @@ public interface ISWADNETControlServicioSocial
 
 	[OperationContract]
 	void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante);
+
+    #region Tabla: Proyecto
+    #region insert
+    [OperationContract]
+    void Insertar_CProyecto_I(ECProyecto eCProyecto);
+    #endregion
+
+    #region get 
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+    #endregion
+    #region update a proyecto
+    [OperationContract]
+    void Actualizar_CProyecto_A(ECProyecto eCProyecto);
+    #endregion
+    #endregion
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

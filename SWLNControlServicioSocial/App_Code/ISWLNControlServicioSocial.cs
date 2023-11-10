@@ -51,5 +51,22 @@ public interface ISWLNControlServicioSocial
 	List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int IdEstudiante);
 	[OperationContract]
 	void InsertarProyectoEstudiante(int idProyecto, int idEstudiante);
+
+    #region Tabla: Proyecto
+    #region insert
+    [OperationContract]
+    void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
+    #endregion
+
+    #region get
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+    #endregion
+
+    #region update
+    [OperationContract]
+    void Actualizar_CProyecto_A(int IdProyecto, string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
+    #endregion
+    #endregion
 }
 
