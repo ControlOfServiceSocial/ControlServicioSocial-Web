@@ -34,6 +34,8 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
 
     protected void btnVer_Click(object sender, EventArgs e)
     {
+        Session["EditarProyecto"] = 0;
+        Session["flag"] = 1;
         Response.Redirect("PCrearProyecto.aspx");
     }
 
@@ -46,6 +48,7 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
         if (e.CommandName == "btnActualizar")
         {
             Session["EditarProyecto"] = IdProyecto;
+            Session["flag"] = 0;
             Response.Redirect("PCrearProyecto.aspx");
         }
         

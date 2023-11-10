@@ -65,6 +65,14 @@ public class SWADNETControlServicioSocial : ISWADNETControlServicioSocial
 		return lstCProyecto;
 	}
 	#endregion
+
+	#region update
+	public void Actualizar_CProyecto_A(ECProyecto eCProyecto)
+	{
+		CCProyecto cCProyecto = new CCProyecto();
+		cCProyecto.Actualizar_CProyecto_A(eCProyecto);
+	}
+	#endregion
 	#endregion
 
 }

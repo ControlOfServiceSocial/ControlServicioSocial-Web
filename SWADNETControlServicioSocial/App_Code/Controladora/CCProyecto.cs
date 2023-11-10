@@ -78,6 +78,7 @@ public class CCProyecto
                 eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
                 eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
                 eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
+                eCProyecto.IdSede = drCProyecto.IdSede;
                 lstECProyecto.Add(eCProyecto);
             }
         }
@@ -87,6 +88,12 @@ public class CCProyecto
         }
 
         return lstECProyecto;
+    }
+    #endregion
+    #region update a proyecto
+    public void Actualizar_CProyecto_A(ECProyecto eCProyecto)
+    {
+        aDCProyecto.Actualizar_CProyecto_A(eCProyecto);
     }
     #endregion
 

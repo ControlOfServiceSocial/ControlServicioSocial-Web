@@ -103,6 +103,34 @@ public class ASNETControlServicioSocial
     }
     #endregion
 
+    #region update
+    public void Actualizar_CProyecto_A(ECProyecto eCProyecto)
+    {
+        try
+        {
+            swADNETControlServicioSocial.Actualizar_CProyecto_A(eCProyecto);
+        }
+        catch (EndpointNotFoundException EndPointEx)
+        {
+            /*EDefecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", EndPointEx.ToString(), EndPointEx.Message);
+            throw new FaultException<EDefecto>(eDefecto);*/
+        }
+        catch (CommunicationException CommEx)
+        {
+            FaultException feaultEx = CommEx as FaultException;
+            if (feaultEx == null)
+            {
+                swADNETControlServicioSocial.Actualizar_CProyecto_A(eCProyecto);
+            }
+            else
+            {
+                /*EDefecto eDefecto = ContruirErrorServicio(TTipoDefecto.Falla, "Insertar_RCampania_I", CommEx.ToString(), CommEx.Message);
+                throw new FaultException<EDefecto>(eDefecto);*/
+            }
+
+        }
+    }
+    #endregion
     #endregion
     #endregion
 

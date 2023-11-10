@@ -31,6 +31,8 @@ public class ECProyecto
     public DateTime FechaFinProyecto { get; set; }
     [DataMember]
     public DateTime FechaCreacionProyecto { get; set; }
+    [DataMember]
+    public int IdSede { get; set; }
     #endregion
 
     public ECProyecto()
@@ -45,5 +47,6 @@ public class ECProyecto
         FechaInicioProyecto = DateTime.MinValue;
         FechaFinProyecto = DateTime.MinValue;
         FechaCreacionProyecto = DateTime.MinValue;
+        IdSede = int.MinValue;
     }
 }

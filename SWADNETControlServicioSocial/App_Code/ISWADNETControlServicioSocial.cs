@@ -38,6 +38,10 @@ public interface ISWADNETControlServicioSocial
 	[OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
 	#endregion
+	#region update a proyecto
+	[OperationContract]
+	void Actualizar_CProyecto_A(ECProyecto eCProyecto);
+	#endregion
 	#endregion
 }
 

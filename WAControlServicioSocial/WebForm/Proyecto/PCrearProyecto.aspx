@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../../Estilos/Proyecto/SCrearProyecto.css" />
 </head>
 <body>
-        <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" />
-
+  <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" runat="server" >
   <div class="proyect-box">
     <form ID="form1" runat="server">
         <h2>Crear proyecto nuevo</h2>
@@ -52,9 +51,9 @@
             <label for="sede">Sede del proyecto *</label>
             <asp:DropDownList ID="sede" runat="server" name="sede" required>
               <asp:ListItem value="">-- Seleccionar --</asp:ListItem>
-              <asp:ListItem value="sede1">Sede 1</asp:ListItem>
-              <asp:ListItem value="sede2">Sede 2</asp:ListItem>
-              <asp:ListItem value="sede3">Sede 3</asp:ListItem>
+              <asp:ListItem value="1">Tiquipaya</asp:ListItem>
+              <asp:ListItem value="2">America</asp:ListItem>
+              <asp:ListItem value="3">Ayacucho</asp:ListItem>
             </asp:DropDownList>
         </div> 
         <div class="form-item">
