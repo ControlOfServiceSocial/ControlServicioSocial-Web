@@ -76,7 +76,7 @@ textarea {
     padding: 5px;
     margin-bottom: 5px;
     font-size: 16px;
-    color: #DCE0E5;
+    color: var(--Gray, #666);
     border: none;
     border-bottom: 1px solid #8C4975;
     outline: none;
@@ -84,7 +84,7 @@ textarea {
 }
 
     textarea::placeholder, input::placeholder {
-        color: #DCE0E5; /* Color deseado (en este caso, rojo) */
+        color: var(--Gray, #666); /* Color deseado (en este caso, rojo) */
     }
 
     input[type="submit"] {
