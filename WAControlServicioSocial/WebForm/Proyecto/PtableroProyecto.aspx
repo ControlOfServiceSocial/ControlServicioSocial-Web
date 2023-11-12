@@ -8,7 +8,7 @@
         <h2>Control de servicio social</h2>
         <form id="form1" runat="server">
             <div>            
-                <asp:GridView ID="gvListaProyectos" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvListaProyectos_PageIndexChanging" OnRowCommand="gvListaProyectos_RowCommand" style="border-radius: 5px;
+                <asp:GridView ID="gvListaProyectos" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="6" OnPageIndexChanging="gvListaProyectos_PageIndexChanging" OnRowCommand="gvListaProyectos_RowCommand" style="border-radius: 5px;
 border: 1px solid #E9EFF4;
 background: #FFF;
 width: 1041px;
@@ -38,13 +38,20 @@ flex-shrink: 0;
                 <asp:HyperLink ID="hlAsignarEstudiante" runat="server" Text=""
                     NavigateUrl='<%# "~/WebForm/Estudiante/PAsignarEstudiante.aspx?idProyecto=" + Eval("IdProyecto") %>'
                     CssClass="icon-info">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icono">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+  <path d="M16 19h6" />
+  <path d="M19 16v6" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+</svg>
                 </asp:HyperLink>
             </ItemTemplate>
         </asp:TemplateField>
                     </Columns>
+                    <EmptyDataTemplate>
+                        Aún no se tiene proyectos registrados.
+                    </EmptyDataTemplate>
                 </asp:GridView>
                 <div class="form-row">
                     <div class="form-item" style="float: right;margin-top: 20px">

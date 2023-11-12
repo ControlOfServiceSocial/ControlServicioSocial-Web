@@ -88,4 +88,5 @@ ul {
     height: 4.3rem;
     background-color: var(--color-principal);
     border-radius: 1.2rem;
+    padding: 0.5rem;
 }

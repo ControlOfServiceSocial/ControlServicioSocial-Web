@@ -43,15 +43,15 @@
           <p>Tiempo de contribución: <asp:Label ID="lblTiempoContribucion" runat="server"></asp:Label></p>
           <p>Nombre completo: <asp:Label ID="lblNombreEstudiante" runat="server"></asp:Label></p>
           <p>Carrera: <asp:Label ID="lblNombreCarrera" runat="server"></asp:Label></p>
-          <p>Horas acumuladas: <asp:Label ID="lblHorasTotales" runat="server"></asp:Label></p>
+          
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
       </div>
       <div class="seccion__proyectos tipo">
+          <p class="horas__totales">Total de horas acumuladas: <asp:Label ID="lblHorasTotales" runat="server"></asp:Label></p>
+        <p class="proyecto__titulo">Proyectos:</p>
         <div class="tipo__proyecto proyecto">
-          <p class="proyecto__titulo">Proyectos:</p>
-        
-          <asp:GridView ID="gridViewProyectosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false" DataKeyNames="IdProyecto"
+          <asp:GridView ID="gridViewProyectosEstudiante" runat="server" CssClass="miGridView" AutoGenerateColumns="False" ShowHeader="false" DataKeyNames="IdProyecto"
               OnSelectedIndexChanged="GridViewProyectosEstudiante_SelectedIndexChanged" AutoGenerateSelectButton="true">
               <SelectedRowStyle BackColor="LightGray" ForeColor="Black" />
             <Columns>
@@ -62,8 +62,8 @@
            
         </div>
 
+        <p class="certificado__titulo">Certificados:</p>
         <div class="tipo__certificado">
-          <p class="certificado__titulo">Certificados:</p>
        
          <asp:GridView ID="gridViewCertificadosEstudiante" runat="server" AutoGenerateColumns="False" ShowHeader="false" OnRowCommand="gridViewCertificadosEstudiante_RowCommand">
     <Columns>
@@ -86,6 +86,9 @@
             </ItemTemplate>
         </asp:TemplateField>
     </Columns>
+    <EmptyDataTemplate>
+        El estudiante aún no tiene certificados cargados.
+    </EmptyDataTemplate>
 </asp:GridView>
 
           

@@ -27,6 +27,9 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <EmptyDataTemplate>
+            Aún no se tiene estudiantes registrados.
+        </EmptyDataTemplate>
     </asp:GridView>
   </div>
 </section>

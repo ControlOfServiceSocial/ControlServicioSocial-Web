@@ -39,12 +39,12 @@
       </div>
 
       <div class="derecha__iconos">
-        <a class="iconos__notificacion" href="#">
+        <%--<a class="iconos__notificacion" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="25" viewBox="0 0 22 25" fill="none">
             <path d="M21.4292 20.7586H0V18.452H1.07146V10.415C1.07146 4.6626 5.38944 0 10.7146 0C16.0397 0 20.3577 4.6626 20.3577 10.415V18.452H21.4292V20.7586ZM3.21438 18.452H18.2148V10.415C18.2148 5.93695 14.8568 2.30651 10.7146 2.30651C6.57233 2.30651 3.21438 5.93695 3.21438 10.415V18.452ZM8.03594 21.9118H13.3932C13.3932 22.6765 13.111 23.4098 12.6087 23.9505C12.1063 24.4912 11.425 24.7949 10.7146 24.7949C10.0042 24.7949 9.32284 24.4912 8.8205 23.9505C8.31815 23.4098 8.03594 22.6765 8.03594 21.9118Z" fill="#8C4975"/>
           </svg>
-        </a>
-        <img class="iconos__imagen-usuario" src="" alt="">
+        </a>--%>
+        <img class="iconos__imagen-usuario" src="/Imagenes/General/usuario.png" alt="usuario">
         <a class="iconos__salir" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
             <g opacity="0.4">

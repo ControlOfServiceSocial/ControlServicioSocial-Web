@@ -31,7 +31,9 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
                 lblTiempoContribucion.Text = "0 horas";
 
                 var proyectosEstudiante = proyectoEstudianteService.ObtenerProyectoEstudiantePorIdEstudiante(estudianteId);
-                var totalHorasAcumuladas = proyectosEstudiante.Sum(pe => pe.HoraAcumulada);
+                var certificadosEstudiante = certificadoService.ObtenerCertificadosEstudianteC(estudianteId);
+                var totalCargaHoraria = certificadosEstudiante.Sum(c => c.CargaHoraria);
+                var totalHorasAcumuladas = proyectosEstudiante.Sum(pe => pe.HoraAcumulada) + totalCargaHoraria;
                 lblHorasTotales.Text = totalHorasAcumuladas + (totalHorasAcumuladas == 1 ? " hora" : " horas");
 
                 CargarProyectos(estudianteId);

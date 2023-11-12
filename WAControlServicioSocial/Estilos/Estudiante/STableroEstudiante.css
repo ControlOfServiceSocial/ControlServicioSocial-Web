@@ -109,7 +109,7 @@ table.tabla td {
     color: var(--negro);
     width: 20px;
     height: 20px;
-    margin-top: .5rem;
+    margin: .5rem;
 }
 
 .tabla tbody tr {
