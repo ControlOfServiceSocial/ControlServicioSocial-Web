@@ -35,3 +35,19 @@
     cursor: pointer;
     border-radius: 7px;
 }
+
+.icon-info {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(140, 73, 117, .1);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+    .icon-info svg {
+        color: var(--negro);
+        width: 20px;
+        height: 20px;
+        margin: .5rem;
+    }
