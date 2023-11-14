@@ -38,19 +38,4 @@ public partial class WebForm_Proyecto_PtableroProyecto : System.Web.UI.Page
         Session["flag"] = 1;
         Response.Redirect("PCrearProyecto.aspx");
     }
-
-    protected void gvListaProyectos_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        index = Convert.ToInt32(e.CommandArgument);
-        string IdProyectoString = System.Net.WebUtility.HtmlDecode(gvListaProyectos.Rows[index].Cells[0].Text);
-        IdProyecto = int.Parse(IdProyectoString);
-        
-        if (e.CommandName == "btnActualizar")
-        {
-            Session["EditarProyecto"] = IdProyecto;
-            Session["flag"] = 0;
-            Response.Redirect("PCrearProyecto.aspx");
-        }
-        
-    }
 }

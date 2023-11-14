@@ -14,19 +14,19 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
     int flag = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (int.Parse(Session["flag"].ToString()) == 0)
+        if (!IsPostBack)
         {
-            if (int.Parse(Session["EditarProyecto"].ToString()) > 0)
+            if (Request.QueryString["idProyecto"] != null)
             {
-                lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Session["EditarProyecto"].ToString()));
+                lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Request.QueryString["idProyecto"]));
 
                 foreach (ECProyecto proyecto in lstECProyecto)
                 {
                     txtnombre.Text = proyecto.NombreProyecto;
                     ubicacion.Text = proyecto.UbicacionProyecto;
-                    inicio.Text = proyecto.FechaInicioProyecto.ToString();
-                    fin.Text = proyecto.FechaFinProyecto.ToString();
-                    creacion.Text = proyecto.FechaCreacionProyecto.ToString();
+                    inicio.Text = proyecto.FechaInicioProyecto.ToString("yyyy-MM-dd");
+                    fin.Text = proyecto.FechaFinProyecto.ToString("yyyy-MM-dd");
+                    creacion.Text = proyecto.FechaCreacionProyecto.ToString("yyyy-MM-dd");
                     estado.SelectedIndex = proyecto.EstadoProyecto;
                     horas.Text = proyecto.HorasEstimadas.ToString();
                     desc.Text = proyecto.DescripcionProyecto;
