@@ -18,6 +18,8 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
         {
             if (Request.QueryString["idProyecto"] != null)
             {
+                h2Title.InnerText = "Editar proyecto";
+                btnSend.Text = "Editar Proyecto";
                 lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Request.QueryString["idProyecto"]));
 
                 foreach (ECProyecto proyecto in lstECProyecto)
@@ -128,5 +130,4 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
         }
             
     }
-
 }

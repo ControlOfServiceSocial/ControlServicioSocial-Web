@@ -12,7 +12,7 @@
   <img src="../../Imagenes/General/atras.png" alt="Imagen de bienvenida" runat="server" >
   <div class="proyect-box">
     <form ID="form1" runat="server">
-        <h2>Crear proyecto nuevo</h2>
+        <h2 runat="server" id="h2Title">Crear proyecto nuevo</h2>
       <div class="form-row">
         <div class="form-item">
           <label for="nombre">Nombre del proyecto *</label>
@@ -75,7 +75,7 @@
           </div>
         <div class="form-row">
             <div class="form-item">
-                <input type="button" ID="btnCancelar" runat="server" value="Cancelar">
+                <input type="button" ID="btnCancelar" runat="server" value="Cancelar" onclick="redireccionarAotraVista();">
             </div>
             <div class="form-item">
                 <asp:Button ID="btnSend" runat="server" Text="Crear Proyecto"  OnClick="btnSend_Click"/>
@@ -87,6 +87,12 @@
           <label ID="mensaje" runat="server"></label>
       </div>
     </form>
+      <script>
+        function redireccionarAotraVista() {
+            // Puedes usar window.location.href para redireccionar a otra página
+            window.location.href = 'PtableroProyecto.aspx';
+        }
+      </script>
       </div>
 </body>
 </html>
