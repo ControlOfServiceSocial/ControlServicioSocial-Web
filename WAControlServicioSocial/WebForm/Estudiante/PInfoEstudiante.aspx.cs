@@ -1,6 +1,10 @@
 ﻿using SWLNControlServicioSocial;
 using System;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,6 +25,7 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
+            Page.ExecuteRegisteredAsyncTasks();
             if (Request.QueryString["estudianteId"] != null && int.TryParse(Request.QueryString["estudianteId"], out estudianteId))
             {
                 ECEstudiante estudiante = estudianteService.ObtenerEstudiantePorId_C(estudianteId);
@@ -103,16 +108,65 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
         Page.ClientScript.RegisterStartupScript(this.GetType(), "ActualizarMapas", script, false);
     }
 
+    //protected void gridViewCertificadosEstudiante_RowCommand(object sender, GridViewCommandEventArgs e)
+    //{
+    //    if (e.CommandName == "Descargar")
+    //    {
+    //        string nombreArchivo = e.CommandArgument.ToString();
+    //        string rutaArchivo = Server.MapPath("~/Archivos/" + nombreArchivo + ".pdf");
+    //        Response.ContentType = "application/pdf";
+    //        Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombreArchivo + ".pdf");
+    //        Response.TransmitFile(rutaArchivo);
+    //        Response.End();
+    //    }
+    //}
+
     protected void gridViewCertificadosEstudiante_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         if (e.CommandName == "Descargar")
         {
-            string nombreArchivo = e.CommandArgument.ToString();
-            string rutaArchivo = Server.MapPath("~/Archivos/" + nombreArchivo + ".pdf");
+            string fileName = e.CommandArgument.ToString();
+            Page.RegisterAsyncTask(new PageAsyncTask(async cancellationToken =>
+            {
+                var result = await DownloadFile(fileName);
+
+                if (result.Error != null)
+                {
+                    // Muestra el mensaje de error en el Label
+                    Label1.Text = "Error: " + result.Error;
+                }
+                else
+                {
+                    // Descarga el archivo directamente
+                    await DownloadFileDirectly(result.FileUrl);
+                }
+            }));
+        }
+    }
+
+    private async Task DownloadFileDirectly(string fileUrl)
+    {
+        using (var client = new HttpClient())
+        {
+            var fileBytes = await client.GetByteArrayAsync(fileUrl);
+
+            // Extrae el nombre del archivo de la URL antes de los parámetros
+            var uri = new Uri(fileUrl);
+            string fileName = Path.GetFileName(uri.AbsolutePath);
+
+            Response.Clear();
             Response.ContentType = "application/pdf";
-            Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombreArchivo + ".pdf");
-            Response.TransmitFile(rutaArchivo);
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName);
+            Response.BinaryWrite(fileBytes);
+            Response.Flush();
             Response.End();
         }
+    }
+
+    public async Task<FileResult> DownloadFile(string fileName)
+    {
+        // Intenta obtener la URL del archivo fuera del bloque try/catch
+        var result = await FirebaseStorageService.GetFile(fileName);
+        return result;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoEstudiante.aspx.cs" Inherits="WebForm_Estudiante_PInfoEstudiante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoEstudiante.aspx.cs" Inherits="WebForm_Estudiante_PInfoEstudiante" Async="true" %>
 
 <!DOCTYPE html>
 
