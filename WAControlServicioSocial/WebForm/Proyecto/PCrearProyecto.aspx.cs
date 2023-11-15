@@ -14,19 +14,21 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
     int flag = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (int.Parse(Session["flag"].ToString()) == 0)
+        if (!IsPostBack)
         {
-            if (int.Parse(Session["EditarProyecto"].ToString()) > 0)
+            if (Request.QueryString["idProyecto"] != null)
             {
-                lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Session["EditarProyecto"].ToString()));
+                h2Title.InnerText = "Editar proyecto";
+                btnSend.Text = "Editar Proyecto";
+                lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Request.QueryString["idProyecto"]));
 
                 foreach (ECProyecto proyecto in lstECProyecto)
                 {
                     txtnombre.Text = proyecto.NombreProyecto;
                     ubicacion.Text = proyecto.UbicacionProyecto;
-                    inicio.Text = proyecto.FechaInicioProyecto.ToString();
-                    fin.Text = proyecto.FechaFinProyecto.ToString();
-                    creacion.Text = proyecto.FechaCreacionProyecto.ToString();
+                    inicio.Text = proyecto.FechaInicioProyecto.ToString("yyyy-MM-dd");
+                    fin.Text = proyecto.FechaFinProyecto.ToString("yyyy-MM-dd");
+                    creacion.Text = proyecto.FechaCreacionProyecto.ToString("yyyy-MM-dd");
                     estado.SelectedIndex = proyecto.EstadoProyecto;
                     horas.Text = proyecto.HorasEstimadas.ToString();
                     desc.Text = proyecto.DescripcionProyecto;
@@ -48,10 +50,10 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             if (extension != "")
             {
                 string fileName = Path.GetFileName(img.PostedFile.FileName);
-                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + ".jpg";
+                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
                 img.SaveAs(filePath);
 
-                string rutaImagen = txtnombre.Text + ".jpg";
+                string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
                 try
                 {
                     cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
@@ -86,10 +88,10 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             if (extension != "")
             {
                 string fileName = Path.GetFileName(img.PostedFile.FileName);
-                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + ".jpg";
+                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
                 img.SaveAs(filePath);
 
-                string rutaImagen = txtnombre.Text + ".jpg";
+                string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
                 try
                 {
                     cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Session["EditarProyecto"].ToString()), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
