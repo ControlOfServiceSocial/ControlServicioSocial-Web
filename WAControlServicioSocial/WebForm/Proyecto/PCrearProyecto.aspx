@@ -16,11 +16,11 @@
       <div class="form-row">
         <div class="form-item">
           <label for="nombre">Nombre del proyecto *</label>
-          <asp:TextBox type="text" ID="txtnombre" runat="server" name="nombre" placeholder="Ingrese el nombre del proyecto"></asp:TextBox>
+          <asp:TextBox type="text" ID="txtnombre" runat="server" name="nombre" placeholder="Ingrese el nombre del proyecto" MaxLength="50"></asp:TextBox>
         </div>
         <div class="form-item">
             <label for="ubicacion">Ubicación del proyecto *</label>
-            <asp:TextBox type="text" ID="ubicacion" runat="server" name="ubicacion" placeholder="Ingrese el lugar del proyecto" ></asp:TextBox>
+            <asp:TextBox type="text" ID="ubicacion" runat="server" name="ubicacion" MaxLength="50" placeholder="Ingrese el lugar del proyecto" ></asp:TextBox>
         </div>
         <div class="form-item">
             <label for="inicio">Fecha de inicio *</label>

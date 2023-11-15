@@ -27,7 +27,7 @@
                 <button>
                     Registrarse
                 </button>
-                <a href="newProyect.html">
+                <a href="../Proyecto">
                     ¿Olvidó su contraseña?
                 </a>
         </form>
