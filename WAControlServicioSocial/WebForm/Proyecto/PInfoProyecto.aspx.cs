@@ -10,7 +10,7 @@ public partial class WebForm_Proyecto_PInfoProyecto : System.Web.UI.Page
 {
     CCProyecto cCProyecto = new CCProyecto();
     CCSede cCSede = new CCSede();
-    protected void Page_Load(object sender, EventArgs e)
+    protected async void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
@@ -43,7 +43,17 @@ public partial class WebForm_Proyecto_PInfoProyecto : System.Web.UI.Page
                 }
 
                 lblDescripcion.Text = proyecto.DescripcionProyecto;
-                imgProyecto.ImageUrl = ResolveUrl("~/Imagenes/Proyecto/" + proyecto.ImagenProyecto);
+                // Get the image URL from Firebase Storage
+                var fileResult = await FirebaseStorageService.GetImage(proyecto.ImagenProyecto);
+                if (string.IsNullOrEmpty(fileResult.Error))
+                {
+                    imgProyecto.ImageUrl = fileResult.FileUrl;
+                }
+                else
+                {
+                    // Handle error
+                    Console.WriteLine(fileResult.Error);
+                }
             }
         }
     }

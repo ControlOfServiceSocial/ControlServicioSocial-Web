@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoProyecto.aspx.cs" Inherits="WebForm_Proyecto_PInfoProyecto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoProyecto.aspx.cs" Inherits="WebForm_Proyecto_PInfoProyecto" Async="true" %>
 
 <!DOCTYPE html>
 

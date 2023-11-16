@@ -52,7 +52,28 @@ public class FirebaseStorageService
             return new FileResult { Error = ex.ToString() };
         }
     }
+
+    public static async Task<FileResult> GetImage(string imageName)
+    {
+        try
+        {
+            var imageUrl = await storage
+                .Child("imagenes")
+                .Child(imageName)
+                .GetDownloadUrlAsync();
+
+            Console.WriteLine(string.Format("URL de la imagen: {0}", imageUrl));
+
+            return new FileResult { FileUrl = imageUrl };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return new FileResult { Error = ex.ToString() };
+        }
+    }
 }
+
 public class FileResult
 {
     public string FileUrl { get; set; }
