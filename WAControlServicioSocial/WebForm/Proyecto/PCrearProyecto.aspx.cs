@@ -23,6 +23,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             {
                 h2Title.InnerText = "Editar proyecto";
                 btnSend.Text = "Editar Proyecto";
+                Session["EditarProyecto"] = 1;
                 lstECProyecto = cProyecto.Obtener_CProyecto_O_CC_ID(int.Parse(Request.QueryString["idProyecto"]));
 
                 foreach (ECProyecto proyecto in lstECProyecto)
@@ -63,7 +64,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                     string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
                     img.SaveAs(filePath);
 
-                    string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
+                    string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text + extension;
                     try
                     {
                         cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
@@ -108,16 +109,16 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 {
                     // Llamada al método UploadImage de FireBaseStorageServiceProyecto
                         // Maneja el éxito de la carga de la imagen aquí
-                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
-                        img.SaveAs(filePath);
+                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
+                    img.SaveAs(filePath);
 
-                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
+                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text + extension;
                         try
                         {
-                            cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Session["EditarProyecto"].ToString()), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                            cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Request.QueryString["idProyecto"]), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
                             mensaje.InnerText = "El proyecto se actualizo correctamente";
                             Session["EditarProyecto"] = 0;
-                            string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
+                            string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName + extension);
                             Response.Redirect("PtableroProyecto.aspx");
                         }
                         catch (Exception)
