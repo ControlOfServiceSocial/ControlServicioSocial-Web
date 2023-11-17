@@ -59,33 +59,25 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 using (Stream imageStream = img.PostedFile.InputStream)
                 {
                     // Llamada al método UploadImage de FireBaseStorageServiceProyecto
-                    string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
+                    
+                    string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
+                    img.SaveAs(filePath);
 
-                    if (fileUrl != null)
+                    string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
+                    try
                     {
-                        // Maneja el éxito de la carga de la imagen aquí
-                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
-                        img.SaveAs(filePath);
-
-                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
-                        try
-                        {
-                            cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
-                            mensaje.InnerText = "El proyecto se guardo correctamente";
-                            Session["EditarProyecto"] = 0;
-                            Response.Redirect("PtableroProyecto.aspx");
-                        }
-                        catch (Exception)
-                        {
-
-                            throw;
-                        }
+                        cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                        mensaje.InnerText = "El proyecto se guardo correctamente";
+                        Session["EditarProyecto"] = 0;
+                        string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, txtnombre.Text + extension);
+                        Response.Redirect("PtableroProyecto.aspx");
                     }
-                    else
+                    catch (Exception)
                     {
-                        // Maneja el error al cargar la imagen aquí
-                        Console.WriteLine("Error al cargar la imagen a Firebase Storage.");
+
+                        throw;
                     }
+
                 }
                 
             }
@@ -115,10 +107,6 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 using (Stream imageStream = img.PostedFile.InputStream)
                 {
                     // Llamada al método UploadImage de FireBaseStorageServiceProyecto
-                    string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
-
-                    if (fileUrl != null)
-                    {
                         // Maneja el éxito de la carga de la imagen aquí
                         string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
                         img.SaveAs(filePath);
@@ -129,6 +117,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                             cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Session["EditarProyecto"].ToString()), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
                             mensaje.InnerText = "El proyecto se actualizo correctamente";
                             Session["EditarProyecto"] = 0;
+                            string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
                             Response.Redirect("PtableroProyecto.aspx");
                         }
                         catch (Exception)
@@ -136,12 +125,6 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 
                             throw;
                         }
-                    }
-                    else
-                    {
-                        // Maneja el error al cargar la imagen aquí
-                        Console.WriteLine("Error al cargar la imagen a Firebase Storage.");
-                    }
                 }
                 
             }
