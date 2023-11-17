@@ -21,7 +21,7 @@
                     <input type="password" name="" required="">
                     <label>Contraseña</label>
                 </div>
-                <button>
+                <button runat="server" onclick="redireccionarAotraVista();">
                     Iniciar sesión
                 </button>        
                 <button>
@@ -31,6 +31,12 @@
                     ¿Olvidó su contraseña?
                 </a>
         </form>
+        <script>
+        function redireccionarAotraVista() {
+            // Puedes usar window.location.href para redireccionar a otra página
+            window.location.href = '../Proyecto/PtableroProyecto.aspx';
+        }
+        </script>
     </div>
 </body>
 </html>

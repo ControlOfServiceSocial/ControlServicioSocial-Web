@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Http;
+using System.Net;
 
 public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 {
@@ -41,31 +44,50 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
         } 
     }
 
-    private void crearProyecto()
+    private async Task crearProyectoAsync()
     {
         if (img.HasFile)
         {
+            
             // Verifica si el archivo es una imagen
             string extension = Path.GetExtension(img.FileName);
             if (extension != "")
             {
                 string fileName = Path.GetFileName(img.PostedFile.FileName);
-                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
-                img.SaveAs(filePath);
+                string imageName = Path.GetFileName(img.FileName);
 
-                string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;           
-                try
+                using (Stream imageStream = img.PostedFile.InputStream)
                 {
-                    cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
-                    mensaje.InnerText="El proyecto se guardo correctamente";
-                    Session["EditarProyecto"] = 0;
-                    Response.Redirect("PtableroProyecto.aspx");
-                }
-                catch (Exception)
-                {
+                    // Llamada al método UploadImage de FireBaseStorageServiceProyecto
+                    string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
 
-                    throw;
+                    if (fileUrl != null)
+                    {
+                        // Maneja el éxito de la carga de la imagen aquí
+                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
+                        img.SaveAs(filePath);
+
+                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
+                        try
+                        {
+                            cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                            mensaje.InnerText = "El proyecto se guardo correctamente";
+                            Session["EditarProyecto"] = 0;
+                            Response.Redirect("PtableroProyecto.aspx");
+                        }
+                        catch (Exception)
+                        {
+
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        // Maneja el error al cargar la imagen aquí
+                        Console.WriteLine("Error al cargar la imagen a Firebase Storage.");
+                    }
                 }
+                
             }
             else
             {
@@ -79,7 +101,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
  
     }
 
-    private void actualizar()
+    private async Task actualizarAsync()
     {
         if (img.HasFile)
         {
@@ -88,22 +110,40 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
             if (extension != "")
             {
                 string fileName = Path.GetFileName(img.PostedFile.FileName);
-                string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
-                img.SaveAs(filePath);
+                string imageName = Path.GetFileName(img.FileName);
 
-                string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
-                try
+                using (Stream imageStream = img.PostedFile.InputStream)
                 {
-                    cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Session["EditarProyecto"].ToString()), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
-                    mensaje.InnerText = "El proyecto se actualizo correctamente";
-                    Session["EditarProyecto"] = 0;
-                    Response.Redirect("PtableroProyecto.aspx");
-                }
-                catch (Exception)
-                {
+                    // Llamada al método UploadImage de FireBaseStorageServiceProyecto
+                    string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName);
 
-                    throw;
+                    if (fileUrl != null)
+                    {
+                        // Maneja el éxito de la carga de la imagen aquí
+                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text;
+                        img.SaveAs(filePath);
+
+                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text;
+                        try
+                        {
+                            cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Session["EditarProyecto"].ToString()), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                            mensaje.InnerText = "El proyecto se actualizo correctamente";
+                            Session["EditarProyecto"] = 0;
+                            Response.Redirect("PtableroProyecto.aspx");
+                        }
+                        catch (Exception)
+                        {
+
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        // Maneja el error al cargar la imagen aquí
+                        Console.WriteLine("Error al cargar la imagen a Firebase Storage.");
+                    }
                 }
+                
             }
             else
             {
@@ -122,11 +162,11 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
     {
         if (int.Parse(Session["EditarProyecto"].ToString()) > 0)
         {
-            actualizar();
+            actualizarAsync();
         }
         else
         {
-            crearProyecto();
+            crearProyectoAsync();
         }
             
     }
