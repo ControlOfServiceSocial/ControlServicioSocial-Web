@@ -51,8 +51,8 @@ public partial class WebForm_Estudiante_PInfoEstudiante : System.Web.UI.Page
 
     private void InicializarMapa()
     {
-        double latitudMapa1 = -17.384368;
-        double longitudMapa1 = -66.135661;
+        double latitudMapa1 = -17.332176;
+        double longitudMapa1 = -66.225870;
         double latitudMapa2 = -17.332176;
         double longitudMapa2 = -66.225870;
 
