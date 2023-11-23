@@ -11,34 +11,25 @@ public class CCProyecto
     #region Metodos Privados
     private ADCProyecto aDCProyecto;
     #endregion
-
     #region Metodos Publicos
     public CCProyecto()
     {
         aDCProyecto = new ADCProyecto();
     }
-    #region insert de Proyecto
-    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
-    {
-        aDCProyecto.Insertar_CProyecto_I(eCProyecto);
-    }
-    #endregion
-
-    #region get de todos los proyectos
     public List<ECProyecto> Obtener_CProyecto_O()
     {
         ECProyecto eCProyecto;
-        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
-        DTOCProyecto dtoCProyecto = aDCProyecto.Obtener_CProyecto_O();
-        if (dtoCProyecto != null)
+        List<ECProyecto> lstECProyecto=new List<ECProyecto>();
+        DTOCProyecto dTOCProyecto = aDCProyecto.Obtener_CProyecto_O();
+        if (dTOCProyecto!=null)
         {
-            foreach (DTOCProyecto.CProyectoRow drCProyecto in dtoCProyecto.CProyecto.Rows)
+            foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
             {
                 eCProyecto = new ECProyecto();
                 eCProyecto.IdProyecto = drCProyecto.IdProyecto;
-                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto.TrimEnd();
-                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto.TrimEnd();
-                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto.TrimEnd();
+                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
+                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
+                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
                 eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
                 eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
                 eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
@@ -47,13 +38,78 @@ public class CCProyecto
                 eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
                 lstECProyecto.Add(eCProyecto);
             }
+            
         }
         else
         {
-            dtoCProyecto = new DTOCProyecto();
+            dTOCProyecto=new DTOCProyecto();
         }
-
         return lstECProyecto;
+    }
+    public ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)
+    {
+        ECProyecto eCProyecto = new ECProyecto();
+        DTOCProyecto dTOCProyecto = aDCProyecto.Obtener_CProyecto_O_IdProyecto(IdProyecto);
+        if (dTOCProyecto != null)
+        {
+            foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
+            {
+                eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
+                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
+                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
+                eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
+                eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
+                eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
+                eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
+                eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
+                eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
+            }
+
+        }
+        else
+        {
+            dTOCProyecto = new DTOCProyecto();
+        }
+        return eCProyecto;
+    }
+
+    public List<ECProyecto> Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante)
+    {
+        ECProyecto eCProyecto;
+        List<ECProyecto> lstECProyecto = new List<ECProyecto>();
+        DTOCProyecto dTOCProyecto = aDCProyecto.Obtener_CProyectoEstudiante_O_CProyecto(idEstudiante);
+        if (dTOCProyecto != null)
+        {
+            foreach (DTOCProyecto.CProyectoRow drCProyecto in dTOCProyecto.CProyecto.Rows)
+            {
+                eCProyecto = new ECProyecto();
+                eCProyecto.IdProyecto = drCProyecto.IdProyecto;
+                eCProyecto.NombreProyecto = drCProyecto.NombreProyecto;
+                eCProyecto.DescripcionProyecto = drCProyecto.DescripcionProyecto;
+                eCProyecto.UbicacionProyecto = drCProyecto.UbicacionProyecto;
+                eCProyecto.EstadoProyecto = drCProyecto.EstadoProyecto;
+                eCProyecto.ImagenProyecto = drCProyecto.ImagenProyecto;
+                eCProyecto.HorasEstimadas = drCProyecto.HorasEstimadas;
+                eCProyecto.FechaInicioProyecto = drCProyecto.FechaInicioProyecto;
+                eCProyecto.FechaFinProyecto = drCProyecto.FechaFinProyecto;
+                eCProyecto.FechaCreacionProyecto = drCProyecto.FechaCreacionProyecto;
+                lstECProyecto.Add(eCProyecto);
+            }
+
+        }
+        else
+        {
+            dTOCProyecto = new DTOCProyecto();
+        }
+        return lstECProyecto;
+    }
+    #endregion
+
+    #region insert de Proyecto
+    public void Insertar_CProyecto_I(ECProyecto eCProyecto)
+    {
+        aDCProyecto.Insertar_CProyecto_I(eCProyecto);
     }
     #endregion
 
@@ -95,7 +151,5 @@ public class CCProyecto
     {
         aDCProyecto.Actualizar_CProyecto_A(eCProyecto);
     }
-    #endregion
-
     #endregion
 }

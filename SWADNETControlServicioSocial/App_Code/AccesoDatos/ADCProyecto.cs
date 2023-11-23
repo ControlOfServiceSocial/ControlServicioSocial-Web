@@ -12,12 +12,60 @@ using System.Web;
 /// </summary>
 public class ADCProyecto
 {
-
+    Database BDSWADNETReciclado = SBaseDatos.BDSWADNETControlServicioSocial;
     #region Metodos Publicos
-    /// <summary>
-    /// Obtener todos los estudiantes
-    /// </summary>
-    /// <returns>Retorna una lista de estudiantes</returns>
+    public DTOCProyecto Obtener_CProyecto_O()
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O");
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+        return dTOCProyecto;
+    }
+    public DTOCProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto)
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O_IdProyecto");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdProyecto", System.Data.DbType.Int32, IdProyecto);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (SqlException SQLEx)
+        {
+            throw;
+        }
+        return dTOCProyecto;
+    }
+
+    public DTOCProyecto Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante)
+    {
+        DTOCProyecto dTOCProyecto = new DTOCProyecto();
+        try
+        {
+            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
+            // Ojo cambie su procedimiento almacenado
+            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyectos_IdEstudiante");
+            BDSWADNETControlServicioSocial.AddInParameter(dbCommand, "IdEstudiante", System.Data.DbType.Int32, idEstudiante);
+            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
+        }
+        catch (SqlException SQLEx)
+        {
+            throw;
+        }
+        return dTOCProyecto;
+    }
+    #endregion
+
     #region insert de proyectos
     public void Insertar_CProyecto_I(ECProyecto eCProyecto)
     {
@@ -49,26 +97,6 @@ public class ADCProyecto
     }
     #endregion
 
-    #region Obtener todos los proyectos
-    public DTOCProyecto Obtener_CProyecto_O()
-    {
-        DTOCProyecto dTOCProyecto = new DTOCProyecto();
-        try
-        {
-            Database BDSWADNETControlServicioSocial = SBaseDatos.BDSWADNETControlServicioSocial;
-            DbCommand dbCommand = BDSWADNETControlServicioSocial.GetStoredProcCommand("CProyecto_O");
-
-            BDSWADNETControlServicioSocial.LoadDataSet(dbCommand, dTOCProyecto, "CProyecto");
-        }
-
-        catch (SqlException SQLEx)
-        {
-            // EDefectoAD eDefectoAD = ConstruirErrorServicio(TTipoError.BaseDatos, "Obtener_RCampania_O", SQLEx.ToString(), SQLEx.Message);
-            // throw new FaultException<EDefectoAD>(eDefectoAD);
-        }
-        return dTOCProyecto;
-    }
-    #endregion
 
     #region get de un proyecto
     public DTOCProyecto Obtener_CProyecto_O_ID(int Idproyecto)
@@ -123,7 +151,4 @@ public class ADCProyecto
         }
     }
     #endregion
-
-    #endregion
-
 }

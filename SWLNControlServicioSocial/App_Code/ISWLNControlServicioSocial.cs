@@ -11,60 +11,62 @@ using System.Text;
 [ServiceContract]
 public interface ISWLNControlServicioSocial
 {
-
-	[OperationContract]
-	string GetData(int value);
-
-	[OperationContract]
-	CompositeType GetDataUsingDataContract(CompositeType composite);
-
 	// TODO: agregue aquí sus operaciones de servicio
 
 	#region Estudiante
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
-	#endregion
-	#region Tabla: Proyecto
-	#region insert
-	[OperationContract]
-	void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
+
+    [OperationContract]
+    ECEstudiante ObtenerEstudiantePorId(int idEstudiante);
 	#endregion
 
-	#region get all
+	#region Facultad
 	[OperationContract]
+	ECFacultad ObtenerCFacultadPorId(int idEstudiante);
+	#endregion
+
+	#region Certificado
+	[OperationContract]
+	List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante);
+    #endregion
+
+    [OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O();
-	#endregion
-
-	#region get
 	[OperationContract]
-	List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
-	#endregion
-
-	#region update
+	List<ECCertificado> Obtener_CCertificado_O();
 	[OperationContract]
-	void Actualizar_CProyecto_A(int IdProyecto, string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
-	#endregion
-	#endregion
+	List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+	[OperationContract]
+	ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
+
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_CProyecto(int idEstudiante);
+    [OperationContract]
+    ECSede ObtenerSedeIdProyecto(int IdProyecto);
+
+	[OperationContract]
+	ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante);
+	[OperationContract]
+	List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int IdEstudiante);
+	[OperationContract]
+	void InsertarProyectoEstudiante(int idProyecto, int idEstudiante);
+
+    #region Tabla: Proyecto
+    #region insert
+    [OperationContract]
+    void Insertar_CProyecto_I(string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
+    #endregion
+
+    #region get
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+    #endregion
+
+    #region update
+    [OperationContract]
+    void Actualizar_CProyecto_A(int IdProyecto, string NombreProyecto, string DescripcionProyecto, string UbicacionProyecto, byte EstadoProyecto, string ImagenProyecto, byte HorasEstimadas, DateTime FechaInicioProyecto, DateTime FechaFinProyecto, DateTime FechaCreacionProyecto, int IdSede);
+    #endregion
+    #endregion
 }
 
-// Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-[DataContract]
-public class CompositeType
-{
-	bool boolValue = true;
-	string stringValue = "Hello ";
-
-	[DataMember]
-	public bool BoolValue
-	{
-		get { return boolValue; }
-		set { boolValue = value; }
-	}
-
-	[DataMember]
-	public string StringValue
-	{
-		get { return stringValue; }
-		set { stringValue = value; }
-	}
-}

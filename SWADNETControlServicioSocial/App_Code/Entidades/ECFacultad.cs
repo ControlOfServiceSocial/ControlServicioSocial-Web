@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 /// <summary>
@@ -8,10 +9,23 @@ using System.Web;
 /// </summary>
 public class ECFacultad
 {
+    #region Atributos
+    [DataMember]
+    public int IdFacultad { get; set; }
+    [DataMember]
+    public string NombreFacultad { get; set; }
+    [DataMember]
+    public int IdEstudiante { get; set; }
+    [DataMember]
+    public int IdSede { get; set; }
+
+
+    #endregion
     public ECFacultad()
     {
-        //
-        // TODO: Agregar aquí la lógica del constructor
-        //
+        IdFacultad = int.MinValue;
+        NombreFacultad = string.Empty;
+        IdEstudiante = int.MinValue;
+        IdSede = int.MinValue;
     }
 }

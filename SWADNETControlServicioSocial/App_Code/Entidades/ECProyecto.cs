@@ -11,7 +11,7 @@ using System.Web;
 public class ECProyecto
 {
     #region Atributos
-    [DataMember]
+    [DataMember]    
     public int IdProyecto { get; set; }
     [DataMember]
     public string NombreProyecto { get; set; }
@@ -33,20 +33,23 @@ public class ECProyecto
     public DateTime FechaCreacionProyecto { get; set; }
     [DataMember]
     public int IdSede { get; set; }
-    #endregion
 
+    #endregion
     public ECProyecto()
     {
+        //
+        // TODO: Agregar aquí la lógica del constructor
+        //
         IdProyecto = int.MinValue;
         NombreProyecto = string.Empty;
-        DescripcionProyecto = string.Empty;
+        DescripcionProyecto=string.Empty;
         UbicacionProyecto = string.Empty;
-        EstadoProyecto = 0;
+        EstadoProyecto=byte.MinValue;
         ImagenProyecto = string.Empty;
-        HorasEstimadas = 0;
-        FechaInicioProyecto = DateTime.MinValue;
+        HorasEstimadas = byte.MinValue;
+        FechaInicioProyecto=DateTime.MinValue;
         FechaFinProyecto = DateTime.MinValue;
-        FechaCreacionProyecto = DateTime.MinValue;
+        FechaCreacionProyecto=DateTime.MinValue;
         IdSede = int.MinValue;
     }
 }

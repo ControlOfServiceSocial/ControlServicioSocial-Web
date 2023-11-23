@@ -22,27 +22,62 @@ public interface ISWADNETControlServicioSocial
 	#region Tabla: Estudiante
 	[OperationContract]
 	List<ECEstudiante> Obtener_CEstudiante_O();
-	#endregion
-	#region Tabla: Proyecto
-	#region insert
-	[OperationContract]
-	void Insertar_CProyecto_I(ECProyecto eCProyecto);
+    [OperationContract]
+    ECEstudiante ObtenerEstudiantePorId(int idEstudiante);
+
 	#endregion
 
-	#region get all
+	#region Tabla: Facultad
 	[OperationContract]
+	ECFacultad ObtenerCFacultadPorId(int idEstudiante);
+    #endregion
+
+    #region Certificado
+    [OperationContract]
+    List<ECCertificado> Obtener_CertificadosEstudiante(int idEstudiante);
+
+    #endregion
+
+    [OperationContract]
 	List<ECProyecto> Obtener_CProyecto_O();
-	#endregion
+	[OperationContract]
+	List<ECCertificado> Obtener_CCertificado_O();
+	[OperationContract]
+	List<ECProyectoEstudiante> Obtener_CProyectoEstudiante_O();
+	[OperationContract]
+	ECProyectoEstudiante Obtener_CProyectoEstudiante_O_IdProyecto(int IdProyecto);
+	[OperationContract]
+	ECProyecto Obtener_CProyecto_O_IdProyecto(int IdProyecto);
 
-	#region get 
+
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyectoEstudiante_O_CProyecto(int idEstudiante);
+
+    [OperationContract]
+    ECSede ObtenerSedeIdProyecto(int IdProyecto);
 	[OperationContract]
-	List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
-	#endregion
-	#region update a proyecto
+	ECProyectoEstudiante ObtenerProyectoEstudiantePorIds(int IdProyecto, int IdEstudiante);
+    [OperationContract]
+    List<ECProyectoEstudiante> ObtenerProyectoEstudiantePorIdEstudiante(int idEstudiante);
+
 	[OperationContract]
-	void Actualizar_CProyecto_A(ECProyecto eCProyecto);
-	#endregion
-	#endregion
+	void InsertarProyectoEstudiante(ECProyectoEstudiante eCProyectoEstudiante);
+
+    #region Tabla: Proyecto
+    #region insert
+    [OperationContract]
+    void Insertar_CProyecto_I(ECProyecto eCProyecto);
+    #endregion
+
+    #region get 
+    [OperationContract]
+    List<ECProyecto> Obtener_CProyecto_O_ID(int Idproyecto);
+    #endregion
+    #region update a proyecto
+    [OperationContract]
+    void Actualizar_CProyecto_A(ECProyecto eCProyecto);
+    #endregion
+    #endregion
 }
 
 // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

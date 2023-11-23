@@ -1,23 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PtableroProyecto.aspx.cs" Inherits="WebForm_Proyecto_PtableroProyecto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra/MasterPage.master" AutoEventWireup="true" CodeFile="PtableroProyecto.aspx.cs" Inherits="WebForm_Proyecto_PtableroProyecto" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link rel="stylesheet" href="../../Estilos/Proyecto/STableroProyecto.css" />
-</head>
-    
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" href="../../Estilos/Estudiante/STableroEstudiante.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="proyect-box">
-        <h2>Control de servicio social</h2>
+        <h2>Lista de proyectos</h2>
         <form id="form1" runat="server">
             <div>            
-                <asp:GridView ID="gvListaProyectos" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="8" OnPageIndexChanging="gvListaProyectos_PageIndexChanging" style="border-radius: 5px;
+                <asp:GridView ID="gvListaProyectos" runat="server" CssClass="tabla" AutoGenerateColumns="false" AllowPaging="true" PageSize="6" OnPageIndexChanging="gvListaProyectos_PageIndexChanging" style="border-radius: 5px;
 border: 1px solid #E9EFF4;
 background: #FFF;
-width: 1000px;
+width: 1041px;
 height: 55px;
 flex-shrink: 0;
 text-align:center;
@@ -28,7 +22,7 @@ text-align:center;
                         <asp:BoundField DataField="NombreProyecto" HeaderText="Nombre Proyecto" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />
                         <asp:BoundField DataField="FechaInicioProyecto" HeaderText="Fecha de inicio" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />
                         <asp:BoundField DataField="FechaFinProyecto" HeaderText="Fecha de finalización" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />
-                        <asp:BoundField DataField="EstadoProyecto" HeaderText="Estado" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />                       
+                        <asp:BoundField DataField="EstadoProyecto" HeaderText="Estado" ItemStyle-CssClass="tabla__cuerpo" HeaderStyle-CssClass="tabla__encabezado" />
                         <asp:TemplateField HeaderText="Editar">
                             <ItemTemplate>
                                 <asp:HyperLink ID="hlVerInformacion" runat="server" Text=""
@@ -45,12 +39,12 @@ text-align:center;
                                 </asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Ver más">
+                            <asp:TemplateField HeaderText="Ver más">
                 <ItemTemplate>
                     <asp:HyperLink ID="hlVerInformacion" runat="server" Text=""
                         NavigateUrl='<%# "~/WebForm/Proyecto/PInfoProyecto.aspx?idProyecto=" + Eval("IdProyecto") %>'
                         CssClass="icon-info">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"  width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icono">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                         </svg>
                     </asp:HyperLink>
@@ -61,7 +55,7 @@ text-align:center;
                 <asp:HyperLink ID="hlAsignarEstudiante" runat="server" Text=""
                     NavigateUrl='<%# "~/WebForm/Estudiante/PAsignarEstudiante.aspx?idProyecto=" + Eval("IdProyecto") %>'
                     CssClass="icon-info">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
   <path d="M16 19h6" />
@@ -85,5 +79,5 @@ text-align:center;
             </div>
         </form>
     </div>
-</body>
-</html>
+</asp:Content>
+
