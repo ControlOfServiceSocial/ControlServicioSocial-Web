@@ -41,11 +41,4 @@ public class FireBaseStorageServiceProyecto
             return null;
         }
     }
-
-}
-
-public class FileResult
-{
-    public string FileUrl { get; set; }
-    public string Error { get; set; }
 }
