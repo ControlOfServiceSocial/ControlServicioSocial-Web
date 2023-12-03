@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoProyecto.aspx.cs" Inherits="WebForm_Proyecto_PInfoProyecto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PInfoProyecto.aspx.cs" Inherits="WebForm_Proyecto_PInfoProyecto" Async="true" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="boton-retorno">
-    <a href="">
+    <a href="javascript:void(0);" onclick="window.history.back();">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
       </svg>         
@@ -21,57 +21,55 @@
   </div>
   <section class="contenedor-info">
     <div class="contenedor-info__titulo">
-      <h2>Proyecto de colaboración con la comunidad</h2>
+      <h2><asp:Label ID="lblSubtitulo" runat="server"></asp:Label></h2>
     </div>
 
     <div class="contenedor-info__informacion-proyecto">
       <section class="informacion-proyecto__imagen">
-        <img src="../../Imagenes/Proyecto/imagen.png" alt="">
+        <asp:Image ID="imgProyecto" runat="server" AlternateText="Imagen del proyecto" />
       </section>
       <section class="informacion-proyecto__datos1">
         <div>
-          <span>Nombre del proyecto:</span>
-          <p>Proyecto de ayuda comunitaria</p>
+          <p>Nombre del proyecto:</p>
+          <p><asp:Label ID="lblNombreProyecto" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Fecha de inicio:</span>
-          <p>23/08/2023</p>
+          <p>Fecha de inicio:</p>
+          <p><asp:Label ID="lblFechaInicio" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Fecha de creación:</span>
-          <p>23/08/2023</p>
+          <p>Fecha de creación:</p>
+          <p><asp:Label ID="lblFechaCreacion" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Sede del proyecto:</span>
-          <p>Sede de tiquipaya</p>
+          <p>Sede del proyecto:</p>
+          <p><asp:Label ID="lblSede" runat="server"></asp:Label></p>
         </div>
       </section>
 
       <section class="informacion-proyecto__datos2">
         <div>
-          <span>Ubicación del proyecto:</span>
-          <p>Cochabamba</p>
+          <p>Ubicación del proyecto:</p>
+          <p><asp:Label ID="lblUbicacion" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Fecha de finalización:</span>
-          <p>23/08/2023</p>
+          <p>Fecha de finalización:</p>
+          <p><asp:Label ID="lblFechaFin" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Estado:</span>
-          <p>Activo</p>
+          <p>Estado:</p>
+          <p><asp:Label ID="lblEstado" runat="server"></asp:Label></p>
         </div>
         <div>
-          <span>Horas asignadas:</span>
-          <p>50 horas</p>
+          <p>Horas estimadas:</p>
+          <p><asp:Label ID="lblHorasEstimadas" runat="server"></asp:Label></p>
         </div>
       </section>
     </div>
 
     <div class="contenedor-info__descripcion">
-      <span>Descripción del proyecto:</span>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, culpa! Quo iure minus cumque voluptas sequi cupiditate accusantium facere ad, earum odit non mollitia blanditiis. Iusto animi quae minus cum!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptatem! Laboriosam, itaque, facere ipsam alias doloribus a ratione pariatur repudiandae veniam quidem nulla. Aut aliquid accusamus modi, voluptatibus quaerat quibusdam.
-      </p>
+      <p>Descripción del proyecto:</p>
+      <p><asp:Label ID="lblDescripcion" runat="server"></asp:Label></p>
     </div>
   </section>
 </body>

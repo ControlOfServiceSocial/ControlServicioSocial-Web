@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PLogin.aspx.cs" Inherits="WebForm_login_PLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PLogin.aspx.cs" Inherits="WebForm_Login_PLogin" %>
 
 <!DOCTYPE html>
 
@@ -10,33 +10,33 @@
 </head>
 <body>
     <div class="login-box">
-        <img src="../../Imagenes/General/logo.png" alt="Imagen de bienvenida"> <!-- Agregamos la imagen aquí -->
-        <h2>Bienvenido</h2>
-        <form id="form1" runat="server">
-            <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Correo electrónico</label>
-                </div>
-                <div class="user-box">
-                    <input type="password" name="" required="">
-                    <label>Contraseña</label>
-                </div>
-                <button runat="server" onclick="redireccionarAotraVista();">
+<img src="../../Imagenes/General/logo.png" alt="Imagen de bienvenida"> <!-- Agregamos la imagen aquí -->
+<h2>Bienvenido</h2>
+<form id="form1" runat="server">
+<div class="user-box">
+<input type="text" name="" required="">
+<label>Correo electrónico</label>
+</div>
+<div class="user-box">
+<input type="password" name="" required="">
+<label>Contraseña</label>
+</div>
+<button runat="server" onclick="redireccionarAotraVista();">
                     Iniciar sesión
-                </button>        
-                <button>
+</button>        
+<button>
                     Registrarse
-                </button>
-                <a href="../Proyecto">
+</button>
+<a href="../Proyecto">
                     ¿Olvidó su contraseña?
-                </a>
-        </form>
-        <script>
-        function redireccionarAotraVista() {
-            // Puedes usar window.location.href para redireccionar a otra página
-            window.location.href = '../Proyecto/PtableroProyecto.aspx';
-        }
-        </script>
-    </div>
+</a>
+</form>
+<script>
+    function redireccionarAotraVista() {
+        // Puedes usar window.location.href para redireccionar a otra página
+        window.location.href = '../Proyecto/PtableroProyecto.aspx';
+    }
+</script>
+</div>
 </body>
 </html>

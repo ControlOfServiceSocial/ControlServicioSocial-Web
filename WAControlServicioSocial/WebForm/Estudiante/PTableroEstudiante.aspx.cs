@@ -1,4 +1,4 @@
-﻿using SWLNControlServicioSocial;
+﻿ using SWLNControlServicioSocial;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ public partial class WebForm_Estudiante_TableroEstudiante : System.Web.UI.Page
     }
 
 
-    private void CargarDatos() 
+    private void CargarDatos()
     {
         gvListaEstudiantes.DataSource = null;
         lstECEstudiante = cEstudiante.Obtener_CEstudiante_O_CC();

@@ -33,7 +33,16 @@ public class FireBaseStorageServiceProyecto
                 .Child(imageName)
                 .PutAsync(imageStream);
 
-            return fileUrl;
+            if (fileUrl != null)
+            {
+                // La operación PutAsync se completó con éxito
+                return fileUrl;
+            }
+            else
+            {
+                // Ocurrió un problema durante la operación de subida
+                return null;
+            }
         }
         catch (Exception ex)
         {
@@ -41,11 +50,4 @@ public class FireBaseStorageServiceProyecto
             return null;
         }
     }
-
-}
-
-public class FileResult
-{
-    public string FileUrl { get; set; }
-    public string Error { get; set; }
-}
+}   

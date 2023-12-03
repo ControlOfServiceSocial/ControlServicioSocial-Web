@@ -12,7 +12,7 @@ using System.Net;
 
 public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
 {
-    CProyecto cProyecto = new CProyecto();
+    CCProyecto cProyecto = new CCProyecto();
     List<ECProyecto> lstECProyecto = new List<ECProyecto>();
     int flag = 0;
     protected void Page_Load(object sender, EventArgs e)
@@ -42,14 +42,14 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                     Session["flag"] = 1;
                 }
             }
-        } 
+        }
     }
 
     private async Task crearProyectoAsync()
     {
         if (img.HasFile)
         {
-            
+
             // Verifica si el archivo es una imagen
             string extension = Path.GetExtension(img.FileName);
             if (extension != "")
@@ -60,14 +60,14 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 using (Stream imageStream = img.PostedFile.InputStream)
                 {
                     // Llamada al método UploadImage de FireBaseStorageServiceProyecto
-                    
+
                     string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
                     img.SaveAs(filePath);
 
                     string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text + extension;
                     try
                     {
-                        cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                        cProyecto.Insertar_CProyecto_I_CC(txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), txtnombre.Text + extension, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
                         mensaje.InnerText = "El proyecto se guardo correctamente";
                         Session["EditarProyecto"] = 0;
                         string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, txtnombre.Text + extension);
@@ -80,7 +80,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                     }
 
                 }
-                
+
             }
             else
             {
@@ -91,7 +91,7 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
         {
             mensaje.InnerText = "Debe subir una imagen";
         }
- 
+
     }
 
     private async Task actualizarAsync()
@@ -108,26 +108,26 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
                 using (Stream imageStream = img.PostedFile.InputStream)
                 {
                     // Llamada al método UploadImage de FireBaseStorageServiceProyecto
-                        // Maneja el éxito de la carga de la imagen aquí
-                        string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
+                    // Maneja el éxito de la carga de la imagen aquí
+                    string filePath = Server.MapPath("../../Imagenes/Proyecto/") + txtnombre.Text + extension;
                     img.SaveAs(filePath);
 
-                        string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text + extension;
-                        try
-                        {
-                            cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Request.QueryString["idProyecto"]), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), rutaImagen, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
-                            mensaje.InnerText = "El proyecto se actualizo correctamente";
-                            Session["EditarProyecto"] = 0;
-                            string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, imageName + extension);
-                            Response.Redirect("PtableroProyecto.aspx");
-                        }
-                        catch (Exception)
-                        {
+                    string rutaImagen = "../../Imagenes/Proyecto/" + txtnombre.Text + extension;
+                    try
+                    {
+                        cProyecto.Actualizar_CProyecto_A_CC(int.Parse(Request.QueryString["idProyecto"]), txtnombre.Text, desc.Text, ubicacion.Text, byte.Parse(estado.SelectedValue), txtnombre.Text + extension, byte.Parse(horas.Text), DateTime.Parse(inicio.Text), DateTime.Parse(fin.Text), DateTime.Parse(creacion.Text), int.Parse(sede.SelectedValue));
+                        mensaje.InnerText = "El proyecto se actualizo correctamente";
+                        Session["EditarProyecto"] = 0;
+                        string fileUrl = await FireBaseStorageServiceProyecto.UploadImage(imageStream, txtnombre.Text + extension);
+                        Response.Redirect("PtableroProyecto.aspx");
+                    }
+                    catch (Exception)
+                    {
 
-                            throw;
-                        }
+                        throw;
+                    }
                 }
-                
+
             }
             else
             {
@@ -152,6 +152,6 @@ public partial class WebForm_Proyecto_PCrearProyecto : System.Web.UI.Page
         {
             crearProyectoAsync();
         }
-            
+
     }
 }

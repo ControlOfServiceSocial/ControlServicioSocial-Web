@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c93c3b74-68bd-45b7-9ce2-f5dd476bec32" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b6faa4b-9dc2-42b1-a329-529dd0acf235" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:56904/SWLNControlServicioSocial.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SWLNControlServicioSocial.disco" MetadataType="Disco" ID="6bd6438c-88ed-4239-bb6d-f5044a18e2b4" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?disco" />
-    <MetadataFile FileName="SWLNControlServicioSocial2.xsd" MetadataType="Schema" ID="deaf507c-88b7-413e-a078-5f52c617e7f4" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd0" />
-    <MetadataFile FileName="SWLNControlServicioSocial.xsd" MetadataType="Schema" ID="30255f0c-5338-4bf4-8679-9ab799f46c45" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd1" />
-    <MetadataFile FileName="SWLNControlServicioSocial.wsdl" MetadataType="Wsdl" ID="6ff1c0ef-e6b6-4e1e-8014-c6f8670018a7" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?wsdl" />
-    <MetadataFile FileName="SWLNControlServicioSocial1.xsd" MetadataType="Schema" ID="bcd39f3d-f01f-46d7-8c37-634f00323842" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd2" />
+    <MetadataFile FileName="SWLNControlServicioSocial.disco" MetadataType="Disco" ID="013e3971-20c5-4116-b853-42620684ef24" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?disco" />
+    <MetadataFile FileName="SWLNControlServicioSocial2.xsd" MetadataType="Schema" ID="3d57f2ac-9e8b-48ee-b121-5e76700a1d9d" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd0" />
+    <MetadataFile FileName="SWLNControlServicioSocial.xsd" MetadataType="Schema" ID="d3edd995-1a38-4f6b-8651-810569f80b6b" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd1" />
+    <MetadataFile FileName="SWLNControlServicioSocial.wsdl" MetadataType="Wsdl" ID="23968662-dcfc-477a-8ed6-cb30cb3e5ba6" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?wsdl" />
+    <MetadataFile FileName="SWLNControlServicioSocial1.xsd" MetadataType="Schema" ID="82eeaff0-9b15-4dbc-b347-9ea342a808e7" SourceId="1" SourceUrl="http://localhost:56904/SWLNControlServicioSocial.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

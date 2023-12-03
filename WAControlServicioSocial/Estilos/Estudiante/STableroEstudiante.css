@@ -109,7 +109,7 @@ table.tabla td {
     color: var(--negro);
     width: 20px;
     height: 20px;
-    margin-top: .5rem;
+    margin: .5rem;
 }
 
 .tabla tbody tr {
@@ -160,4 +160,36 @@ table.tabla td {
     color: var(--blanco);
     border-radius: 50%;
     padding: .5rem;
+}
+
+.proyect-box h2 {
+    text-align: left;
+    color: var(--Gray, #666);
+}
+
+/* Estilos para el card */
+.proyect-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1100px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+
+.btnasd {
+    width: 100%;
+    border-radius: 7px;
+    background: var(--basic-colour, #8C4975);
+    box-shadow: 1px 2px 3px 0px rgba(70, 118, 251, 0.41);
+    color: var(--background-color, #FAFAFB);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 7px;
 }
